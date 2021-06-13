@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişkenler</title>
+</head>
+<body>
+    <pre>
+    <script>
+
+        /* Değişkenleri Tanımlarken Dikkat Etmemiz Gereken Hususlar:
+          - Değişkenlere isim verilirken Türkçe karakter olmamalıdır
+          - JavaScript büyük küçük harfe duyarlı bir dildir
+          - Değişken adı daima bir harfle başlamalıdır
+          - Değişken adı en fazla 255 karakter uzunluğunda olmalıdır
+          - Değişken adı içinde boşluk bulunmamalıdır
+          - Değişken adı içinde özel karakterler (+, -, * vb.) bulunmamalıdır
+          - Değişken adı herhangi bir JavaScript sözcüğü (operatör adı, fonksiyon adı vs.) ile aynı olmamalıdır */
+
+        var x = 5;                    // Değişkenler bu şekilde tanımlanır
+        var y = 10;
+        var c = x * y;
+
+        var isim = "Hüseyin";
+
+        var soyisim;                  // Bu şekilde de tanımlanabilir                
+        soyisim = "Yaman"
+
+        var isim = "Hüseyin", soyisim = "Yaman", yas = 35;  // Bu şekilde tek satırda da tanımlama yapılabilir
+
+        var yas2 = '5';
+        var yas3 = 5;
+
+        var name = "Hüseyin";         // Bu şekilde tanımlandıklarında JS iki ayrı değişken olarak değerlendirir
+        var Name = "Yavuz Ali";
+
+        var my_first = "Değişken isminde boşluk olamaz ";
+
+        var $var = "Dolar işareti başta olabilir";           // Bu şekilde $ ve _ işaretleri başta kullanılırsa reserved kelimeler dahi değişken adı olarak kullanılabilir 
+
+        var _var = "Bu şekilde _ işareti başa da gelebilir";
+
+        document.writeln(x);
+        document.writeln(x + 6);
+        document.writeln(c);
+        document.writeln(isim);
+        document.writeln(soyisim);
+        document.writeln(yas);
+        document.writeln(my_first);
+        document.writeln($var);
+        document.writeln(_var);
+
+        document.writeln(yas2 + 10);  // Burada yas2 değişkeni string ifade olduğu için kendisinden sonra geleni de string olarak kabul eder ve birleştirir 510 olur
+
+        document.writeln(yas3);
+        document.writeln(yas3 + 10);  // Fakat burada değişken değeri integer olduğu için direk matematiksel ifadenin sonucu olarak 15 çıkarttı 
+
+        document.writeln("Kullanıcı ismi: " + isim);
+        document.writeln("Kullanıcı ismi: " , isim);              // Bu şekilde de yazılabilirdi
+
+        document.writeln("Kullanıcı yaşı: " + yas); 
+        document.writeln("Kullanıcı yaşı: +10 " + yas + 10);    // Bu şekilde yaparsak ikinci kısmı da metin gibi algılar ve sayıları birleştirerek çıktı gösterir 
+        document.writeln("Kullanıcı yaşı: +10 " + (yas + 10));  // Bu şekilde math işlemlerini parantez içine alırsak işin içinden çıkabiliriz
+
+        document.write("İsim: " + isim + "<br>Soyisim: " + soyisim + "<br>Yaş: " + yas + "<br>");
+        
+        document.writeln(name);       // Görüleceği üzere JS, case sensitive olduğu için bu iki değişkenin çıktıları farklı olur
+        document.writeln(Name);
+
+    </script>
+    </pre>
+</body>
+</html>
