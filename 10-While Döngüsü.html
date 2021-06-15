@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Döngüsü</title>
+</head>
+<body>
+    <pre>
+        <script>
+
+            var selam = "Merhaba!";
+            counter = 0; 
+            while (counter <= 10){                       // While döngüsünün syntaxı bu şekildedir
+            document.writeln(counter + "." + selam);
+            counter++;
+            }
+            document.writeln();
+
+            //----------------------------------------------------------------------------------------------
+
+            var tahmin = 0;
+            var istenilen = 5;
+            var deneme = 1;
+
+            while(tahmin != istenilen) {
+                tahmin++;
+                document.writeln(deneme + ".deneme");
+                if(tahmin == istenilen){
+                    document.writeln(deneme + ".denemede buldunuz");
+                }
+                deneme++;
+            }
+            document.writeln();
+
+            //----------------------------------------------------------------------------------------------
+
+            var tahmin = 0;
+            var istenilen = 5;
+            var deneme = 1;
+
+            while(tahmin != istenilen) {
+                
+                document.writeln(deneme + ".deneme");
+                if(deneme == 15){
+                    document.writeln(deneme + ".denemede buldunuz");
+                    document.writeln("İstenilen sayı: " + istenilen);
+                    tahmin = 5;   // Burada tahmin değerini 5'e eşitleyerek while döngüsünü kırıyoruz 
+                }
+                deneme++;
+            }
+
+        </script>
+    </pre>
+</body>
+</html>

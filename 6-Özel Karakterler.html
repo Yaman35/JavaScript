@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Karakterler</title>
+</head>
+<body>
+    <pre>
+        <script>
+            var text1 = "Türkiye'nin başkenti Ankara'dır"; // Bu şekilde tek tırnak kullanmak gerekiyorsa dış çerçevede çift tırnak kullanılmaıldır, aksi takdirde hata alınır
+            document.writeln(text1);
+
+            var text2 = 'Türkiye\'nin başkenti Ankara\'dır'; // Bu şekilde de kullanılabilir eğer tek tırnak içerisinde yazmak istiyorsak
+            document.writeln(text2);
+
+            var text3 = "Burada \\ işaretini göstermek için önüne bir slash daha koyulmalıdır "
+            document.writeln(text3);
+
+            var text4 = "Eğer text çok uzunsa ve alt satıra geçmek istiyorsak geçmeden \
+            önce mutlaka burada olduğu gibi slash işareti kullanmalıyız aksi \
+            takdirde hata alınacaktır fakat çıktıda hepsi yan yana yazılmaya devam eder "
+            document.writeln(text4);
+
+            var text5 = "Normalde burada\tboşluk yok ama \\t olunca varmış gibi gözüküyor "
+            document.writeln(text5);
+        </script>
+    </pre>
+    
+</body>
+</html>

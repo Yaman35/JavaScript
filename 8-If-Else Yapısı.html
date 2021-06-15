@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else Yapısı</title>
+</head>
+<body>
+    <pre>
+    <script>
+
+        var sayi = 5;
+        if (sayi > 3) {                                   // If-Else Yapısının syntaxı bu şekildedir...
+            document.writeln(sayi + " 3'ten büyüktür");
+        }
+        else {
+            document.writeln(sayi + " 3'ten küçüktür");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var sayi2 = 7;                                     
+        if (sayi2 == 5){                                  // Eşit mi karşılaştırması
+            document.writeln("Sayımız 5'e eşittir");
+        }
+        else {
+            document.writeln("Sayımız 5 değildir");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 35;  // 35 integer                                     
+        if (age === 35){
+            document.writeln("Evet bu değişken hem değer hem tür bakımından eşit"); // Burada age değişkeni hem tür hem de değer açısından eşit olduğundan ilk satır çalıştı
+        }
+        else {
+            document.writeln("Bu değişken tür veya değer açısından eşit değil");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = "35"; // "35" string                               
+        if (age === 35){
+            document.writeln("Evet bu değişken hem değer hem tür bakımından eşit"); // Burada age değişkeni değer açısından eşit fakat tür açısından eşit olmadığı için ikinci satır çalıştı
+        }
+        else {
+            document.writeln("Bu değişken tür veya değer açısından eşit değil");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 34;                                       
+        if (age != 35){                                   // Eşit değilse karşılaştırması
+            document.writeln("Kullanıcı yaşı 35'ten farklıdır"); 
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 35'tir");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 35;                               
+        if (age !== "35"){                                // Tipi,türü eşit değilse karşılaştırması
+            document.writeln("Bunların tipleri aynı değil");
+        }
+        else {
+            document.writeln("İkisinin de tipi aynı ");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 35;                               
+        if (age < 50){                               
+            document.writeln("Kullanıcı yaşı 50'den küçüktür: " + age);
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 50 veya 50'den büyüktür: " + age);
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 25;                               
+        if (age > 30){                               
+            document.writeln("Kullanıcı yaşı 30'dan büyüktür: " + age);
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 30 veya 30'dan küçüktür: " + age);
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 25;                               
+        if (age <= 25){                               
+            document.writeln("Kullanıcı yaşı 25'ten küçük veya eşittir: " + age);
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 25'ten büyüktür: " + age);
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var age = 23;                               
+        if (age >= 23){                               
+            document.writeln("Kullanıcı yaşı 23'ten büyük veya eşittir: " + age);
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 23'ten küçüktür: " + age);
+        }
+
+        //-------------------------------------------------------------------------------
+
+        isim = "Hüseyin";
+        var age = 55;                               
+        if (age >= 50 && isim == "Hüseyin"){        // "&&" operatörü (and) anlamındadır ve her iki şartı da sağlama olayına bakar                         
+            document.writeln("Kullanıcı yaşı 50'den büyüktür: " + age + "'dir ve ismi de: " + isim + " 'dir.");
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 50'den büyük değildir veya ismi Hüseyin değildir");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        isim = "Emre";
+        var age = 45;                               
+        if (age >= 50 || isim == "Hüseyin"){        // "||" operatörü (or) anlamındadır ve şartlardan birisi bile sağlansa true döndürür                         
+            document.writeln("Kullanıcı yaşı 50'den büyüktür veya ismi Hüseyin'dir");
+        }
+        else {
+            document.writeln("Kullanıcı yaşı 50'den küçüktür ve ismi Hüseyin değildir");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var degilse = 45; 
+            document.writeln( !(degilse == 30) );     // Burada içerideki ifadeden false gelir "!" (not) ifadesi ile false değilden true olarak çıktı verir
+
+        //-------------------------------------------------------------------------------
+
+        var num_1 = 3;
+        if (num_1 == 1){
+            document.writeln("Girilen sayı 1'dir");
+        }
+        else if (num_1 == 2){
+            document.writeln("Girilen sayı 2'dir");
+        }
+        else{
+            document.writeln("Girilen sayı 1 ve 2 den farklı bir sayıdır");
+        }
+
+        //-------------------------------------------------------------------------------
+
+        var num_2 = 3;
+        if (num_2 <5){
+            if (num_2 == 4){
+                document.writeln("Sayımız 4'e eşittir");
+            }
+            else{
+                document.writeln("Sayımız 4'ten de küçüktür");
+            }
+        }
+        else{
+            document.writeln("Sayımız 5 veya 5'ten büyüktür");
+        }
+
+    </script>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Kullanımı</title>
+</head>
+<body>
+    <pre>
+        <script>
+            // Ağaşıdaki iki kullanım aynı anlamdadır...
+
+            var meyve = "elma";
+            switch(meyve){      // Karşılaştırma özelliğidir
+
+                case "armut":document.writeln("Seçilen meyve armuttur..."); // Değişkenin armuta eşit olması durumudur
+                break;          // Burada "break" kullanılmazsa ilk seçenek doğru olsa bile ikinci seçeneği de hatalı olarak yazdırmaktadır !
+                
+                case "elma":document.writeln("Seçilen meyve elmadır...");   // Değişkenin elmaya eşit olması durumudur
+                break;
+                
+                case "kiraz":document.writeln("Seçilen meyve kirazdır..."); // Değişkenin kiraza eşit olması durumudur
+                break;
+                
+                default:document.writeln("Hiçbir meyve seçilmedi...");     // Hiçbirisne eşit olmaması durumunda yazılacak ifadeyi belirtmek için "default" kullanılır
+            }
+
+            //-------------------------------------------------------------------------------------------------------------------------
+
+            if (meyve == "elma"){
+                document.writeln("Seçilen meyve elmadır...");
+            }
+            else if (meyve == "armut"){
+                document.writeln("Seçilen meyve armuttur...");
+            }
+            else if (meyve == "kiraz"){
+                document.writeln("Seçilen meyve kirazdır...");
+            }
+            else{
+                document.writeln("Hiçbir meyve seçilmedi...");
+            }
+
+        </script>
+    </pre>
+    
+</body>
+</html>
