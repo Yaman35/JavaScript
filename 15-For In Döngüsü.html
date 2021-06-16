@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In Döngüsü</title>
+</head>
+<body>
+    <script>
+        var araba = {marka: "BMW", model:"X5", yas:3, sehir: "İzmir"};
+        var liste = " "; // Bir nevi boş liste tanımladık, sonradan for föngüsü ile içini doldurtup yazdırıyoruz 
+        var x;           // For in döngüsü içerisinde kullanabilmemiz için bu şekilde tanımladık, tanımlamasaydık da olurdu 
+
+        for(x in araba){
+            liste += araba[x] + " ";
+        }
+        document.write(liste);
+    </script>
+</body>
+</html>

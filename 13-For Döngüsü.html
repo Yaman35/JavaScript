@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Döngüsü</title>
+</head>
+<body>
+    <script>
+
+        var sayi = 1;
+        while (sayi <= 5){                                  /* While Döngüsü ile */
+            document.writeln(sayi + ". sayı <br>");
+            sayi++
+        }
+
+        document.write("<br>");
+        //---------------------------------------------------------------------------------------------------------------
+        
+        for ( var sayi = 1; sayi <= 10; sayi++ ){           /* For Döngüsü ile */
+            document.writeln(sayi + ". sayı <br>");
+        }
+
+        document.write("<br>");
+        //---------------------------------------------------------------------------------------------------------------
+
+        var sayi;                                           /* Değişken tanımlama işlemi bu şekilde de olabiliyor */
+        for ( sayi = 1; sayi <= 3; ){                   
+            document.writeln(sayi + ". sayı <br>");
+            sayi++;                                          /* Kontrol yapısı bu şekilde de kullanılabilir */
+        }
+
+        document.write("<br>");
+        //---------------------------------------------------------------------------------------------------------------
+
+        var sayi = 1;                                       /* Değişken tanımlama işlemi bu şekilde de olabiliyor */
+        for ( sayi; sayi <= 5; ){                   
+            document.writeln(sayi + ". sayı <br>");
+            sayi++;                                         
+        }
+
+        document.write("<br>");
+        //---------------------------------------------------------------------------------------------------------------
+
+        var sayi = 1;                                       
+        for ( ; sayi <= 5; ){                               /* Eğer değişken yukarıda tanımlanmış olduğu durumlarda parantez içinde değişkeni belirtmek şart değildir lakin ";" kullanımı olmak zorundadır bu durumda*/
+            document.writeln(sayi + ". sayı <br>");
+            sayi++;                                         
+        }
+
+    </script>
+    
+</body>
+</html>

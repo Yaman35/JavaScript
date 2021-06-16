@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İç İçe While Döngüsü</title>
+</head>
+<body>
+   
+        <script>
+            var num_1 = 1;
+            var num_2 = 1;
+
+            while(num_1 <= 10){
+                document.write(num_1 + ".Satır: ");
+                while(num_2 <= 4){
+                    document.write(" * ");
+                    num_2++;
+                }
+                document.write("<br>");
+                num_1++;
+                num_2 = 1;  /* Burayı yazmamızın sebebi yukarıda ikinci while döngüsünü bir defa döndürdükten sonra num_2 = 4 oluyor ve num_1 = 2 
+                olduğunda ikinci döngüye girenmiyor, o yüzden bununla tekrar başa döndürüp ikinci while döngüsüne sokturabiliyoruz */
+            }
+        </script>
+    
+    
+</body>
+</html>

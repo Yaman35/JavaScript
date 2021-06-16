@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While Döngüsü</title>
+</head>
+<body>
+    <pre>
+        <script>
+            var sayi = 1;
+            document.write("While Döngüsü <br> <br>");
+            while(sayi <= 5){
+                document.write(sayi + ".Sayı <br>");
+                sayi++;    
+            }
+
+            document.write("<br><br><br>");
+
+            //-----------------------------------------------------------------------------------------------------------------
+
+            var sayi1 = 1;
+            document.write("Do While Döngüsü <br> <br>");
+
+            do{
+                document.write(sayi1 + ".Sayı <br>");
+                sayi1++;
+            }while(sayi1 <= 5)
+
+            document.write("<br><br><br>");
+            //-----------------------------------------------------------------------------------------------------------------
+
+            var sayi = 10;
+            document.write("Diğer While Döngüsü <br> <br>");
+            while(sayi <= 5){                             // Burada sayı 5 ten büyük olduğundan (10), while döngüsüne hiç giremedi
+                document.write(sayi + ".Sayı <br>");
+                sayi++;    
+            }
+
+            document.write("<br><br><br>");
+            //-----------------------------------------------------------------------------------------------------------------
+
+            var sayi1 = 10;
+            document.write("Diğer Do While Döngüsü <br> <br>");
+
+            do{
+                document.write(sayi1 + ".Sayı <br>");
+                sayi1++;
+            }while(sayi1 <= 5)                            // Ama burada üstteki do ifadesini bir kereye mahsus çalıştırır takiben while şartı sağlanmadığı için diğerlerini çalıştırmaz
+
+
+        </script>
+    </pre>
+    
+</body>
+</html>
