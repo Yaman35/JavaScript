@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch-Hata Yakalama Kodu</title>
+</head>
+<body>
+    <script>
+        try{                               // Hata yakalamak istediğimiz kod bloğunu bunun süslü parantezleri içerisine yazıyoruz
+        aalert("Merhaba Kardeşim");
+        }
+        catch(message){                    // Takiben ekrana hatayı çıkartmak için de bu şekilde yazıyoruz 
+            document.write(message + "<br>")
+        }
+        finally{                           // Bunu yazdırmasak/kullanmasak da olur 
+            document.write("Hata Mesajı Bitti...")
+        }
+    </script>
+    
+</body>
+</html>

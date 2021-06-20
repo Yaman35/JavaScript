@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugger Kullanımı</title>
+</head>
+<body>
+    <script>
+        var sayi1 = 20, sayi2 = 10, sonuc;
+        document.write("sayı1 değişkeninin değeri : " + sayi1 + "<br><br>");
+        document.write("sayı2 değişkeninin değeri : " + sayi2 + "<br><br>");
+
+        document.write("Hata ayıklamak için F12 tuşuna (Fn 12) basınız...<br><br>");
+        debugger;   /*  Bir nevi kod akışını bunu kullanarak durduruyoruz ve oraya kadar olan kodlarda herhangi bir hata olup olmadığını 
+                        görebilmek için bir nevi tarayıcının sana yardım etmesini bekliyorsun. Mesela 100 lerce satır kod var ve hatalar varsa 
+                        hepsini tek tek okumak yerine bununla kademeli bir şekilde çalıştırıp kodlarını kontrol edebilirsin  */
+
+        sonuc = sayi1 * sayi2;
+        document.write("Sonuç : " + sonuc);
+        
+    </script>
+    
+</body>
+</html>

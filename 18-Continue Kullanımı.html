@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continue Kullanımı</title>
+</head>
+<body>
+    <script>
+        var sayi = 0;
+        while(sayi <= 10){
+            
+            sayi++;       // Bu şekilde kontrol yapısı mutlak surette if bloğunun üzerinde olmalıdır aksi takdirde tarayıcı sonsuz döngüye girer
+            if ( sayi == 5 || sayi == 9){
+                document.write("Eksik bilgi verdiniz... <br>");
+                continue; // continue ile o döngünün çalışmamasını atlanmasını sağlayıp bir sonrakine devam ettiriyoruz 
+                          // Mesela burada "break" deseydik tüm döngü kırılırdı ama continue sadece o dişliyi kırıyor zincir devam ediyor 
+            } 
+            document.write(sayi + ".sayı <br>");
+        }
+    </script>
+</body>
+</html>
