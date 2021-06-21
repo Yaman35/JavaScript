@@ -9,10 +9,12 @@
 <body>
     <pre>
     <script>
+
         // Statement: Çalıştırılabilir kod bloğu demektir...
+        
         var name = "Yaman";
         document.writeln(name);
-        document.writeln(typeof(name));   // Değişken değerlerinin tipini öğrenebilmek için 'typeof' kullanılır
+        document.writeln(typeof(name));    // Değişken değerlerinin tipini öğrenebilmek için 'typeof' kullanılır
 
         var number = 35;
         document.writeln(number);
@@ -26,13 +28,24 @@
         document.writeln(boolean);
         document.writeln(typeof(boolean));
 
-        var empty;                         // Tanımlanmamış değişken
+        var empty;                          // Tanımlanmamış değişken
         document.writeln(empty);
         document.writeln(typeof(empty));
 
-        var tanimsiz = null;               // null değişken
+        var tanimsiz = null;                // null değişken
         document.writeln(tanimsiz);
-        document.writeln(typeof(tanimsiz));
+        document.writeln(typeof(tanimsiz)); // Lakin tipi object çıkar
+
+        console.log ("1. " + typeof 0);             //number
+        console.log ("2. " + typeof (3,14));        //number
+        console.log ("3. " + typeof "hello");       //string
+        console.log ("4. " + typeof (7+8));         //number
+        console.log ("5. " + typeof "Oliver");      //string
+        console.log ("6. " + typeof "");            //string
+        console.log ("7. " + typeof true);          //boolean
+        console.log ("8. " + typeof (3>=2));        //boolean
+        var a;    // Value is undefined.
+        console.log ("9. " + typeof a);             //undefined
 
     </script>
     </pre>
