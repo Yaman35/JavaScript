@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throw Kullanımı</title>
+</head>
+<body>
+    <script>
+
+       var sayi = 5;
+
+       try{
+           if(sayi == 2){throw "sayi değeri 2";}     // Yazdırmak istediğimiz ifadeyi "throw" içerisinde yazıyoruz 
+           if(sayi == 5){throw "sayi değeri 5";}
+           if(sayi == 9){throw "sayi değeri 9";}
+       }
+       catch(mesaj){
+            document.write(mesaj)                    // catch kısmında da yukarıdan yakaldığını ekrana döküyoruz
+       }
+
+       //------------------------------------------------------------------------------------------------------------------------------------------
+
+       var x = 10, y = 5;
+
+       try{
+           if(x ==y) {throw "e1";}
+           else {throw "e2";}  
+       }
+       catch(e){                               // Burada da alert kullanımıyla birlikte istediğimiz ifadeyi/hata mesajını ekrana yazdırıyoruz                  
+           if (e == "e1")
+                alert("Exception: Both are same value!");   
+           if (e == "e2")
+                alert("Exception: Both are different!");
+       }
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+        var eleman = "Yaman";
+        var display = eleman.constructor;      // Değişkenin türünü göstermeye yarar
+        document.writeln(display + "<br>");
+
+        var eleman2 = ["Yaman", "Ahmet"];
+        var display2 = eleman2.constructor;
+        document.write(display2 + "<br>");
+
+        if (display2 === Array){               // Bu şekilde bir kullanım ile kontrol şartı olarak kullanılabilir
+            document.writeln("Bu elaman bir array dir");}
+        else{
+            document.writeln("Bu elaman bir array değildir");
+        }
+        
+      
+    </script>
+  
+</body>
+</html>

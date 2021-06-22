@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+  
+    <script>
+        var classs = [" Ahmet ", " Mehmet ", " Hasan ", " Hüseyin "];   // Liste tanımlama bu şekildedir
+
+          document.writeln(classs + "<br>");   
+          document.writeln(classs[0] + "<br>");                         // Listenin elamanlarını index leme yöntemleriyle yazdırabiliyoruz
+          document.writeln(classs[1] + "<br>");
+          document.writeln(classs[2] + " " + classs[3] + "<br>");
+          document.writeln("<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        var erkekler = [" Ahmet ", " Mehmet ", " Hasan "];              // 1.Yöntem (Güncel Liste Tanımlama Yöntemi)
+        var kizlar = new Array(" Ayşe ", " Zeynep ", " Emine ");        // 2.Yöntem (Eski Liste Tanımlama Yöntemi)
+
+          document.writeln(erkekler + "<br>");
+          document.writeln(kizlar + "<br>");
+          document.writeln("<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        var meyveler = [];                                              // Bu şekilde tanımlanmış boş listeye sonradan da eleman atayabiliyoruz
+          meyveler[0] = "elma";
+          meyveler[1] = "armut";
+          meyveler[2] = "muz";
+          document.writeln(meyveler + "<br>"); 
+          document.writeln("<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        var liste = ["Ahmet" , "Mehmet" , 5, 19, 80, "5", "1987", 1.50]; // Bu şekilde elemanları ekleyebiliriz, string, integer, float vs
+          document.writeln(liste + "<br>"); 
+          document.writeln(liste[4] + liste[7] + "<br>");                 // Bu şekilde aritmetik işlemler de yaptırabiliriz
+          document.writeln(liste[0] + liste[2] + "<br>");                 // Metinsel ifade ile rakamı toplamaya çalıştığımızda onları yanyana yazar
+          document.writeln("<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        var liste2 = [" Hüseyin ", " Emine ", " Yavuz Ali "];  
+        var liste1 = ["Ahmet" , "Mehmet" , 5, 19, 80, "5", "1987", 1.50, liste2, liste2[2]]; // Bu şekilde liste içinde liste de tanımlayabiliriz
+        
+          document.writeln(liste1[8] + "<br>");    // Fakat yazdırırken "undefined" hatası vermemesi için liste içindeki listenin daha önce tanımlanması gerekiyor
+          document.writeln(liste1[9] + "<br>");    // Görüleceği üzere liste1 in 9. indexindeki eleman liste2 nin  2. indexindeki eleman
+          document.writeln("<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        var erkekler = ["Ahmet", "Mehmet", "Hüseyin"];
+        var kizlar = ["Emine", "Zeynep", "Elif"];
+        var arabalar = ["BMW", "Opel", "Mercedes"];
+
+        var topla = [erkekler, kizlar, arabalar];
+          document.writeln(topla + "<br>");
+          document.writeln(topla[0] + "<br>");
+          document.writeln(topla[2] + "<br>");
+          document.writeln(topla[2][2] + "<br>");
+          document.writeln(topla[2][2][0] + "<br>");     // Bu şekilde index kullanımları ile istediğimiz listenin istediğimiz indexine ulaşabilriz
+          document.writeln("<br>");
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        countries = ["Türkiye", "Almanya", "Fransa", "Rusya", "İspanya"];
+
+        //For Döngüsü ile Yazımı
+
+        for (var i = 0; i <= 4; i++ ){              // Normalde burayı methodlar kullanarak listenin uzunluğu kadar dememiz gerekkiyor
+          document.writeln(i+1 + ". Ülke: " + countries[i] + "<br>");
+        }
+
+        document.writeln("<br>");
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        countries = ["Türkiye", "Almanya", "Fransa", "Rusya", "İspanya"];
+
+        //While  Döngüsü ile Yazımı
+
+        var i = 0;                   // Değişken görüldüğü gibi looptan önce tanımlanmalıdır
+
+        while (i <= 4){              
+          document.writeln(i+1 + ". Ülke: " + countries[i] + "<br>");
+          i++;
+        }
+        
+
+
+
+
+    </script>
+  
+</body>
+</html>
