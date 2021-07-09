@@ -13,15 +13,19 @@
         /* Değişkenleri Tanımlarken Dikkat Etmemiz Gereken Hususlar:
           - Değişkenlere isim verilirken Türkçe karakter olmamalıdır
           - JavaScript büyük küçük harfe duyarlı bir dildir
-          - Değişken adı daima bir harfle başlamalıdır
+          - Değişken adı daima bir harfle başlamalıdır, rakam ile başlanılamaz
           - Değişken adı en fazla 255 karakter uzunluğunda olmalıdır
           - Değişken adı içinde boşluk bulunmamalıdır
           - Değişken adı içinde özel karakterler (+, -, * vb.) bulunmamalıdır
           - Değişken adı herhangi bir JavaScript sözcüğü (operatör adı, fonksiyon adı vs.) ile aynı olmamalıdır */
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         var x = 5;                    // Değişkenler bu şekilde tanımlanır
         var y = 10;
         var c = x * y;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var isim = "Hüseyin";
 
@@ -30,17 +34,25 @@
 
         var isim = "Hüseyin", soyisim = "Yaman", yas = 35;  // Bu şekilde tek satırda da tanımlama yapılabilir
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         var yas2 = '5';
         var yas3 = 5;
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         var name = "Hüseyin";         // Bu şekilde tanımlandıklarında JS iki ayrı değişken olarak değerlendirir
         var Name = "Yavuz Ali";
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var my_first = "Değişken isminde boşluk olamaz ";
 
         var $var = "Dolar işareti başta olabilir";           // Bu şekilde $ ve _ işaretleri başta kullanılırsa reserved kelimeler dahi değişken adı olarak kullanılabilir 
 
         var _var = "Bu şekilde _ işareti başa da gelebilir";
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         document.writeln(x);
         document.writeln(x + 6);
@@ -52,6 +64,8 @@
         document.writeln($var);
         document.writeln(_var);
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
         document.writeln(yas2 + 10);  // Burada yas2 değişkeni string ifade olduğu için kendisinden sonra geleni de string olarak kabul eder ve birleştirir 510 olur
 
         document.writeln(yas3);

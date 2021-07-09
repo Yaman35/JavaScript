@@ -11,44 +11,89 @@
     <script>
 
         // Statement: Çalıştırılabilir kod bloğu demektir...
-        
+        // Mouse ile tıkladıktan sonra Alt tuşuna basılırsa istediğimiz kadar satırı seçip aynı anda işlem yapabiliyoruz 
+
         var name = "Yaman";
         document.writeln(name);
-        document.writeln(typeof(name));    // Değişken değerlerinin tipini öğrenebilmek için 'typeof' kullanılır
+        document.writeln(typeof(name));   // Değişken değerlerinin tipini öğrenebilmek için 'typeof' kullanılır
+        document.writeln(typeof name);    // Bu şekilde parantez içinde yazmasak da olur !!!
+
+        var userName = 'Mark';
+        var a = `Merhaba ${userName}`;    // Bu şekilde $ işareti ile bir değişkenin değerini direk kullanabiliyoruz. Lakin `` tırnakları içerisinde olmalı (i harfinin yanındaki tuş)
+                                          // Tek tırnak veya çift tırnak ile yapılamaz. Pyhton daki format kullanımına benzer
+        console.log(a)
+
+        console.log("I'm ready");         // Bu iki şekilde de kullanılabilir, string ifadelerde
+        console.log('I\'m ready');
+        
+        // Bu şekilde renkli çıktılar da gösterilebilir 
+        console.log('%c Hello Full Stack!', 'background: #840A7F; color: #fff');
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var number = 35;
         document.writeln(number);
-        document.writeln(typeof(number));
+        document.writeln(typeof(number));  // Numaralarda max kabul edilebilir basamak sayısı 15 tir üstünü yuvarlar
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var pi = 3.14;
         document.writeln(pi);
         document.writeln(typeof(pi));
 
+        var h = 0.1 + 0.2;
+        console.log(h.toFixed(2));          // "toFixed" ile noktadan sonra kaç basamak gösterilmesini istiyorsak belirtebiliriz
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         var boolean = true;
         document.writeln(boolean);
         document.writeln(typeof(boolean));
+        document.writeln(typeof false);
+        document.writeln(typeof True);      // Büyük harflerle olmaz true, false
+        document.writeln(8 > 4);
+        document.writeln(typeof (8 > 4));
+
+        var x = 8 == 8;
+        var y = 8 == '8';
+        var z = 8 === '8';
+
+        document.writeln(x);        //true
+        document.writeln(y);        //true, sadece değerine bakar tipine bakmaz o yüzden eşit görür
+        document.writeln(z);        // false, hem tipine bakar hem değerine 
+
+        var a = Boolean(0);         // false, -0 da olunca false olur 
+        console.log(a);
+
+        var b = Boolean('0');       // true
+        console.log(b);
+
+        var c = Boolean(5);         // true  Sayının poziitif veya negatif olması farketmez her halükarda true döner
+        console.log(c);
+
+        var d = Boolean(-5);        // true 
+        console.log(d);
+
+        var space = Boolean(' ');   // true, space bir karakter olarak algılanır o yüzden true verir
+        console.log(space);
+
+        var tirnak = Boolean('');   // false, Ama bu şekilde olursa false verir
+        console.log(tirnak);
+
+        var t = Boolean(null);      // false
+        console.log(t);
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var empty;                          // Tanımlanmamış değişken
         document.writeln(empty);
-        document.writeln(typeof(empty));
+        document.writeln(typeof(empty));    // undefined
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         var tanimsiz = null;                // null değişken
         document.writeln(tanimsiz);
-        document.writeln(typeof(tanimsiz)); // Lakin tipi object çıkar
-
-        console.log ("1. " + typeof 0);             //number
-        console.log ("2. " + typeof (3,14));        //number
-        console.log ("3. " + typeof "hello");       //string
-        console.log ("4. " + typeof (7+8));         //number
-        console.log ("5. " + typeof "Oliver");      //string
-        console.log ("6. " + typeof "");            //string
-        console.log ("7. " + typeof true);          //boolean
-        console.log ("8. " + typeof (3>=2));        //boolean
-        var a;    // Value is undefined.
-        console.log ("9. " + typeof a);             //undefined
-
-        var x = { firstName: "John", lastName: "Clarusway" };
-        console.log ("10. " + typeof x);            //Object
+        document.writeln(typeof(tanimsiz)); // object
 
     </script>
     </pre>

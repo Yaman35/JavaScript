@@ -12,18 +12,38 @@
 
             var isim = "Hüseyin";
             document.writeln(isim);
-            document.writeln("Kullanıcı ismi: " + isim);   // + işareti metinsel(string) ifadelerde birleştirme yapar
+            document.writeln("Kullanıcı ismi: " + isim);  // + işareti metinsel(string) ifadelerde birleştirme yapar
 
             var sayi1 = 10;
             var sayi2 = 3;
-            document.writeln(sayi1 + 10);                  // + işareti sayısal(integer) ifadelerde toplama işlemi yapar
+            document.writeln(sayi1 + 10);                 // + işareti sayısal(integer) ifadelerde toplama işlemi yapar
             document.writeln(sayi1 + sayi2);
+
+            var h = 5;
+            var y = '3';
+            document.writeln(h + y + "<br>");             // Bu şekilde number ve string ifadelerde toplanabiliyor ve çıktısı 53 oluyor
+
+            var k = '5';
+            var m = 3;
+            document.writeln(k - m + "<br>");             // Burada da çıkarma işlemlerinde js diyor ki sen string yazmak istemedin herhalde diyip 5-3 yapar sonucu number olarak yazıyor 
+                                                          // String - String olsaydı da, sonuç aynı şekilde 2 çıkardı
+
+            var k1 = '12';
+            var m1 = '3';
+            document.writeln(k1 / m1 + "<br>");            // Burada da her ne kadar string olsalar da normal bölme işlemi yapılır ve sonuç 4 çıkar (number olarak)                                   
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            // Arithmetic Operators
 
             document.writeln(sayi1 - sayi2);               // Çıkarma işlemi
             document.writeln(sayi1 * sayi2);               // Çarpma İşlemi
             document.writeln(sayi1 / sayi2);               // Bölme işlemi
             document.writeln(sayi1 % sayi2);               // Mod alma işlemi, kalanı bulma
             document.writeln(sayi1 ** sayi2);              // Üs alma işlemi
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            // Assignment Operators 
 
             var number1 = 3;
             number1++;                                      // Sayının değerini bir arttırma, uzun yazımı ise number1 = number1 + 1 şeklindedir.
@@ -53,7 +73,188 @@
             number7 %= 5;                                   // number7 = number7 % 5 in kısa yazılmış halidir.
             document.writeln(number7);
 
-        </script>
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            document.writeln( false == false ); // true,
+            document.writeln( Boolean(0) == false ); //Boolean(0) false a eşit mi ave eşit dolayısıyla true
+            document.writeln( Boolean('0') == false ); // false olur çünkü Boolean('0') true dur
+            
+            document.writeln( 0 == false )    // true
+            document.writeln( '0' == false )  // true çıkar çünkü burada '0' ı 0 olarak algılar ve false der, Boolean('0') true dur
+            
+            console.log(typeof null);        // object !!!
+    
+            document.writeln( null == false ) // false, yani null false a eşit değil
+            document.writeln( null == true )  // false, yani null true a eşit değil
+            document.writeln( null == null ); // true
+            document.writeln( null == 0 );    // false ama aşağıda işlemlerde 0 kabul edilir
+            document.writeln( null + 3 );     // Sonuç 3 çıkar
+
+            document.writeln( Boolean(null) == false ) // true Aynı 0 da olduğu gibi boolean a girmiş hali ile girmemiş hali farklı
+            document.writeln( Boolean(null) == Boolean(0) ) //true, İkisi de false çünkü
+
+            console.log(typeof NaN);          // "number" çıkıyor !!!
+            document.writeln( NaN == NaN );   // false
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var aa;
+            while(isNaN(aa)){             // Kullanıcıdan alınan veri sayı mı? diye sorgulatmamıza yarar
+            a = prompt("Enter a number");
+            a = Number(aa);               // Kullanıcıdan alınan tüm değerler string olduğu için bu şekilde sayıları hesaplamalarda kullanabilmek adına Number ile numbera çevrilmelidir
+            console.log(aa)
+            }
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            let a = 5;
+            console.log(a);     // Burada 5 çıkar
+
+            {                   // Scope başlangıcı
+                let a = 8;
+                console.log(a); // Burada 8 çıkar scope içi
+            }                   // Scope sonu
+
+            console.log(a);     // Burada tekrardan 5 çıkar scope dışı
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var x = 6;
+            var y = 3;
+
+            //Aslında aşağıdaki kod yazımı x = y - 1 ve y = y - 1 demektir
+
+            x = --y;            // Burası "--" önde olduğu için y den 1 çıkart x e at demektir, aynı şekilde y nin değerini de 1 azaltır. Dolaysıyla her ikisi de sonuç olarak 2 olmuş olur
+            console.log({x});   
+            console.log({y});   //Object tipi gösterim
+             
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var p = 6;
+            var r = 3;
+
+            // console.log({r}); burada r yazdırınca 3 olur lakin aşağıda yazdırınca 2 olur
+
+            //Aslında aşağıdaki kod yazımı p = r ve r = r - 1 demektir
+
+            p = r--;                // Fakat burada "--" sonrasında olduğu için r nin ilk değerini (yani 3) p ye atar ve takiben r yi de 1 azaltır (yani 2 olur)
+            console.log({p});   
+            console.log({r});
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var x1 = 6;
+            var y1 = 3;
+
+            x1 = ++y1;              // Burada y1 in 1 artırılmış halini x1 e atar o da 4 olur ve takiben y1 de arttırılmış olur o da 4 olur
+             
+            console.log(x1);   
+            console.log(y1);
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var x2 = 6;
+            var y2 = 3;
+
+            x2 = y2++;              // Burada y2 nin ilk değerini x1 e atar o da 3 olur ve takiben y2 de arttırılmış olur o da 4 olur
+                                    // Aslında burada y2 yi al x2 ye eşitle değerini sonra y2 değerini 1 arttır demektir
+            console.log(x2);   
+            console.log(y2);
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            // Comparison Operators
+
+            var q = 2;
+            var w = '2';
+
+            console.log(q == w);     // true, çünkü değerler aynımı diye baktı aynı tiplerine bakmaz
+            console.log(q === w);    // false, çünkü hem tipi hem de değeri aynı mı diye baktı ki aynı olmadığı için false verdi (birisi number diğeri string)
+
+            console.log(q != w);     // false olur, çünkü eşit değil mi? diye soruyor ama eşit
+            console.log(q !== w);    // true olur, çünkü tamamen eşit değiller mi? diyo evet tamamen eşit değiller
+
+            let age = 14;
+            console.log(age >= 14)   // true
+            console.log(age > 14)    // false
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            console.log(015 + 025);  // 34 yapar (13 + 21) "Üçlü yani başına 0 uazılınca 8 lik (oktal) sisteme göre olur"
+            console.log(15 + 025);   // 36 yapar (15 + 21)
+            console.log(015 + 25);   // 38 yapar (13 + 25)
+            console.log(15 + 25);    // 40 yapar (15 + 25)
+
+            console.log( 9 < 8);     // false
+            console.log( 9 < 8 < 7); // true ( Burada false < 7 o da 0 < 7 gibi olur ve true çıkar)
+            console.log( false < 7);
+
+            console.log('Clarusway' > 'clarusway'); // false olur, Karakterleri ASCII koduna göre 
+            console.log('C'.charCodeAt());          // 67 Çıkar
+            console.log('c'.charCodeAt());          // 99 Çıkarma
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            // Logical Operators
+
+            // (&&) "and" anlamına gelir
+            // (||) "or" anlamına gelir
+            // (!) "not" anlamına gelir 
+
+            let x5 = 2 && 3;
+            console.log(x5);    // Burada sonucu 3 olarak verir, Phyton daki logical operators mantığının aynısı
+
+            let x6 = 0 && false;
+            console.log(x6);    // Burada ise direk ilk başta karar veriyor ve 0 verir
+
+
+
+            let x7 = 7 || false;
+            console.log(x7);    // Burada ilkinde True gelir ikincisi önemli değil sonuç True olur
+
+            let x8 = 0 || 3;
+            console.log(x8);    // Burada ilkinden false gelir ama ikincisi true olduğu için sonuç true olur
+
+            let x9 = 0 || false;
+            console.log(x9);    // Burada da ikincide karar veriyor bu sefer ikinci olan false u çıkarır
+
+
+
+            let x10 = 0 || false;
+            console.log(!x10);  // Burada sonuç normalde fals çıkıyor ama ! işareti ile sonuç true ya çevriliyor
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            let password = 'p@s';
+            console.log(password.length > 5 && password.includes('@'));  // false olur , Bu şekilde kontrol mekanızmaları kullanılabilir
+            console.log(password.length > 5 || password.includes('@'));  // true olur
+            console.log(password.length >= 8 || password.includes('@') && password.length > 5); // false çıkar (NAO sıralaması)
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            // Nullish Coalescing Operators "??" ile kullanılır
+
+            const foo = null ?? "default string";    // İlk kısım null veya undefined ise sağdaki aksi takdirde soldakini veriyor
+            console.log(foo);
+
+            const foo1 = 0 ?? 42;    // Burada 0 olması önemli değil null veya undefined değil ise ilkini verir yani buranın çıktısı 0 olur
+            console.log(foo1);
+
+            const nullValue = null;
+            const emptyText = "";
+            const someNumber = 42;
+
+            const valA = nullValue ?? "Default for A";
+            const valB = emptyText ?? "Default for B";
+            const valC = someNumber ?? 0;
+
+            console.log(valA); // "Default for A"
+            console.log(valB); // "" (as the empty string is not null or undefined)
+            console.log(valC); // 42
+
+
+
+        </script> 
     </pre>
     
 </body>
