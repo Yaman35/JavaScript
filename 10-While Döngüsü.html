@@ -13,11 +13,23 @@
             var selam = "Merhaba!";
             counter = 0; 
             while (counter <= 10){                       // While döngüsünün syntaxı bu şekildedir
-            document.writeln(counter + "." + selam);
+            document.writeln((counter + 1) + "." + selam);
             counter++;
             }
             document.writeln();
 
+            //----------------------------------------------------------------------------------------------
+
+            let i = 0;
+            let sum = 0;
+
+            while(i < 6){
+                sum = sum + i;
+                console.log(i);
+                i++;
+            }
+            console.log(`The total is: ${sum}`);
+            
             //----------------------------------------------------------------------------------------------
 
             var tahmin = 0;
@@ -46,7 +58,7 @@
                 if(deneme == 15){
                     document.writeln(deneme + ".denemede buldunuz");
                     document.writeln("İstenilen sayı: " + istenilen);
-                    tahmin = 5;   // Burada tahmin değerini 5'e eşitleyerek while döngüsünü kırıyoruz 
+                    tahmin = 5;   // Burada tahmin değerini 5'e eşitleyerek de while döngüsünü kırabiliriz, break gibi
                 }
                 deneme++;
             }
