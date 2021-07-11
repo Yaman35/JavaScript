@@ -10,7 +10,7 @@
     <pre>
     <script>
 
-        var sayi = 5;
+        let sayi = 5;
         if (sayi > 3) {                                   // If-Else Yapısının syntaxı bu şekildedir...
             document.writeln(sayi + " 3'ten büyüktür");
         }
@@ -20,7 +20,18 @@
 
         //-------------------------------------------------------------------------------
 
-        var sayi2 = 7;                                     
+        let score = 50;
+        if (score >= 50) console.log("Congratulations!"); // Bu şekilde tek satır şeklinde de yazılabilir
+        
+        //-------------------------------------------------------------------------------
+
+        let score2 = 49;
+        if (!(score2 >= 50)){                           // If bloğu sadece true olduğunda çalıştırdığı için bu şekilde içerisi false olan bir yapıyı true ya çevirerek de ilk kod bloğunu çalıştırtabiliriz
+            console.log("Congratulations2!");
+        }  
+        //-------------------------------------------------------------------------------
+
+        let sayi2 = 7;                                     
         if (sayi2 == 5){                                  // Eşit mi karşılaştırması
             document.writeln("Sayımız 5'e eşittir");
         }
@@ -30,7 +41,7 @@
 
         //-------------------------------------------------------------------------------
 
-        var age = 35;  // 35 integer                                     
+        let age = 35;  // 35 integer                                     
         if (age === 35){
             document.writeln("Evet bu değişken hem değer hem tür bakımından eşit"); // Burada age değişkeni hem tür hem de değer açısından eşit olduğundan ilk satır çalıştı
         }
@@ -40,8 +51,8 @@
 
         //-------------------------------------------------------------------------------
 
-        var age = "35"; // "35" string                               
-        if (age === 35){
+        let age2 = "35"; // "35" string                               
+        if (age2 === 35){
             document.writeln("Evet bu değişken hem değer hem tür bakımından eşit"); // Burada age değişkeni değer açısından eşit fakat tür açısından eşit olmadığı için ikinci satır çalıştı
         }
         else {
@@ -50,8 +61,8 @@
 
         //-------------------------------------------------------------------------------
 
-        var age = 34;                                       
-        if (age != 35){                                   // Eşit değilse karşılaştırması
+        let age3 = 34;                                       
+        if (age3 != 35){                                   // Eşit değilse karşılaştırması
             document.writeln("Kullanıcı yaşı 35'ten farklıdır"); 
         }
         else {
@@ -60,8 +71,8 @@
 
         //-------------------------------------------------------------------------------
 
-        var age = 35;                               
-        if (age !== "35"){                                // Tipi,türü eşit değilse karşılaştırması
+        let age4 = 35;                               
+        if (age4 !== "35"){                                // Tipi,türü eşit değilse karşılaştırması
             document.writeln("Bunların tipleri aynı değil");
         }
         else {
@@ -70,50 +81,74 @@
 
         //-------------------------------------------------------------------------------
 
-        var age = 35;                               
-        if (age < 50){                               
-            document.writeln("Kullanıcı yaşı 50'den küçüktür: " + age);
+        let age5 = 35;                               
+        if (age5 < 50){                               
+            document.writeln("Kullanıcı yaşı 50'den küçüktür: " + age5);
         }
         else {
-            document.writeln("Kullanıcı yaşı 50 veya 50'den büyüktür: " + age);
+            document.writeln("Kullanıcı yaşı 50 veya 50'den büyüktür: " + age5);
         }
 
         //-------------------------------------------------------------------------------
 
-        var age = 25;                               
-        if (age > 30){                               
-            document.writeln("Kullanıcı yaşı 30'dan büyüktür: " + age);
+        let age6 = 25;                               
+        if (age6 > 30){                               
+            document.writeln("Kullanıcı yaşı 30'dan büyüktür: " + age6);
         }
         else {
-            document.writeln("Kullanıcı yaşı 30 veya 30'dan küçüktür: " + age);
+            document.writeln("Kullanıcı yaşı 30 veya 30'dan küçüktür: " + age6);
         }
 
         //-------------------------------------------------------------------------------
 
-        var age = 25;                               
-        if (age <= 25){                               
-            document.writeln("Kullanıcı yaşı 25'ten küçük veya eşittir: " + age);
+        // Ternary Oerator
+
+        age6 > 30 ? console.log("Yaşı 30'dan büyüktür: ") : console.log("Yaşı 30 veya 30'dan küçüktür: ");
+        // Bu şekildeki ternary bir yapı ile if-else bloğunu tek satırda yazmak mümkündür !!!!!
+
+        //-------------------------------------------------------------------------------
+
+        let username;
+
+        username ? console.log(`Hello ${username}`) : console.log('Please login');
+        // Burada kullanıcı herhangi bir isim girmezse "Please login" çalışır, ama girerse girdiği isim ile birlikte Hello yazısı yazdırılır
+
+        //-------------------------------------------------------------------------------
+
+        let age7 = 25;                               
+        if (age7 <= 25){                               
+            document.writeln("Kullanıcı yaşı 25'ten küçük veya eşittir: " + age7);
         }
         else {
-            document.writeln("Kullanıcı yaşı 25'ten büyüktür: " + age);
+            document.writeln("Kullanıcı yaşı 25'ten büyüktür: " + age7);
         }
 
         //-------------------------------------------------------------------------------
 
-        var age = 23;                               
-        if (age >= 23){                               
-            document.writeln("Kullanıcı yaşı 23'ten büyük veya eşittir: " + age);
+        // if - else if Ternary
+
+        let score = 79;
+        
+        score > 80 ? console.log('Tebrikler') : 
+        (score >= 50 ? console.log('Fena Değil') : console.log('Daha çok çalışmalısınız!')); // Buradaki parantezleri yazmasaydık da çalışırdı
+
+
+        //-------------------------------------------------------------------------------
+
+        let age8 = 23;                               
+        if (age8 >= 23){                               
+            document.writeln("Kullanıcı yaşı 23'ten büyük veya eşittir: " + age8);
         }
         else {
-            document.writeln("Kullanıcı yaşı 23'ten küçüktür: " + age);
+            document.writeln("Kullanıcı yaşı 23'ten küçüktür: " + age8);
         }
 
         //-------------------------------------------------------------------------------
 
         isim = "Hüseyin";
-        var age = 55;                               
-        if (age >= 50 && isim == "Hüseyin"){        // "&&" operatörü (and) anlamındadır ve her iki şartı da sağlama olayına bakar                         
-            document.writeln("Kullanıcı yaşı 50'den büyüktür: " + age + "'dir ve ismi de: " + isim + " 'dir.");
+        let age9 = 55;                               
+        if (age9 >= 50 && isim == "Hüseyin"){        // "&&" operatörü (and) anlamındadır ve her iki şartı da sağlama olayına bakar                         
+            document.writeln("Kullanıcı yaşı 50'den büyüktür: " + age9 + "'dir ve ismi de: " + isim + " 'dir.");
         }
         else {
             document.writeln("Kullanıcı yaşı 50'den büyük değildir veya ismi Hüseyin değildir");
@@ -122,8 +157,8 @@
         //-------------------------------------------------------------------------------
 
         isim = "Emre";
-        var age = 45;                               
-        if (age >= 50 || isim == "Hüseyin"){        // "||" operatörü (or) anlamındadır ve şartlardan birisi bile sağlansa true döndürür                         
+        let age10 = 45;                               
+        if (age10 >= 50 || isim == "Hüseyin"){        // "||" operatörü (or) anlamındadır ve şartlardan birisi bile sağlansa true döndürür                         
             document.writeln("Kullanıcı yaşı 50'den büyüktür veya ismi Hüseyin'dir");
         }
         else {
@@ -132,12 +167,25 @@
 
         //-------------------------------------------------------------------------------
 
-        var degilse = 45; 
+        let degilse = 45; 
             document.writeln( !(degilse == 30) );     // Burada içerideki ifadeden false gelir "!" (not) ifadesi ile false değilden true olarak çıktı verir
 
         //-------------------------------------------------------------------------------
 
-        var num_1 = 3;
+        let point = prompt("What is your exam score?");
+
+        if (point > 80){
+            console.log("Congratulations");
+        }
+        else if (point >= 50) {
+            console.log("Not bad!");
+        }
+        else {
+            console.log("You're lazy boy!");
+        }
+        //-------------------------------------------------------------------------------
+
+        let num_1 = 3;
         if (num_1 == 1){
             document.writeln("Girilen sayı 1'dir");
         }
@@ -150,7 +198,7 @@
 
         //-------------------------------------------------------------------------------
 
-        var num_2 = 3;
+        let num_2 = 3;
         if (num_2 <5){
             if (num_2 == 4){
                 document.writeln("Sayımız 4'e eşittir");
