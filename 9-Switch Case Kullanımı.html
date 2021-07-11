@@ -11,97 +11,97 @@
         <script>
             // Ağaşıdaki iki kullanım aynı anlamdadır...
 
-            // var meyve1 = "ArMuT";
-            // meyve2 = meyve1.toLowerCase(); // Burada kullanıcının girişlerinden kaynaklı hataları önlemek için kullanmakta fayda var
-            //                              // toUpperCase() de kullanılabilir
+            var meyve1 = "ArMuT";
+            meyve2 = meyve1.toLowerCase(); // Burada kullanıcının girişlerinden kaynaklı hataları önlemek için kullanmakta fayda var
+                                         // toUpperCase() de kullanılabilir
 
-            // switch(meyve2){      // Karşılaştırma özelliğidir
+            switch(meyve2){      // Karşılaştırma özelliğidir
 
-            //     case "armut":    // Bir de switch case yapısında karşılaştırmalar case sensitive dir dikkat edilmesi gerekir "armut-Armut"
-            //         document.writeln("Seçilen meyve armuttur..."); // Değişkenin armuta eşit olması durumudur
-            //     break;           // Burada "break" kullanılmazsa ilk seçenek doğru olsa bile ikinci seçeneği de hatalı olarak yazdırmaktadır !
+                case "armut":    // Bir de switch case yapısında karşılaştırmalar case sensitive dir dikkat edilmesi gerekir "armut-Armut"
+                    document.writeln("Seçilen meyve armuttur..."); // Değişkenin armuta eşit olması durumudur
+                break;           // Burada "break" kullanılmazsa ilk seçenek doğru olsa bile ikinci seçeneği de hatalı olarak yazdırmaktadır !
                 
-            //     case "elma":
-            //         document.writeln("Seçilen meyve elmadır...");   // Değişkenin elmaya eşit olması durumudur
-            //     break;
+                case "elma":
+                    document.writeln("Seçilen meyve elmadır...");   // Değişkenin elmaya eşit olması durumudur
+                break;
                 
-            //     case "kiraz":
-            //         document.writeln("Seçilen meyve kirazdır..."); // Değişkenin kiraza eşit olması durumudur
-            //     break;
+                case "kiraz":
+                    document.writeln("Seçilen meyve kirazdır..."); // Değişkenin kiraza eşit olması durumudur
+                break;
                 
-            //     default:
-            //         document.writeln("Hiçbir meyve seçilmedi...");     // Hiçbirisne eşit olmaması durumunda yazılacak ifadeyi belirtmek için "default" kullanılır
-            // }
+                default:
+                    document.writeln("Hiçbir meyve seçilmedi...");     // Hiçbirisne eşit olmaması durumunda yazılacak ifadeyi belirtmek için "default" kullanılır
+            }
 
-            // //-------------------------------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------------------------------
            
-            // // Yukarıdaki örneğin if-elsse yapısı
+            // Yukarıdaki örneğin if-elsse yapısı
 
-            // let meyve = "elma";
-            // if (meyve == "elma"){
-            //     console.log("Seçilen meyve elmadır...");
-            // }
-            // else if (meyve == "armut"){
-            //     console.log("Seçilen meyve armuttur...");
-            // }
-            // else if (meyve == "kiraz"){
-            //     console.log("Seçilen meyve kirazdır...");
-            // }
-            // else{
-            //     console.log("Hiçbir meyve seçilmedi...");
-            // }
+            let meyve = "elma";
+            if (meyve == "elma"){
+                console.log("Seçilen meyve elmadır...");
+            }
+            else if (meyve == "armut"){
+                console.log("Seçilen meyve armuttur...");
+            }
+            else if (meyve == "kiraz"){
+                console.log("Seçilen meyve kirazdır...");
+            }
+            else{
+                console.log("Hiçbir meyve seçilmedi...");
+            }
 
             
-            // //-------------------------------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------------------------------
             
-            // var product = "eraser";
-            // var message;
+            var product = "eraser";
+            var message;
 
-            // switch(product) {     
+            switch(product) {     
 
-            //     case "pen":
-            //         message = " is 0.93$"; 
-            //     break;         
+                case "pen":
+                    message = " is 0.93$"; 
+                break;         
                 
-            //     case "notebook":
-            //     case "eraser":                  // Bu şekilde birden falza seçenek için aynı çıktıyı aldırtabiliriz
-            //         message = " is 0.50$";     
-            //     break;
+                case "notebook":
+                case "eraser":                  // Bu şekilde birden falza seçenek için aynı çıktıyı aldırtabiliriz
+                    message = " is 0.50$";     
+                break;
                 
-            //     case "pencil":
-            //         message = " is 0.80$"; 
-            //     break;
+                case "pencil":
+                    message = " is 0.80$"; 
+                break;
                 
-            //     default:
-            //         message = "Select a product";     
-            // }
+                default:
+                    message = "Select a product";     
+            }
 
-            // console.log(product, message); // Çıktısı Eraser is 0.50$ olur
+            console.log(product, message); // Çıktısı Eraser is 0.50$ olur
 
-            // //-------------------------------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------------------------------
 
-            // var product = '';
-            // var message;
+            var product = '';
+            var message;
 
-            // switch(product) {     
+            switch(product) {     
 
-            //     case "pen":
-            //         message = "Pen is 0.93$"; 
-            //     break;         
+                case "pen":
+                    message = "Pen is 0.93$"; 
+                break;         
                 
-            //     case "eraser":
-            //         message = "Eraser is 0.50$";     
-            //     break;
+                case "eraser":
+                    message = "Eraser is 0.50$";     
+                break;
                 
-            //     case "pencil":
-            //         message = "Pencil is 0.80$"; 
-            //     break;
+                case "pencil":
+                    message = "Pencil is 0.80$"; 
+                break;
                 
-            //     default:
-            //         message = "Select a product";     
-            // }
+                default:
+                    message = "Select a product";     
+            }
 
-            // console.log(message); // Çıktısı "Select a product" olur çünkü product kısmına herhangi bir şey atanmadı 
+            console.log(message); // Çıktısı "Select a product" olur çünkü product kısmına herhangi bir şey atanmadı 
 
             //-------------------------------------------------------------------------------------------------------------------------
 
