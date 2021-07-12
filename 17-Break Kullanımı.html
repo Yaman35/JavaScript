@@ -11,13 +11,35 @@
     <script>
         var sayi = 1;
         for(sayi; sayi <=10; sayi++){
-            if (sayi == 5){
-                document.write(sayi + "değerine ulaştığınız için döngüden çıktınız...")
-                break;                // Döngüden çıkmamızı sağlar
+            if (sayi === 5){
+                document.writeln(sayi + " değerine ulaştığınız için döngüden çıktınız...")
+                break;                // Döngüden çıkmamızı sağlar, break ve de return sonrası yazılan hiçbir kod çalışmaz
+                // console.log("Buraya ne yazarsak yazalım çalışmaz")
             }
-            document.write(sayi + "<br>");
+            document.writeln(sayi + "<br>");
         }
+
+        //------------------------------------------------------------------------------------------------------------------
         
+        let i = 0;
+        while (i < 10){
+            if (i === 6){
+                break;
+            }
+            i++;
+            console.log(i);  
+        }
+            
+        //------------------------------------------------------------------------------------------------------------------
+        
+        let i2 = 0;
+        while (i2 < 10){
+            if (!(i2 % 3 === 0)){ // Sadece 3 ve katlarını yazdırmasın demektir, if (i2 % 3 !== 0) şeklinde de yazılabilirdi
+                console.log(i2);
+            }
+            i2++;
+           
+        }
     </script>
     
 </body>
