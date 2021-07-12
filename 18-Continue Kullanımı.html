@@ -22,18 +22,29 @@
 
         //------------------------------------------------------------------------------------------------------------------
         
-        
-
         let i = 0;
         //console.log(0); 0 başta yazsın istedik
+
         while (i < 10){
             i === 0 ? console.log(i) : null; // Bu şekilde 0 da başa yazılmış oldu
-            i++;              // Arttırma yeri önemli aksi takdirde sonsuz döngüye girilebilir, dikkat etmek gereklidir
+            i++;                             // Arttırma yeri önemli aksi takdirde sonsuz döngüye girilebilir, dikkat etmek gereklidir
             if (i % 3 === 0){ 
-                continue;     // Burada sadece 3 ve 3 ün katlarını yazmamak için bu sefer continue kullandık
+                continue;                    // Burada sadece 3 ve 3 ün katlarını yazmamak için bu sefer continue kullandık
             }
             console.log(i);
         }
+
+        //------------------------------------------------------------------------------------------------------------------
+        
+        let i2;
+       
+        for (i2 = 0; i2 < 7; i2++){
+            if (i2 == 2 || i2 ==4){          // 1 den 7 ye kadar olan sayılardan 2 ve 4 ü yazdırma demektir
+                continue;
+            }
+            console.log(i2)
+        }
+
     </script>
 </body>
 </html>
