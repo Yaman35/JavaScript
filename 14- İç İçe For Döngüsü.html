@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+
         for(var i=1; i<=5; i++){
 
             for(var k=1; k<=4; k++){
@@ -15,6 +16,65 @@
             }
            document.write("<br>");
         }
+
+        //----------------------------------------------------------------------------------------------------------------------
+
+        // ÇARPIM TABLOSU
+
+        for (let a = 1; a <= 10; a++){
+            for (let b = 1; b <= 10; b++){
+                document.writeln(a + "X" + b + " = " + a * b + "<br/>" );
+            //  document.write(`${a} * ${b} = ${a * b}`, "<br>") şeklinde de yazılabilirdi
+            }
+            document.write("<br>");
+        }
+
+        //----------------------------------------------------------------------------------------------------------------------
+
+        const number = [13, 34, 24, 67, 23, 90];
+        let total = 0;
+
+        for(let t = 0; t < number.length; t++){
+            total += number[t];
+            // console.log(total); her seferinde yeni toplamı bu şekilde de yazdırabilirdik 
+        }
+        console.log(total);
+
+        //----------------------------------------------------------------------------------------------------------------------
+
+        let fakt = prompt("Faktoriyeli alıancak sayıyı giriniz: ");
+        let result = 1;
+
+        for (let f = 1; f <= fakt; f++){
+            result = result * f;
+        }
+        console.log(result);
+
+        //----------------------------------------------------------------------------------------------------------------------
+
+        let fizzbuzz;
+
+        for (let x = 1 ; x < 101; x++){
+            if (x % 15 === 0 ){
+                console.log(x," : fizzbuzz");
+            }
+            else if (x % 3 === 0){
+                console.log(x,": fizz");
+            }
+            else if (x % 5 === 0){
+                console.log(x,": buzz");
+            }
+            else
+                console.log(x);
+            }
+
+            //----------------------------------------------------------------------------------------------------------------------
+        
+            for (var i = 1; i <= 100; i++) {
+            var f = i % 3 == 0, b = i % 5 == 0;
+            console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+}
+
     </script>
 </body>
 </html>

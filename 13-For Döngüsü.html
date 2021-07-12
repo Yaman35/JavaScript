@@ -84,6 +84,24 @@
             document.writeln("<h1>", i + 1, ":", bests[i], "</h1>");   // Bu şekilde HTML kodlarını da dahil edebiliyoruz
         }
 
+        //---------------------------------------------------------------------------------------------------------------
+
+        let text = "Clarusway";
+        for (i = 0; i < text.length; i++){
+            document.write(text[text.length - (i+1)]);  // Burada Clarusway yazısını tersten yazdırabilmek için text[8] için mesela bu şekilde bir kod yazmamız gerekiyor, 
+                                                        //takiben i arttıkça burası da azaldığı için text[7],text[6]... şeklinde gidiyor
+        }
+
+        //---------------------------------------------------------------------------------------------------------------
+
+        let text1 = "Clarusway";
+        let newText = ''
+        for (i = 0; i < text1.length; i++){
+            newText += text1[text1.length - (i+1)];
+            console.log(newText);
+        }
+
+
     </script>
     
 </body>

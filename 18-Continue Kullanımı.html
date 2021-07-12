@@ -11,11 +11,11 @@
         var sayi = 0;
         while(sayi <= 10){
             
-            sayi++;       // Bu şekilde kontrol yapısı mutlak surette if bloğunun üzerinde olmalıdır aksi takdirde tarayıcı sonsuz döngüye girer
+            sayi++;                 // Bu şekilde kontrol yapısı mutlak surette if bloğunun üzerinde olmalıdır aksi takdirde tarayıcı sonsuz döngüye girer
             if ( sayi == 5 || sayi == 9){
                 document.write("Eksik bilgi verdiniz... <br>");
-                continue; // continue ile o döngünün çalışmamasını atlanmasını sağlayıp bir sonrakine devam ettiriyoruz 
-                          // Mesela burada "break" deseydik tüm döngü kırılırdı ama continue sadece o dişliyi kırıyor zincir devam ediyor 
+                continue;           // continue ile o döngünün çalışmamasını atlanmasını sağlayıp bir sonrakine devam ettiriyoruz 
+                                    // Mesela burada "break" deseydik tüm döngü kırılırdı ama continue sadece o dişliyi kırıyor zincir devam ediyor 
             } 
             document.write(sayi + ".sayı <br>");
         }
