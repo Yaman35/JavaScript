@@ -12,8 +12,8 @@
         var liste = " "; // Bir nevi boş liste tanımladık, sonradan for föngüsü ile içini doldurtup yazdırıyoruz 
         var x;           // For in döngüsü içerisinde kullanabilmemiz için bu şekilde tanımladık, tanımlamasaydık da olurdu 
 
-        for(x in araba){
-            liste += araba[x] + " ";
+        for(x in araba){ // in kullandığımız vakit ilgili indexteki değeri bize çıktı olarak veriyor burada
+            liste += araba[x] + " , ";
         }
         document.write(liste);
     </script>
