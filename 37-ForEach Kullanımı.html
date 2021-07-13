@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+        var eleman = [20, 18, 11, "ayşe", 50, "masal", 85, 98, "okan", 20, 60, "emre", 23];
+        document.write("Normal Liste: " + eleman + "<br/><br/>");
+
+        eleman.forEach(function(yazdir){       //forEach kullanımı
+           document.write(yazdir + "<br/>"); 
+       })
+    
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const items = ['item1', 'item2', 'item3'];
+    const copy = [];
+
+    items.forEach(function(yaman){     // itemsin her elemanıa bu fonksiyonu uygula, ne o : fonksiyon içine gelen her elemanı copy listine push la
+        copy.push(yaman);
+    })
+    document.write(copy+ "<br/><br/>");
+
+
+    </script>
+  
+</body>
+</html>

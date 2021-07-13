@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+        // from kullanımı
+
+        var city = "Barcelona";
+        new_city = Array.from(city);      // String ifadenin tüm karakterlerinden bir dizi oluşturdu
+        console.log(new_city); 
+        console.log(new_city[7],new_city[2]);
+        
+        //--------------------------------------------------------------------------------------------------------------------
+        
+        var i;
+        for(i of new_city){               // Bu şekilde de dizi elemanlarını tek tek alt alta göstertebiliriz
+            console.log(i);               // Bu kod bloğu tek satırda da ifade edilebilirdi
+        }
+
+    </script>
+  
+</body>
+</html>
