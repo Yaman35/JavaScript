@@ -27,7 +27,8 @@
         var sayilar = [200, 860, 850, 990, 660, 560, 230, 190];
         var doldur4 = sayilar.fill(30, 2, 5);                              // ilki value, ikincisi start indexi, üçüncüsü end indexi
         document.write("2 ile 6 arası 30 ile : " + doldur4 + "<br/><br/>");
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
        
         // Filter Kullanımı
 
@@ -42,11 +43,16 @@
             return yas2 > 18;
         }
 
-        document.write("18 yaş altı : " + yaslar.filter(goster1) + "<br/>");  // filter kullanımı
+        document.write("18 yaş altı : " + yaslar.filter(goster1) + "<br/>");  // goster1 fonksiyonuna göre filtrele
 
-        document.write("18 yaş üstü : " + yaslar.filter(goster2) + "<br/>");  // filter kullanımı
-    
-    
+        document.write("18 yaş üstü : " + yaslar.filter(goster2) + "<br/>");  // goster2 fonksiyonuna göre filtrele
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        var words = ["spray", "limit", "elite", "excellent", "destruction", "present"];
+
+        const result = words.filter(word => word.length > 6);   // Karakter sayısı 6 dan büyük olan kelimeleri çıkartmak için (içeride bir arrow function var)
+        document.write(result);
     
     </script>
   

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Keyword Kullanımı </title>
+</head>
+<body>
+    <script>
+
+       function insan(isim, soyisim, yas){
+        //    document.write(isim + "<br/>");
+        //    document.write(soyisim + "<br/>");
+        //    document.write(yas + "<br/>");
+            this.isim = isim;                           // Globaldeki isim ile eşleştirebilmek için bu yazılmalıdır
+            this.soyisim = soyisim;
+            this.yas = yas;
+       }
+       // insan("emre", "sabuncu", 50);
+
+        var yeni = new insan("Hüseyin", "Yaman", 35);
+            document.write(yeni.isim + "<br/>");        // Sadece bu şekilde kullanırsak undefined hatası alırız o yüzden yukarıdaki this ile kullanmak zorundayız
+            
+            yeni.boy = 175;                             // Yeni fonksiyona bu şekilde yeni parametreler dahi eklenebililyor
+            document.write(yeni.boy + "<br/>");
+
+        var yeni2 = new insan("Yavuz Ali", "Yaman", 2);
+            document.write(yeni2.yas + "<br/>");
+        
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function MyFunction(){
+            this.x = 100;                               // Bu da farklı bir kullanım 
+        }
+
+        var obj1 = new MyFunction();
+        document.write(obj1.x);
+
+    </script>
+    
+</body>
+</html>

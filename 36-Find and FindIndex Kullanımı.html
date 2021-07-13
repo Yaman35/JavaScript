@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill and Filter kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+     
+        // Find Kullanımı, içine aldığı functiona göre ilk karşılayan değeri çıkartır
+
+        var sayilar = [180, 30, 11, 12, 15, 18, 20, 86, 85, 99, 66, 56, 23, 19, 21, 22, 23]
+        document.write("Normal Liste: " + sayilar + "<br/><br/>");
+        
+        function goster(bul){
+            return bul < 20;
+        }
+
+        function goster2(bul2){
+            return bul2 > 20;
+        }
+
+        document.write("20 den küçük bulunan ilk sayı : " + sayilar.find(goster) + "<br/><br/>");   // Sonuç 11 çıkar, çalışma mantığı baştan itibaren 20 den küçük sayılara bakıyor ilk bulduğunu çıkarıyor
+        document.write("20 den büyük bulunan ilk sayı : " + sayilar.find(goster2)+ "<br/><br/>");   // 86 çıkar sonrasına bakmaz 
+
+        // Dizinin orjinal halini değiştirmez
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+        // FindIndex Kullanımı, içine aldığı functiona göre ilk karşılayan değerin index numarasını çıkartır, sonrakilere bakmaz 
+
+        var eleman = [20, 18, 11, "ayşe", 50, "masal", 85, 98, "okan", 20, 60, "emre", 23];
+        document.write("Normal Liste: " + eleman + "<br/><br/>");
+
+        function goster3(sira){
+            return sira < 19;
+        }
+
+        document.write("FindIndex: " + eleman.findIndex(goster3) + "<br/><br/>");             // Index: 1 çıkar
+        document.write("Bulunan Eleman " + eleman[eleman.findIndex(goster3)] + "<br/><br/>"); // Çıkan indexe göre hangi eleman olduğunu yazdırdık
+
+
+    </script>
+  
+</body>
+</html>

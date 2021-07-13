@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+
+        function add100(a){           // Regular Functions
+            return a + 100;
+        }
+        console.log(add100(1));
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function myFirstFunction(a, b) {
+        return a * b;
+       }
+       console.log(myFirstFunction(3, 5));            // Fonksiyon bu şekilde çağırıldı
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function islem(){
+           let deger = "Yaman";
+           return deger;        // Return ile bunu dışarı aktar artık hafızada tutulsun diyorum, return tek başına yazdırmaz onun fonksiyonun çağırmamız gereklidir
+       }
+       console.log(islem())
+       
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function selam(name = "New User"){
+            console.log(`Hello ${name}`);
+        }
+        selam("Yaman");        // Function içine isim gönderilirse onu yazar 
+        selam("Yavuz Ali");
+        selam();               // Bu şekilde boş çağırılırsa default değer olarak yukarıda tanımlanan New User gelir
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function sayHi(myName){
+           console.log(`Hello ${myName}`);         // Burada Mark olur
+           myName = 'Ed'
+           console.log(`Hello ${myName}`);         // Burada Ed olur
+       }
+        let myName = "Mark";
+        sayHi(myName);
+        console.log('Outside Function', myName); // Burada tekrar Mark olur
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Objects
+
+        let student = {};
+        student.name = 'Mark';
+
+        function sayHi2(student){
+           console.log(`Hello ${student.name} entry point`);        // Mark oldu
+           student.name = 'John';
+           studen = {name : 'Leon'}                                 // John dan Leon a döndü
+           console.log(`Hello ${student.name} inside function`);    // Leon çıktı, yapılan değişiklik sadece içeride geçerli oldu   
+       }
+        
+        sayHi2(student);
+        console.log(`Hello ${student.name} outside function`);      // Bu sefer fonksiyon içindeki John çıktı, içerde yapılan değişiklik dışarda işlemedi
+
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+       
+       function addTwo(number){
+           return +number + 2;      // !!!!!!!!!
+       }
+       console.log(addTwo(3));
+       console.log(addTwo('7'));    // Bu şekilde kullanıcı string bir ifade girerse onu engellemek için number önüne + koymak çözer işi
+                                    // Aksi takdirde sonuç 9 yerine 72 çıkar 
+
+       // Number(number) ile veya parseInt(number) ile de string ifadeleri işlemlerde kullanabilmek için number ifadeye çevirebililyoruz
+       
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function goster(){
+           console.log(myFirstFunction(110, 7));  // Bu şekilde daha önce tanımlanmış bir fonksiyonu başka bir fonksiyon içerisinde de tekrar çağırabilriz
+       }
+       goster();
+       
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       let a = 10;
+       let b = 20;                                    // Bu şekilde değişkenler önceden de tanımlanabilir
+
+       function myFirstFunction2(a, b) {
+        let result1 = a * b;
+        console.log(result1) 
+       }
+
+       myFirstFunction2(a, b);                        // Fonksiyon bu şekilde çağırıldı
+       myFirstFunction2(6, 12);
+       myFirstFunction2(15, 9);                       // Bu şekilde içine tekrar değer yazdırarak fonsiyona istediğimiz işlemi yaptırabiliriz
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function mySecondFunction(num_1, num_2) {    
+        let result2 = num_1 * num_2
+        document.writeln(result2 + " <br>")           // Bu şekilde de fonksiyon kullanılabilir 
+       }
+       mySecondFunction(7, 9)                         // Fonksiyon bu şekilde çağırıldı
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function process(name,age){
+           document.writeln("Merhaba " + name + " Bey ! <br>");
+           document.writeln("Yaşınız " + age + " <br>");
+       }
+
+       process("Yaman", 35);
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function square(x){
+            return x**2;
+        }
+        let sonuc = square(8);
+        console.log(sonuc);
+        console.log(square(5));   // Direk bu şekilde de kullanılabilir 
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+    
+       function yaz(){
+           document.writeln('Merhaba ben bir fonksiyonum');
+       }
+
+       // yaz()   // Fonksiyonumuzu çağırmamız gerekir
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function bolme1(num_1, num_2){
+           if(num_2 === 0){
+               console.log("Zero Division Error");
+            // return "Zero Division Error";     Bu şekilde de yazılabilirdi
+           }
+           else{ // else yazmasaydık da olurdu çalışırdı, yani 0 olsaydı üste girmezdi koda devam ederdi
+           console.log(num_1 / num_2);
+           // return num_1 / num_2;
+        }
+       }
+       
+       bolme1(10, 2);
+       bolme1(10, 0);
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function bolme2(num_1, num_2){
+           num_2 === 0 ? console.log("Zero Division Error") : console.log(num_1 / num_2);     // Ternary Hali
+        }
+
+       bolme2(10, 2);
+       bolme2(10, 0);
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+       
+       function bolme3(num_1, num_2){
+           return num_2 ? num_1 / num_2 : "Zero Division Error";    // En kısa hali, burada num2 0 harici bir rakamda true gelir değilse 0 dır zaten false gelir ve ikinci kısım çalışır (: sonrası)
+       }
+       console.log(bolme3(10, 2));
+       console.log(bolme3(10, 0));
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function sum(a,b, ...args){                     // Burayı function birden fazla değer alabilir diye belirttik sadece function sum(...args) şeklinde de yazılabilirdi 
+           console.log(arguments);                     // Girilen sayıların ne olduğunu görebiliriz bu kodla, bir nevi iterable 
+           let total = 0;
+           for(let i = 0; i < arguments.length; i++){  // Bu değerleri kullandık for döngüsü ile 
+                total += arguments[i];
+           }
+           return total;
+       }
+       console.log(sum(1,2,3,4,5));
+
+       //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+       function sum2(a,b, ...args){                     
+           console.log(args);           // args kısmına karşılık gelen sayıları gösterir. Burada (3, 4, 5)
+           console.log(arguments);      // iterator olarak array şeklinde girdiğimiz tüm değerleri gösterir            
+           
+           return a+b;
+       }
+       console.log(sum2(1,2,3,4,5));
+
+   
+       
+    </script>
+
+        <button onclick = "yaz()"> Tıkla </button>  <!-- Burada Tıkla butonunun üzerine tıklandığında yukarıdaki yaz() fonksiyonunu çağırdık -->
+
+</body>
+</html>

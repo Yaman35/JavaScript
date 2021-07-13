@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions This Kullanımı </title>
+</head>
+<body>
+    <script>
+        var student = "Zeynep";
+
+        function display(){
+            var student = "Hakan"
+            document.writeln(student + "<br>")          // Hakan çıkartır
+            document.writeln(this.student + "<br>")     // Zeynep çıkartır
+    }
+    display();
+
+    // Burada normalde çıktı olarak Hakan verirdi. Ama biz Zeynep'e ulaşabilmek için (window içindeki nesneye) başına this ekleyerek this.student yazmamız gerekiyor(global olana ulaşmak için)
+    // Globaldeki değişkenlere fonksiyon dışında iken erişmekte herhangi bir sıkıntı yok fakat fonksiyon içerisinde iken ulaşmak istediğimizde işte bu "this" yapısını kullanmaktayız
+    
+    // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Aşağıdaki şekilde de yazılabilirdi
+
+        var student2 = "Zeynep";
+
+        function display2(){
+            var student2 = "Hakan"  
+            var insan = this.student2;  // Globaldeki student2 değişkenini insan değişkenine atamış olduk
+            
+            document.writeln(insan)     // Zeynep çıkartır
+        }
+        display2();
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        // This methodu, cat object
+        // this içerisinde bulunduğu scopa işaret ediyor
+        // this özelliği arrow function larda kullanılamıyor
+        
+        const cat = {
+        name: 'Muezza',
+        age: 8,
+        whatName() {return this.name}
+        };
+        console.log(cat.whatName());  // Output: Muezza, Objecte ait bir değeri bu şekilde çağırabiliriz 
+
+
+
+    </script>
+    
+</body>
+</html>

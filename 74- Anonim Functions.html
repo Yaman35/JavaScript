@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonim Functions</title>
+</head>
+<body>
+    <script>
+
+    // Immediately invoked funtion expression (Anonim Function Kullanımı - Self Invoked Function)
+
+    
+    (function()                 // Burada görüldüğü gibi yazım şekli parantez (sarı) içerisinde olur
+      {
+        document.write("Merhaba" + "<br>")
+      }) ();                      // Ve parantez bitirilir bitirilmez bu fonksiyon oluşturulduğu yerde çağırma işlemi yapılmalıdır, araya başka bir kod girerse çağıramayız
+    
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    (function(isim)
+      {
+        document.write("Merhaba ", isim, "! <br>")
+      }) ("Yaman");                                 // Parametreli çağırma işlemi
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    let age = 50;
+    (function(isim)                                 // Bu fonksiyon türünün dezavantajı kendinden önce gelen değişkenlere kullanabilirken kendinden sonra gelenleri tanımıyor
+      {
+        document.write("Merhaba ", isim, "!", age, "<br>")
+      }) ("Yaman");
+      
+    // let age = 50; Mesela bu değişken yukarıda değil de burada tanımlansaydı bu değişkeni kullanamayacaktı ve undefined şeklinde yaş kısmını gösterecekti
+    
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+      (function (n){                      // Immediately invoked funtion expression
+        var sum = 0;
+        while (n>=0){
+            sum += n;
+            n--;
+        }
+        console.log('result : ', sum);   
+
+        })(4);    // Görüleceği üzere hemen çağrıldı
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    var square2 = function(number2){ return number2 * number2 };         // Bu şekilde fonksyionları bir değişkene de atayabilriz (const, let, var hepsi olur)
+    console.log(square2(10));
+
+    const square3 = new Function("number", "return number*number");     // Bu iki şekilde de yazılabilir
+    console.log(square3(8));      
+    
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    function sayHi1(){
+      return "Hello from sayHi1";
+    }
+    console.log(sayHi1());  // Burayı sayHi tanımlanmadan önce yani en üstte yazsaydık da sıkıntı olmazdı çünkü bu bir regular function
+
+    const sayHi2 = function greet(){return "Hello from sayHi2"};
+    console.log(sayHi2());  // Fakat buradaki sayHi2 functionu yukarıda çağırsaydık olmazdı çünkü bu bir anonim function ile tanımlandı 
+                            // Burada greet() fonksiyonunu çağırsaydık hata alırdık
+    
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const sayHi3 = function(a,b){return a + b};   // Bu şekilde değer tarafındaki fonksiyona illa ki bir isim vermek zorunda değiliz 
+    console.log(sayHi3(3, 6));
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const pascalNumber = function(n){
+        return (n*(n+1)/2)
+    }
+    console.log(pascalNumber(100));
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const pascalNumber2 = function recursive(n){
+        if (n === 1) return 1;              // Bunu koymazsak negatif sayılara doğru gider, biz burada bunu yazarak sigortamızı koymuş olduk
+        return n + recursive(n - 1);        // Fonksiyonun kendisini içinde bir daha çağırdık !!!!!!!!!!!!!!!!!!
+    }
+    console.log(pascalNumber(10));
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    let result = (function toplam(num){      // Yukarıdaki örneğin Immediately invoked funtion expression versiyonu
+        if (num === 1) return 1;          
+        return num + toplam(num - 1);    
+    }) (7) ;                                 // Görüldüğü gibi burada fonsiyonu hemen çağırdık, içine göndereceğimiz değeri yazdık ve işimiz bitti
+    console.log(result);
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    function goster(){                      // İç içe fonksyion 
+      var yazi = "Merhaba";
+      document.writeln("Göster Fonksiyonundan gelen : " + yazi + "<br>");
+      
+      function islem(a, b){
+        var sonuc = a * b;
+        document.write("İşlem Fonksiyonundan gelen : " + sonuc + "<br>"  )
+      }
+      islem(5, 3);          // Burada önemli olan içteki fonskiyon en altta çağırılırsa çalışmaz, onun yeri fonksiyonun kendi parantezinin hemen bittiği yer yani burası
+    }
+    goster();
+
+    </script>
+    
+</body>
+</html>
