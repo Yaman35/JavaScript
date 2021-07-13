@@ -21,6 +21,23 @@
         var topla = erkekler.concat(kizlar, arabalar);  // Bu şekilde birden fazla diziyi ekleyebiliyoruz
         document.writeln(topla + "<br>"); 
 
+    // ----------------------------------------------------------------------------------------------------------------------------
+
+        // concat() methodunu kullanırken orjinal array ler değişmez. Yaptığımız concatanation işlemini bir değişkene atayıp yazdırmak daha iyi olur
+        
+        const cars1 = ['Audi', 'Opel', 'Fiat'];
+        const cars2 = ['BMW', 'Ferrari'];
+
+        const cars3 = cars1.concat(cars2);
+        console.log(cars3);
+        console.log(cars1);
+        console.log(cars2);
+
+        const cars4 = cars3.concat('Mercedes', 2021);   // Bu şekilde de ekleme yapılabilir
+        console.log(cars4);
+
+        console.log(cars1 + cars2);    // Bu şekilde bir birleştirme işlemi yaparsak Array yapısı bozulur artık string olur
+        console.log(typeof(cars1 + cars2));
     </script>
   
 </body>

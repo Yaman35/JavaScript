@@ -19,7 +19,27 @@
 
         //------------------------------------------------------------------------------------------------------------------------------------------
 
-        var erkekler = [" Ahmet ", " Mehmet ", " Hasan "];              // 1.Yöntem (Güncel Liste Tanımlama Yöntemi)
+        const cars = ['Audi', 'Opel', 'Fiat'];
+        console.log(typeof cars);  // object çıkar
+        console.log(cars);
+
+        // Aşağıdaki tanımlama eski yöntem, kullanılmıyor arttık
+
+        const numbers = new Array(2, 10);    // Bu şekilde oluşturmada sıkıntı olmuyor
+        console.log(numbers);
+
+        const numbers2 = new Array(10);      // Ancak böyle tek elemanlı bir array oluşturmak istediğimizde, mesela bu örnekte 10 tane empty eleman oluşturuyor
+        console.log(numbers2);
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+        
+        var name = ['John', 'James', 24];    // Arrays
+
+        var name1 = {firstname : 'John', lastname : 'James', age:24};   // object
+
+         //------------------------------------------------------------------------------------------------------------------------------------------
+        
+         var erkekler = [" Ahmet ", " Mehmet ", " Hasan "];              // 1.Yöntem (Güncel Liste Tanımlama Yöntemi)
         var kizlar = new Array(" Ayşe ", " Zeynep ", " Emine ");        // 2.Yöntem (Eski Liste Tanımlama Yöntemi)
 
           document.writeln(erkekler + "<br>");
@@ -32,6 +52,9 @@
           meyveler[0] = "elma";
           meyveler[1] = "armut";
           meyveler[2] = "muz";
+
+          meyveler[1] = "karpuz";               // Array in index 1 deki elemanını değiştirmiş olduk
+
           document.writeln(meyveler + "<br>"); 
           document.writeln("<br>");
 

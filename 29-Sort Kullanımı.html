@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+        let names = ["John", "James", "Aaron", "Walter", "Edward"];
+        console.log(names.sort());      // Burada sort işlemi alfabetik sıraya göre yapılır
+
+        const points = [40, 100, 1, 5, 25, 10]
+        console.log(points.sort());     // [1, 10, 100, 25, 40, 5] şeklinde çıkar, çünkü string gibi algılamaktadır
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Rakamları küçükten-büyüğe / büyükten - küçüğe sıralamak istediğimizde ise
+
+        const points2 = [40, 100, 1, 5, 25, 10]
+        sortResult = points2.sort(function(a, b){return a-b})     // Bu function kullanarak elemanlar içindeki rakamları sıralayabiliriz
+        console.log(sortResult);        // [1, 5, 10, 25, 40, 100] şekşinde doğru çıkar
+
+        // Sonuç negatif ise a, b den önce sıralanır
+        // Sonuç pozitif ise b, a dan önce sıralanır
+        // Sonuç 0 ise, iki değerin sıralama düzeninde herhangi bir değişiklik yapılmaz 
+
+        
+    </script>
+  
+</body>
+</html>
