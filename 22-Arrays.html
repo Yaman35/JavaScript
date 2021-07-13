@@ -119,10 +119,83 @@
           document.writeln(i+1 + ". Ülke: " + countries[i] + "<br>");
           i++;
         }
+
+         //------------------------------------------------------------------------------------------------------------------------------------------
+
+         function test(testData){
+          console.log(`Inside function before operation ${testData}`);  // Burada gönderdiğimiz arrayi yazar [1, 2, 3, 4]
+          testData = [2, 4, 6, 8];
+          console.log(`Inside function after operation ${testData}`);   // Burada değiştirilmiş olanı yazar  [2, 4, 6, 8]
+         }
+
+         const arr = [1, 2, 3, 4];
+         test(arr);
+         console.log(`Outside function after operation ${arr}`);         // Fonksiyon içinde değişmiş olsa bile burada orjinal olanı yazar [1, 2, 3, 4]
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+         function test2(testData){
+          console.log(`Inside function before operation2 ${testData}`);  // Burada gönderdiğimiz arrayi yazar [1,2,3,4]
+          testData.push(8);  // pop() yapsaydık da aynı olurdu
+          console.log(`Inside function after operation2 ${testData}`);   // Burada değiştirilmiş olanı yazar [1,2,3,4,8]
+         }
+
+         const arr2 = [1, 2, 3, 4];
+         test2(arr2);
+         console.log(`Outside function after operation2 ${arr2}`);        // Bu sefer fonksiyon içinde method ile değiştirmiş olduğumuz için değiştirilmiş olanı yazıyor [1,2,3,4,8]
+                                                                          // Bu sebeple iyi bir function girdisinin orjinal halini değiştirmemelidir
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
         
+        const arrr = [12, 35, 44, 67, 21, 89, 100]
+        const a = arrr[0];
+        const b = arrr[1];
+        const c = arrr[2];
+        console.log(a, b, c);
 
+        const [x, y, z] = arrr;             // Bu işlem yukarıdaki ile aynı sonucu çıkarır
+        console.log(x, y, z);
 
+        const [t, u, ...yaman] = arrr;      // Bu şekilde diğerlerini belirtmek için de istediğimizi (...yaman) yazabiliriz
+        console.log(t, u);                  // 12 35 çıkar
+        console.log(...yaman);              // 44 67 21 89 100 çıkar
 
+        console.log(Array.isArray(yaman));  // yaman bir dizi(array) mi?, burada true çıkar
+        console.log(arrr instanceof Array); // arr bir array mi ?
+
+        console.log(arrr);                  // Orjinali duruyor
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        const aro = [1, 2];
+        const [o = 32, p= 64, q = 96] = aro;
+        console.log(o, p, q);                // Burada üçüncüsü undefined olur normalde ama başta yukarıdaki gibi atarsak o default değer gelir (Burada 96)
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Destructuring Assignment
+
+        let x1 = 5;
+        let y1 = 10;
+
+        [x1, y1] = [y1, x1];                 // Burada x ve y yer değştirmiş oldu
+        console.log("x : ", x1, "y :", y1); 
+
+         //------------------------------------------------------------------------------------------------------------------------------------------
+
+         // Iterate Methods (for , for of, for in, forEach)
+
+         const colors = ["Red", "Yellow", "Green", "Blue", "Pink", "Purple", "Gray", "Lime"]
+
+         for(let i1 = 0; i1 < colors.length; i1++){
+           console.log(colors[i1]);                       // empty elemanları undefined olarak gösterir
+         }
+
+         for (let i2 of colors) console.log(i2);          // Yukarıdaki kodun daha kısa hali, empty elemanları undefined olarak gösterir
+
+         for (let i3 in colors) console.log(colors[i3]);  // Normalde buradaki "in" ile sadece indexler geldiği için value ları çıktı alabilmek için [] içinde yazdık, empty elemanları pas geçer
+
+         colors.forEach(i4 => console.log(i4));           // Bu da yukarıdaki gibi array elemanların çıkartır, empty elemanları pas geçer
 
     </script>
   
