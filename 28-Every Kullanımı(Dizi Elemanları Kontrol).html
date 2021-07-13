@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entries Kullanımı</title>
+</head>
+<body>
+    <script>
+        
+        let age = [20, 35, 44, 28, 56, 87, 51];
+
+        function display(number){
+            return number >= 17;
+        }
+
+        var eleman = age.every(display); // Sonucu true gelir
+
+        if(eleman == true){
+            document.write("Kullanıcıların hepsinin yaşı 18 den büyüktür");
+        }else {
+            document.write("Kullanıcıların arasında yaşı 18 den küçük olanlar var")
+        }
+        
+    </script>
+  
+</body>
+</html>

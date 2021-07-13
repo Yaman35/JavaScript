@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyWithin Kullanımı</title>
+</head>
+<body>
+    <script>
+        let dizi = ["Ali", "Okan", "Elif", "Yasin", "Yusuf", "Nazlı","Hüseyin"];
+        document.writeln("Normal Liste <br><br>");
+        document.writeln(dizi + "<br><br>");
+
+        dizi.copyWithin(3);  // İlk 3 elemanı bir kez kopyalar yazar yani 6 index doldu, 7. index yerine kaldığı yerden devam eder
+
+        document.writeln("Kopya Liste <br><br>" )
+        document.writeln(dizi + "<br><br>" )
+      
+
+        dizi.copyWithin(1, 4);  // 4. elemandan başla 1. indexten itibaren yaz demek
+
+        document.writeln("Kopya Liste2  <br><br>" )
+        document.writeln(dizi + "<br><br>" )
+
+        dizi.copyWithin(0, 1, 4);  // 1 ile 4 index arasını (4 dahil değil), 0. indexten itibaren yaz demek
+ 
+        document.writeln("Kopya Liste3  <br><br>" )
+        document.writeln(dizi + "<br><br>" )
+    </script>
+  
+</body>
+</html>
