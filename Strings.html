@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var str1 = "Hello";
+        var str2 = "world";
+        var str3 = "Hello world";
+        var str4 = new String("A string Object")    // Object haline new yazarak dönüştürebiliriz
+
+        console.log(typeof str1);
+        console.log(typeof str2);
+        console.log(typeof str3);
+        console.log(typeof str4);
+        console.log(str3);
+        console.log(str4);
+
+        console.log('Hello Merhaba'.length);
+        console.log(str2.length);
+        console.log(str3.length);
+        console.log(str4.length);
+
+        //----------------------------------------------------------------------------------
+
+        var best = "Clarusway";
+        var second = "";
+        console.log("Best : " + best.length);      // length() property string uzunluğunu verir
+        console.log("Second : " + second.length);
+
+        //----------------------------------------------------------------------------------
+
+        var s1 = "Hello";
+        var s2 = "World";
+        var s3 = s1.concat(s2);                    // concat() property stringleri birleştirir
+        
+        console.log(s3);
+        console.log({s3});           // object gösterim
+        console.log({s1});           // object gösterim
+        console.log({s2});           // object gösterim
+
+        console.log(s1.concat(s2));
+        console.log(s1 + '' + s2);      // Yukarıdaki ile aynı 
+
+        //----------------------------------------------------------------------------------
+
+        var best = "Clarusway"
+        console.log(best.charAt(0));               // charAt() property ile string içerisindeki belirli bir indexte yer alan karakteri çıktı olarak almamıza yarar
+        console.log(best.charAt(6));
+        console.log(best.charAt(best.length-1));   // Sonuncu eleman
+
+        
+        var a = 'primitive.\nlerin property veya metodu olmaz.'
+        console.log(a.charAt(0));     // Alttaki ile aynı işi yapar 
+        console.log(a[0]);            // Üsttek ile aynı kullanım, p harfi çıkar
+        console.log(a);
+
+        console.log(a.charAt(8));
+        console.log(a.charAt(9));
+        console.log(a.charAt(10));     // "\n" karakteri, yani boşluk
+        console.log(a.charAt(11));
+        console.log(a.charAt());       // Hiçbirşey yazmazsak () içine ilk karakteri döndürür
+        // console.log(a.charAt(-1));  bu şekilde negatif indexler phyton daki gibi çalışmaz
+
+        console.log(a.charAt(a.length-1));          // Sonuncu eleman
+        console.log("Hello World".charAt(6));       // Bu şekilde de kullanılabilir 
+
+        //----------------------------------------------------------------------------------
+
+        // includes() property aranacak olan kelime/karakter var mı yok mu şeklinde true/false döndürür
+        
+        var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+        console.log(str.includes('simply'));          // true
+        console.log(str.includes('Simply'));          // false döner çünkü case sensitive
+        console.log("Hello World".includes("ell"));   // true
+
+         //----------------------------------------------------------------------------------
+
+        // indexOf() Methods eğer içinde yoksa -1 döndürür
+        
+        var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+
+        console.log(str.indexOf("simply"));  // 15 çıkar, () içindeki karakter/kelimenin ilk başladığı yerdeki indexini gösterir, ilk bulduğunu döndürür
+        console.log(str.indexOf("Simply"));  // -1 çıkar, case sensitive, İçinde olmadığı için -1 döndürür
+        console.log(str.indexOf("x"));       // 30 çıkar
+        console.log(str.indexOf("xx"));      // -1 çıkar
+
+        //----------------------------------------------------------------------------------
+
+        // lastIndexOf() methodu içinde bulunduğu karakterin en son olanının indexini verir
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+
+        console.log(str.length);            // Stringin uzunluğu
+        console.log(str.lastIndexOf("t"));  // String içindeki en son t nin indexi
+
+        //----------------------------------------------------------------------------------
+        
+        // replace() methodu sadece ilk gördüğü eşleşmeyi değiştirir
+
+        var s = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+
+        var rep = s.replace("printing", "Replace Method")  // İlk "printing" yerine "Replace Method" yazılacak
+        console.log(rep);
+
+        //----------------------------------------------------------------------------------
+        
+        // search() methodu indexOf gibi ama bunda regular expressions (/ /g, / /i gibi) kullanılabilir
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+
+        console.log(str.search("simply"));   // 15 çıkar
+        console.log(str.search("Simply"));   // -1 çıkar
+        console.log(str.search(/Simply/i));  //case sensitive ortadan kaldırmak için kullanılır, 15 çıkar (regular expressions)
+
+        //----------------------------------------------------------------------------------
+
+        // slice() methodu belirtilen indexler arasını alır veya sonrasını, substring ile arasındaki fark (-) değerler alabilmesi
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+
+        console.log(str.slice(0,5));    // 'Lorem' çıkar
+        console.log(str.slice(13,21));  // 's simply' çıkar
+        console.log(str.slice(13));     // 's simply dummy text of simply printing and typesetting industry.''
+        console.log(str.slice(25, -10));// 'my text of simply printing and typesetting' çıkar
+        //----------------------------------------------------------------------------------
+
+        // split() method bölmesini istediğimiz karakterden itibaren hepsini [array] olarak verir
+
+        var s = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+        var arr1 = s.split("e"); // e lerin hepsini çıkarır, diğerlerini array elemanı yapar
+        var arr2 = s.split(" "); // Her kelimeyi array elamanı olarak ayırır
+        var arr3 = s.split("");  // Her harfi array elamanı olarak ayırır
+
+        console.log (arr1);
+        console.log (arr2);
+        console.log (arr3);
+
+        //----------------------------------------------------------------------------------
+
+        // substr() methodu belirtilen indexten başla sonraki sayı kadar al demek
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+
+        console.log(str.substr(26,10));   // 26 dan itibaren 10 karakter al
+        console.log(str.length);
+        console.log(str.substr(72,10));   //Elindeki kadar çevirir, bu örnek için 5 karakter geldi
+
+        //----------------------------------------------------------------------------------
+    
+        // substring() belirtilen indexe kadar alır, iki index arasını alır yani, slice() methodundan farkı bunda (-) değerler girilemez!!!
+       
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+
+        console.log(str.substring(25,32)); // 25 ten başla 32. indexe kadar al
+
+        //----------------------------------------------------------------------------------
+
+        // toLowerCase() Method, tüm harfleri küçük harf yapar
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+        console.log(str.toLowerCase());
+
+        //----------------------------------------------------------------------------------
+
+        // toUpperCase() Method, tüm harfleri büyük harf yapar
+
+        var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
+        console.log(str.toUpperCase());
+
+        //----------------------------------------------------------------------------------
+    
+        var pangram = "pijamalı hasta yağız şoföre çabucak güvendi";
+        console.log(pangram.toUpperCase());
+        console.log(pangram.toLocaleUpperCase());
+
+        var pangramupper = pangram.toLocaleUpperCase();      // Bu şekilde de kullanılabilir
+        console.log(pangramupper);
+        
+        console.log(pangramupper.toLocaleLowerCase());
+        console.log(pangramupper.toLocaleLowerCase('tr-TR')); //Eğer browser TR ise 'tr-TR' optional
+
+        //----------------------------------------------------------------------------------
+
+        // trim() method baştaki ve sondakileri keser veya her ikisini de 
+
+        var s = "                 <-Welcome \t to Clarus\tway->                 "
+        console.log(s.trim());      // Baştaki ve sondaki boşluklar gitti
+        console.log(s.trimLeft());  // Soldaki boşluklar gitti
+        console.log(s.trimRight()); // Sağdaki boşluklar gitti
+
+    </script>
+</body>
+</html>
