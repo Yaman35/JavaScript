@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice Methodu</title>
+</head>
+<body>
+  
+    <script>
+
+        // IndexOf() methodu arrayin içinde, yazmış olduğumuz elemanı (ilk gördüğü yerin) indexini dönderir
+        // Eğer eleman array içerisinde değilse "-1" dönderir !!!!!
+        // ikinci parametre start index tir, herhangi bir değer verilmezse (0. indexten) başlatır. Case sensitive dir.
+
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango", "Strawberry", "Mango", "Mango"];
+       
+        console.log(fruits.indexOf("Mango", 3));   // 4 çıkar
+        console.log(fruits.indexOf("mango", 3));   // -1 çıkar (Case sensitive)
+        console.log(fruits.indexOf("Orange", 3));  // -1 çıkar
+        console.log(fruits.indexOf("Mango", -6));  // Start index negatif de verilebilir 
+              
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // lastIndexOf() methodu arrayin içinde, yazmış olduğumuz elemanın (sondan başlayarak ilk gördüğü yerin) indexini dönderir
+        // Eğer eleman array içerisinde değilse "-1" dönderir !!!!!
+        // ikinci parametre start index tir, herhangi bir değer verilmezse (arrayin sonundan) başlatır. Case sensitive dir.
+
+        var fruits2 = ["Banana", "Orange", "Lemon", "Apple", "Mango", "Strawberry", "Mango", "Mango", "Banana"];
+
+        var last = fruits2.lastIndexOf("Mango");   
+        console.log(last);                              // 7 çıkar
+        console.log(fruits2.lastIndexOf("orange", 4));  // Case sensitive
+        console.log(fruits2.lastIndexOf("Tomato", 4));  // -1 verir, çünkü array içinde o eleman yok
+        console.log(fruits2.lastIndexOf("Orange", 4));  // 1 çıkar, başlangıç indexi 4 ve sola doğru bakmaya devam eder
+        console.log(fruits2.lastIndexOf("Lemon", -2));  // 2 çıkar, başlangıç indexi negatif değer de verilebilir
+
+    </script>
+  
+</body>
+</html>
