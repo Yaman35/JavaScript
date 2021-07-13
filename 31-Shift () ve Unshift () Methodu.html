@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift ve Unshift Methodu</title>
+</head>
+<body>
+  
+    <script>
+
+        let names = ["John", "James", "Aaron", "Walter", "Edward"];
+
+        shiftedName = names.shift();      // shift() methodu elemanı array in ilk elamanını dönderir
+        console.log(shiftedName);         // John dönderir
+        console.log(names);               // John çıkartılmış array hali
+
+    // //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
+
+        names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler
+        console.log(names2);
+        names2.unshift("Yavuz Ali", "Emine");
+        console.log(names2);
+        
+    </script>
+  
+</body>
+</html>

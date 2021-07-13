@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift ve Unshift Methodu</title>
+</head>
+<body>
+  
+    <script>
+
+        // splice() methodu array e yeni elemanlar eklemek ve eleman çıkarmak için kullanılır
+        // Silmiş (çıkarmış) olduğu elemanları dönderir
+
+        var names = ["James", "Aaron", "Walter"];
+
+        var deleted = names.splice(1, 2, "John", "Edward");    // Array in 1. indexe git 2 tane sil yerine "John" ve "Edward" ekle
+        
+        console.log(deleted); //  ["Aaron", "Walter"] bunlar dönderildi
+        console.log(names);   //  ["James", "John", "Edward"] en son olarak array bu hale geldi
+        
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        var names2 = ["James", "Aaron", "Walter"];
+
+        var deleted = names2.splice(1,0, "John", "Edward");    // 2.sayıyı 0 yazarsak ise 1.indexe git 0 eleman sil demek, yani hiçbir elemanı silmez, yazılan elemanları da ekler
+
+        console.log(deleted);       // [] Boş array döner
+        console.log(names2);        // ["James", "John", "Edward", "Aaron", "Walter"] olur.
+         
+    </script>
+  
+</body>
+</html>

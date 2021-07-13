@@ -39,7 +39,7 @@
 
          //------------------------------------------------------------------------------------------------------------------------------------------
         
-         var erkekler = [" Ahmet ", " Mehmet ", " Hasan "];              // 1.Yöntem (Güncel Liste Tanımlama Yöntemi)
+        var erkekler = [" Ahmet ", " Mehmet ", " Hasan "];              // 1.Yöntem (Güncel Liste Tanımlama Yöntemi)
         var kizlar = new Array(" Ayşe ", " Zeynep ", " Emine ");        // 2.Yöntem (Eski Liste Tanımlama Yöntemi)
 
           document.writeln(erkekler + "<br>");
@@ -66,6 +66,13 @@
           document.writeln(liste[0] + liste[2] + "<br>");                 // Metinsel ifade ile rakamı toplamaya çalıştığımızda onları yanyana yazar
           document.writeln("<br>");
 
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+        const cars3 = ['Audi', 'Opel', 'Fiat'];
+        console.log(cars3);
+        cars3[6] = "Wolksvagen";
+        console.log(cars3);           // ["Audi", "Opel", "Fiat", empty × 3, "Wolksvagen"] şeklinde olur
+        console.log(cars3[4]);        // undefined olmuş olur haliyle
         //------------------------------------------------------------------------------------------------------------------------------------------
 
         var liste2 = [" Hüseyin ", " Emine ", " Yavuz Ali "];  
@@ -99,6 +106,7 @@
         }
 
         document.writeln("<br>");
+
         //------------------------------------------------------------------------------------------------------------------------------------------
 
         countries = ["Türkiye", "Almanya", "Fransa", "Rusya", "İspanya"];
