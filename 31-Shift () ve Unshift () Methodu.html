@@ -16,12 +16,18 @@
         console.log(shiftedName);         // John dönderir
         console.log(names);               // John çıkartılmış array hali
 
+
+        var colors = ["Red", "Yellow", "Green"];
+        colors.push("Red");         // Sonuna "Red" ekledi
+        colors.shift();             // Array ilk elemanını çıkardı
+        console.log(colors);        // ["Yellow", "Green", "Red"] şeklinde olur son halini
+
     // //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
 
-        names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler
-        console.log(names2);
+        names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler and returns the new array length.
+        console.log(names2);              // "Yaman" eklenmiş hali
         names2.unshift("Yavuz Ali", "Emine");
         console.log(names2);
         

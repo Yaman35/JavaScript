@@ -197,6 +197,20 @@
 
          colors.forEach(i4 => console.log(i4));           // Bu da yukarıdaki gibi array elemanların çıkartır, empty elemanları pas geçer
 
+         //----------------------------------------------------------------------------------------------------------------
+         
+          let obj = {x: 1, y: 2, z: 3};
+          for (let a in obj) {
+          console.log(a);        // Burada çıktı alt alta x y z olur, normalde index leri verirdi 
+          }
+
+          var names = ['Aaron', 'James', 'Oliver'];
+          var q11;
+
+          for (q11 of names) {
+          console.log(q11);      // Alt alta array elemanlarını yazar
+          }
+
     </script>
   
 </body>

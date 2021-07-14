@@ -82,6 +82,7 @@
          //----------------------------------------------------------------------------------
 
         // indexOf() Methods eğer içinde yoksa -1 döndürür
+        // The indexOf() method cannot take powerful search values (regular expressions).
         
         var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
 
@@ -111,6 +112,7 @@
         //----------------------------------------------------------------------------------
         
         // search() methodu indexOf gibi ama bunda regular expressions (/ /g, / /i gibi) kullanılabilir
+        // The search() method cannot take a second start position argument.
 
         var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
 
@@ -143,7 +145,7 @@
 
         //----------------------------------------------------------------------------------
 
-        // substr() methodu belirtilen indexten başla sonraki sayı kadar al demek
+        // substr() methodu belirtilen indexten başla sonraki sayı kadar al demek, sayı yazılmazsa sonuna kadar alır
 
         var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
 
@@ -158,6 +160,7 @@
         var str = "Lorem Ipsum is simply dummy text of simply printing and typesetting industry.";
 
         console.log(str.substring(25,32)); // 25 ten başla 32. indexe kadar al
+        console.log(str.substring(8,1));   // Bu şekilde geriye doğru da gidilebilir
 
         //----------------------------------------------------------------------------------
 
