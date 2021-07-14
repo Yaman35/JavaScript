@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Objects </title>
+</head>
+<body>
+  
+    <script>
+
+        var dog = {                                     // Object Display
+            name: "Rocky",
+            legs: 4,
+            tail: 1,
+            qualities: ["loyalty","companionship"]
+        };
+
+        /* There are two ways to access object properties.
+
+          1- objectName.propertyName
+          2- objectName['propertyName'] */
+
+        var myDog = dog.name;
+        var yourDog = dog["name"] ;
+
+        console.log(myDog);     // İkisi de Rocky çıktısı verir
+        console.log(yourDog);
+
+        // Object Methods
+
+        var dog2 = {
+        name: "Rocky",
+        legs: 4,
+        tail: 1,
+        qualities: ["loyalty","companionship"],
+
+        bark : function() {
+            console.log("woof");  },
+
+        result : function() {
+         return this.name+ " has " + this.legs + " legs.";
+        }
+
+        };
+
+        dog2.bark();
+        console.log(dog2.result());
+
+        // Object Constructor
+
+        function dog3(name, legs, tail) {
+            this.name = name;
+            this.legs = legs;
+            this.tail = tail;
+      }
+        // "this" is a keyword that refers to the current object. It is not a variable. And we cannot change the value of this.
+
+        // After we have an object constructor, we can create new objects of the same type with the "new" keyword.
+
+        var dog1 = new dog3("Riley", 4, 1);
+        var dog2 = new dog3("Ginger", 4, 1);
+
+        console.log(dog1.name); // Output: "Riley"
+        console.log(dog2.tail); // Output: 1
+
+
+        /* Class Definition
+
+        ➤ Classes are "special functions," and the class syntax has two components just as you can describe function expressions 
+           and function declarations: class expressions and class declarations.
+        ➤ The standard way to define a class is to use a declaration of class. 
+           You use the class keyword with the class name to designate a class, and always add the constructor() method.  */
+
+           class Dog {
+            constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+            }
+        }
+
+         // ➤ Now you can create objects using the Dog class:
+
+        class Dog {
+            constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+            }
+        }
+            myDog = new Dog("Buldog") 
+
+        // ------------------------------------------------------------------------------------------------------------------------------------------
+
+        class Dog {
+            constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+            }
+            current(){
+                return "I have a " + this.dogName + " and it has " + this.foot + " legs" ;
+            }
+        }
+
+        myDog = new Dog("Buldog", 4) 
+        document.getElementById("content").innerHTML = myDog.current();
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /* Static Methods
+
+        ➤ Static methods are defined on the class itself, and not on the prototype.
+
+        ➤ That means you cannot call a static method on the object, but on the class: */
+
+        class Dog {
+            constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+            }
+            static hello(){
+                return "Hello";
+            }
+        }
+
+        myDog = new Dog("Buldog");
+        document.getElementById("content").innerHTML = Dog.hello();
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+
+        /* Inheritance
+
+        ➤ To create a class inheritance, use the "extends" keyword.
+
+        ➤ A class created with a class inheritance inherits all the methods from another class: */
+
+        class Dog {
+            constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+            }
+            current(){
+                return "I have a " + this.dogName;
+            }
+        }
+
+        class Specy extends Dog {
+            constructor(name, foot, char) {
+            super(name, foot);
+            this.character = char;
+            }
+            show() {
+                return this.current() + ', it is  ' + this.character;
+            }
+        }
+
+        myDog = new Specy("Buldog", 4, "curious");
+        document.getElementById("content").innerHTML = myDog.show();
+
+        /* ➤ The super() method refers to the parent class.
+
+            ➤ By calling the super() method in the constructor method, we call the parent's constructor method and get access 
+                to the parent's properties and methods. */
+
+        // ------------------------------------------------------------------------------------------------------------------------------
+
+        /* Getters and Setters
+
+        ➤ Classes also allows us to use getters and setters.
+
+        ➤ To add getters and setters in the class, use the get and set keywords. */document
+
+        class Song {
+        constructor(genre) {
+          this.genre = genre;
+        }
+        get sgenre() {
+          return this.genre;
+        }
+        set sgenre(newgenre) {
+          this.genre = newgenre;
+        }
+      }
+
+        mysong = new Song("Classical");
+
+        document.getElementById("content").innerHTML = "My favourite is " + mysong.sgenre; // My favourite is Classical
+
+        // !!! Even if the getter is a method, you do not use parentheses when you want to get the property value.
+
+        // To use a setter, use the same syntax as when you set a property value, without parentheses.
+
+        class Song {
+        constructor(genre) {
+          this.genre = genre;
+        }
+        get sgenre() {
+          return this.genre;
+        }
+        set sgenre(newgenre) {
+          this.genre = newgenre;
+        }
+      }
+
+      mysong = new Song("Classical");
+      mysong.sgenre = "Jazz";
+
+      document.getElementById("content").innerHTML = "My favourite is " + mysong.sgenre; // My favourite is Jazz
+
+    </script>
+  
+</body>
+</html>
