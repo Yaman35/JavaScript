@@ -70,8 +70,77 @@ console.log(document.querySelector('#info h3'))
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 // HTML Manipulation
 
-const brands = document.querySelector("#brands")
+const brands = document.querySelector("#brands");
 console.log(brands);
+
+// brands.innerHTML = "<li>NioyaTech</li";   Bu şekilde yaparsak önceki 4 marka gider sadece bu yazılır
+
+brands.innerHTML += "<li>NioyaTech</li";  // Ama bu şekilde mevcut olan listeye bir eleman daha ekleyebiliriz
+brands.innerHTML += `<li>BionTech</li"`;  // Backtick ile de eklenebilir
+
+// Görüleceği üzere "".innerHTML", bizim HTML elemanımız içine müdahele etmemizi sağlar
+
+// brands.innerHTML = brands + `<li>BionTech</li"`;  Böyle yazarsak da bu şekilde çıkıyor [object HTMLOListElement]
+brands.innerHTML = brands.innerHTML + `<li class="brand" style="color:red">Sinovac</li`; // Bu şekilde de ekleyebiliriz, class lı eklemek için de bu şekilde onu da etiket içine yazabiliriz, hatta style bile ekleyebiliriz
+
+const classBrands = document.querySelectorAll(".brand"); 
+console.log(classBrands[3]);              // Marka listesinde index[3] teki elemanı da bu şekilde yazdırabiliyoruz
+console.log(classBrands[3].innerText);    // Böyle yazarak da o li etiketi içideki direk text e ulaşılabiliyor (Amazon)
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const copyRight = document.querySelector("#copy-right");    // id ile aratırken # işaretini, class ile aratırken . işaretini başılarına ekelemyi unutma yoksa (null) alırsın !!!
+console.log(copyRight);
+
+const copyRight2 = document.querySelector("footer p");      // Bu şekilde de yazabilirdik
+console.log(copyRight2);
+
+
+copyRight.innerHTML = "&copy; 2022 clarusway.com"           // BU ŞEKİLDE İÇERİĞİ DE DEĞİŞTİREBİLİRİZ !!
+copyRight.innerHTML = "<h1>&copy; 2022 clarusway.com</h1>"  // .innerHTML ile bu şekilde tag de ekleyebiliyoruz child olarak, burada (h1)
+
+/* copyRight.innerText = "<h1>&copy; 2021 clarusway.com</h1>" ama bu şekilde de yazsaydık burada <h1> ve &copy; olduğu ve burayı "" içinde yazdığı için hepsini string gibi algılar ve olduğu gibi yazardı, 
+   yani .innerText ile aslında html kodu değil sadece string ifadeler ekleyip değiştirebiliyoruz */
+
+// copyRight.innerHTML += "&copy; 2023 clarusway.com" Bu şekilde o etiketin içeriğine başka bir içerik de ekleyebilirdik
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Aşağıdaki array elemanlarını HTML içine yazdırma
+
+const lessonList = [            
+    {id: 1, name: 'HTML'},
+    {id: 2, name: 'CSS'},
+    {id: 3, name: 'JS'},
+    {id: 4, name: 'REACT'},
+];
+
+/* const lessons = document.querySelector('#lessons');     // ul tag ine ulaştık
+
+    for(items of lessonList){                              // lessonList arrayinin tüm elemanlarına tek tek ulaşıyoruz
+        lessons.innerHTML += items.name + '<br>'           // eleman objectlerinin namelerini teker teker for döngüsü yardımıyla ve .innerHTML ile lessons id li ul tagi içine yazdırıyoruz
+    }; */
+
+        ///////////////////////////////////
+
+/* let liste = document.querySelector('#lessons');         // Aynı şekilde ul tag ine ulaştık
+
+for(let i = 0; i < lessonList.length; i++){                // for döngüsünü lessonList objectinin tüm elemanları arasında dönderdik 
+    liste.innerHTML += lessonList[i].name + '<br>';        // ul tag inin içine her seferinde diğerini de ekleyecek şekilde lessonList objectinin herbir elemanının name ini aktardık
+    }; */
+
+        ///////////////////////////////////
+
+const lessonElm = document.querySelector('#lessons');
+// lessonList.forEach( (element) => { console.log(element)} )       // Bu da forEach ile arrayin tüm elemanlarına ulaşma yöntemi
+lessonList.forEach( (element) => { 
+    lessonElm.innerHTML += `<li class="lesson-item">${element.name}</li>`;  // Ulaştığımız her bir elemanın name ini  lessonElm (yani ul tag) içine li etiketi olarak yaz demek
+});                                                                         // Burada backtick `` değilde "" kullansaydık değişken ismini ( element.name ) mecbur + lar ile birlikte yazmamız gerekecekti
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// setAttribute and getAttribute Methods
