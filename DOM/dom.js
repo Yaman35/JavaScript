@@ -143,4 +143,73 @@ lessonList.forEach( (element) => {
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// setAttribute and getAttribute Methods
+// setAttribute and getAttribute Methods     (js ile htmle attribute vermek için)
+
+const mdn = document.querySelector("#mdn");
+console.log(mdn)
+
+const mdnHrefAttr = mdn.getAttribute("href"); // Görüleceği üzere bu getAttribute ile linkin href attributunda ne olduğunu öğrenebiliyorum
+console.log(mdnHrefAttr)                      // Bu örnek için "https://developer.mozilla.org/" çıkar
+console.log(mdn.getAttribute("target"));
+
+mdn.setAttribute("href", "https://www.w3schools.com/");  // İlk parametre: hangi attribute değiştirmek istiyorsun?, ikinci parametre: bunu ne yapmak istiyorsun?
+                                                         // Artık linke tıkladığımızda bu saatten sonra burada yeni girdiğimiz linke yönlenecektir
+
+mdn.innerHTML = "W3School"    // Bu şekilde linkin ismini de değiştirebiliriz
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// HTML deki id si instructor olan listede içinde Frontend geçenler kırmızı Backend geçenler yeşil olsun
+
+const insElm = document.querySelectorAll("#instructors li") // id si instructors olan ul listesinin elemanları döner
+// console.log(insElm);
+
+insElm.forEach((item) =>{ 
+// console.log(item.innerText);    // Dönderilen elemanların ne olduklarını bu şekilde görüntülemekte fayda var
+   console.log(item.innerText.includes("FrontEnd")); // İlki için false, sonraki ikisi için true, sondaki ikisi için de false geldi
+   if (item.innerText.includes("FrontEnd")){         // Eğer içinde FrontEnd geçiyorsa
+       item.setAttribute("class", "front-end")       // Burada classı değişti üzerine yazdı
+   }else if (item.innerText.includes("BackEnd")){    // Eğer içinde BackEnd geçiyorsa
+       item.setAttribute("class", "back-end")        // Burada da classı değişti
+   }
+})
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// JS ile manually adding style
+
+const jsprg = document.querySelector("#js-prg");
+console.log(jsprg);
+
+jsprg.style.color = 'red';       // Bu şekilde style işlemi uygulayabiliriz
+// jsprg.style = 'color:green'   // Bu şekilde de bir kullanım mevcuttur
+
+jsprg.style.backgroundColor = 'blue';
+jsprg.style.fontSize = '1rem';
+jsprg.style.margin = '10px';
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Bir elemanın mevcut classını değiştirmeden class ekleme (setAttribute mevcut class üzerine yazıyordu bu yöntem mevcut olanı muhafaza ederek yebi class ekliyor)
+
+const cwBanner = document.querySelector("#cw-banner");
+console.log(cwBanner);
+
+console.log(cwBanner.classList);    // Elemanın tüm class larını görüntüler, işte biz bu classliste ekleme yapacağız (Burada banner ve test diye iki class geldi)
+cwBanner.classList.add("imp")       // Bu şekilde elemana yeni bir class eklemiş olduk( banner, test, imp), böylece css de tanımlanmış olan altını çizme işlemini gerçekleştirmiş oldu
+cwBanner.classList.remove("banner") // Bu şekilde de bir elemandan bir classı çıkartma işlemi yapabililyoruz (test, imp), kahverengi rengi vardı gitti
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Mevcut bir paragrafın altına yazı ekleme
+
+const cwQuote = document.querySelector("#quote-div");
+console.log(cwQuote);
+
+cwElm = document.createElement("h2")    // () içine hangi tag ile bir eleman oluşturmak istiyorsak o tagi yazıyoruz
+console.log(cwElm);                     // İçi boş bir h2 tag geldi
+// console.log(document.createElement("h3"));  // Bu şekilde de yazılabilir
+
+cwElm.innerText = "Clarusway"           // 'h2' tag ile oluşturduğumuz cwElm elemanının içine 'Clarusway' yazdırdık
+
+cwQuote.appendChild(cwElm);             // id si #quote-div olan div içerisine child olarak h2 elementini eklemiş olduk, içindeki h3 elementinin siblingsi(kardeş) olmuş oldu
