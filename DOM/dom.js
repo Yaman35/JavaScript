@@ -51,5 +51,27 @@ console.log(inst);
 const inst3 = document.querySelector("#instructor2");
 console.log(inst3);
 
-const inst4= document.querySelectorAll("#instructor2");  // Hepsini dönderir yine
+const inst4= document.querySelectorAll("#instructor2"); // Hepsini dönderir yine
 console.log(inst4);
+
+//tagName
+
+console.log(document.querySelector('h3'));              // Böyle yazarsak sadece ilkini dönderir
+console.log(document.querySelectorAll('h3'));           // Array döner, All yapmazsak sadece ilk h3 döner
+console.log(document.querySelectorAll('h3')[0]);        // Bu şekilde array içinden de istediğimiz elemanı alabiliriz
+console.log(document.querySelectorAll('h3')[1]);
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Aşağıdaki şekillerde de herhangi bir id veya class vermeden ulaşabilliyoruz
+console.log(document.querySelector('div h3'))           
+console.log(document.querySelector('.class-info h3'))
+console.log(document.querySelector('#info h3')) 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// HTML Manipulation
+
+const brands = document.querySelector("#brands")
+console.log(brands);
