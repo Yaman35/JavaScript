@@ -12,11 +12,11 @@
 
         /* Değişkenleri Tanımlarken Dikkat Etmemiz Gereken Hususlar:
           - Değişkenlere isim verilirken Türkçe karakter olmamalıdır
-          - JavaScript büyük küçük harfe duyarlı bir dildir
-          - Değişken adı daima bir harfle başlamalıdır, rakam ile başlanılamaz
+          - JavaScript büyük küçük harfe duyarlı bir dildir (Case Sensitive)
+          - Değişken adı daima bir harfle başlamalıdır, rakam ile başlanamaz!
           - Değişken adı en fazla 255 karakter uzunluğunda olmalıdır
-          - Değişken adı içinde boşluk bulunmamalıdır
-          - Değişken adı içinde özel karakterler (+, -, * vb.) bulunmamalıdır
+          - Değişken adı içinde boşluk bulunmamalıdır!
+          - Değişken adı içinde özel karakterler (+, -, * vb.) bulunmamalıdır!
           - Değişken adı herhangi bir JavaScript sözcüğü (operatör adı, fonksiyon adı vs.) ile aynı olmamalıdır */
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,19 +36,20 @@
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        var yas2 = '5';
-        var yas3 = 5;
+        var yas2 = '5';     // string
+        var yas3 = 5;       // number
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        var name = "Hüseyin";         // Bu şekilde tanımlandıklarında JS iki ayrı değişken olarak değerlendirir
-        var Name = "Yavuz Ali";
-
+        var name = "Hüseyin";         // Bu şekilde tanımlandıklarında JS iki ayrı değişken olarak değerlendirir (Case Sensitive)
+        var Name = "Mehmet"
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        var my_first = "Değişken isminde boşluk olamaz ";
+        var my_first = "Değişken isminde boşluk olamaz";
 
-        var $var = "Dolar işareti başta olabilir";           // Bu şekilde $ ve _ işaretleri başta kullanılırsa reserved kelimeler dahi değişken adı olarak kullanılabilir 
+        // Bu şekilde "$" ve "_" işaretleri başta kullanılırsa reserved kelimeler dahi değişken adı olarak kullanılabilir 
+
+        var $var = "Dolar işareti başta olabilir";           
 
         var _var = "Bu şekilde _ işareti başa da gelebilir";
 
@@ -66,17 +67,17 @@
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
-        document.writeln(yas2 + 10);  // Burada yas2 değişkeni string ifade olduğu için kendisinden sonra geleni de string olarak kabul eder ve birleştirir 510 olur
+        document.writeln(yas2 + 10);  // Burada yas2 değişkeni "string" ifade olduğu için kendisinden sonra geleni de string olarak kabul eder ve birleştirir 510 olur
 
         document.writeln(yas3);
         document.writeln(yas3 + 10);  // Fakat burada değişken değeri integer olduğu için direk matematiksel ifadenin sonucu olarak 15 çıkarttı 
 
         document.writeln("Kullanıcı ismi: " + isim);
-        document.writeln("Kullanıcı ismi: " , isim);              // Bu şekilde de yazılabilirdi
+        document.writeln("Kullanıcı ismi: " , isim);              // Bu şekilde "," ile de yazılabilir
 
         document.writeln("Kullanıcı yaşı: " + yas); 
-        document.writeln("Kullanıcı yaşı: +10 " + yas + 10);    // Bu şekilde yaparsak ikinci kısmı da metin gibi algılar ve sayıları birleştirerek çıktı gösterir 
-        document.writeln("Kullanıcı yaşı: +10 " + (yas + 10));  // Bu şekilde math işlemlerini parantez içine alırsak işin içinden çıkabiliriz
+        document.writeln("Kullanıcı yaşı: +10 " + yas + 10);    // Bu şekilde + ile yaparsak basta string ifade oldugu icin ikinci kısmı da metin gibi algılar ve sayıları birleştirerek çıktı gösterir 
+        document.writeln("Kullanıcı yaşı: +10 " + (yas + 10));  // Fakat bu şekilde math işlemlerini parantez içine alırsak işin içinden çıkabiliriz
 
         document.write("İsim: " + isim + "<br>Soyisim: " + soyisim + "<br>Yaş: " + yas + "<br>");
         

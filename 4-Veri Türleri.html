@@ -11,16 +11,15 @@
     <script>
 
         // Statement: Çalıştırılabilir kod bloğu demektir...
-        // Mouse ile tıkladıktan sonra Alt tuşuna basılırsa istediğimiz kadar satırı seçip aynı anda işlem yapabiliyoruz 
-
+        
         var name = "Yaman";
         document.writeln(name);
-        document.writeln(typeof(name));   // Değişken değerlerinin tipini öğrenebilmek için 'typeof' kullanılır
+        document.writeln(typeof(name));   // Değişken değerlerinin tipini öğrenebilmek için "typeof" kullanılır
         document.writeln(typeof name);    // Bu şekilde parantez içinde yazmasak da olur !!!
 
         var userName = 'Mark';
-        var a = `Merhaba ${userName}`;    // Bu şekilde $ işareti ile bir değişkenin değerini direk kullanabiliyoruz. Lakin `` tırnakları içerisinde olmalı (i harfinin yanındaki tuş)
-                                          // Tek tırnak veya çift tırnak ile yapılamaz. Pyhton daki format kullanımına benzer
+        var a = `Merhaba ${userName}`;    // Bu şekilde $ işareti ile bir değişkenin değerini direk kullanabiliyoruz. Lakin `` tırnakları içerisinde olmalı
+                                          // Tek tırnak veya çift tırnak ile yapılamaz. Pyhton daki format kullanımına benzemektedir
         console.log(a)
 
         console.log("I'm ready");         // Bu iki şekilde de kullanılabilir, string ifadelerde
@@ -42,7 +41,7 @@
         document.writeln(typeof(pi));
 
         var h = 0.1 + 0.2;
-        console.log(h.toFixed(2));          // "toFixed" ile noktadan sonra kaç basamak gösterilmesini istiyorsak belirtebiliriz
+        console.log(h.toFixed(4));          // ("toFixed") ile noktadan sonra kaç basamak gösterilmesini istiyorsak belirtebiliriz
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -50,7 +49,7 @@
         document.writeln(boolean);
         document.writeln(typeof(boolean));
         document.writeln(typeof false);
-        document.writeln(typeof True);      // Büyük harflerle olmaz true, false
+        document.writeln(typeof True);      // Büyük harflerle olmaz true, false "undefined" cikar
         document.writeln(8 > 4);
         document.writeln(typeof (8 > 4));
 
@@ -60,7 +59,7 @@
 
         document.writeln(x);        //true
         document.writeln(y);        //true, sadece değerine bakar tipine bakmaz o yüzden eşit görür
-        document.writeln(z);        // false, hem tipine bakar hem değerine 
+        document.writeln(z);        // false, hem tipine bakar hem değerine o yuzden burasi esit degil birisi number birisi string
 
         var a = Boolean(0);         // false, -0 da olunca false olur 
         console.log(a);
@@ -68,7 +67,7 @@
         var b = Boolean('0');       // true
         console.log(b);
 
-        var c = Boolean(5);         // true  Sayının poziitif veya negatif olması farketmez her halükarda true döner
+        var c = Boolean(5);         // true  Sayının pozitif veya negatif olması farketmez her zaman true döner
         console.log(c);
 
         var d = Boolean(-5);        // true 
@@ -77,7 +76,7 @@
         var space = Boolean(' ');   // true, space bir karakter olarak algılanır o yüzden true verir
         console.log(space);
 
-        var tirnak = Boolean('');   // false, Ama bu şekilde olursa false verir
+        var tirnak = Boolean('');   // false, Ama bu şekilde olursa false verir, yokluk yani
         console.log(tirnak);
 
         var t = Boolean(null);      // false
@@ -85,7 +84,7 @@
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        var empty;                          // Tanımlanmamış değişken
+        var empty;                          // Tanımlanmamış değişken, undefined
         document.writeln(empty);
         document.writeln(typeof(empty));    // undefined
 
@@ -93,7 +92,7 @@
 
         var tanimsiz = null;                // null değişken
         document.writeln(tanimsiz);
-        document.writeln(typeof(tanimsiz)); // object
+        document.writeln(typeof(tanimsiz)); // null degiskenin tipi object olur
 
     </script>
     </pre>

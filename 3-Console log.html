@@ -18,11 +18,13 @@
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        const PI = 3.141521;                 // Sabit olan değişkenleri tanımlamak için kullanılır
-        let myNum = 5;                       // Değiştirilebilecek değişkenleri ifade etmek için kullanılır
+        const PI = 3.141521;                 // Sabit olan değişkenleri tanımlamak için kullanılır,sabitleri hepsi buyuk harf yazmak uygundur
         console.log(PI);
 
-        myNum = 4;                           // Burada myNum değiştirilebilir ama PI yi de değiştirmeye kalkarsan console ekranı üzerinde bakacak olursak hata görürüz çünkü o const !
+        let myNum = 5;                       // Değiştirilebilecek değişkenleri ifade etmek için kullanılır
+        
+        myNum = 4;                           // Burada myNum değiştirilebilir ama PI yi de değiştirmeye kalkarsan console ekranı üzerinde hata aliriz çünkü o CONST!
+                                             // (Uncaught TypeError: Assignment to constant variable.)
         console.log(myNum);
 
         const SCHOOL = 'Clarusway IT School';
@@ -35,8 +37,10 @@
 
         const SECONDS_IN_A_DAY = 24 * 60 * 60;
         console.log(SECONDS_IN_A_DAY);
-        console.log(86400);                         // Her ikisi de aynı sabit sonucu verir 
+        console.log(86400);                   // Her ikisi de aynı sabit sonucu verir 
 
+        //--------------------------------------------------------------------------------------------------------------------
+        
         var name = prompt("Enter your name: ")      // Pyhton daki input gibi
         document.write("Your name is : " + name)
 
@@ -44,32 +48,34 @@
 
         var num1 = 42;
         if (num1 === 42){
+            
             let num2 = 22;             // Bu if bloğu içerisinde let ile tanımlanan num2 sadece burada (if bloğu içinde) geçerlidir,alttaki çıktıda undefined olarak gösterilir, bu yüzden tekrar tanımlanması gereklidir...
-                                       // Fakat var ile tanımlasaydık geçerli olurdu
+                                       // Fakat var ile tanımlasaydık geçerli olurdu, ama artik genellikle let ve const kullanilmaktadir
             console.log(num1, num2);
         }
-        //console.log(num1, num2);
+        // console.log(num1, num2);    Iste burada sonuc almak istedigimizde hata aliriz (Uncaught ReferenceError: num2 is not defined)
 
         // let ile tanımlanan bir değişken bir daha let ile tanımlanamaz, var olsaydı tekrardan başına var yazdığında kabul ediyor
-        // var ile bir değişkeni tanımlamadan önce kullanmaya çalışırsak undefined şeklinde çıktı veriyor
-        // Fakat let ile bir değişkeni tanımlamadan önce kullanmaya çalışırsak, "cannot access num2 before initialization" şeklinde uyarı alırsın
-        // Fakat let ile değişkeni hiç tanımlamadan kullanmaya çalışırsak da bu kez "num2 is not defined" hatası alırız
-        // Eğer let ile tanımladığımız bir değişken tekrar let ile tanımlamaya kalkarsak bu seferde "num1 has alraedy been declared" şeklinde ikaz alırız.
-        // Yine aynı şekilde function içinde tanımlanan değişkenleri dışarıda kullanmaya/yazdırmaya çalıştığımızda is not defined alıyoruz
+        
+        // var ile bir değişkeni tanımlamadan önce kullanmaya çalışırsak ("undefined") şeklinde çıktı veriyor
+        // Fakat let ile bir değişkeni tanımlamadan önce kullanmaya çalışırsak, ("cannot access num2 before initialization") şeklinde uyarı alıriz
+        // Fakat let ile değişkeni hiç tanımlamadan kullanmaya çalışırsak da bu kez ("num2 is not defined") hatası alırız
+        // Eğer let ile tanımladığımız bir değişken tekrar let ile tanımlamaya kalkarsak bu seferde ("num1 has alraedy been declared") şeklinde ikaz alırız.
+        // Yine aynı şekilde function içinde tanımlanan değişkenleri dışarıda kullanmaya/yazdırmaya çalıştığımızda is ("not defined") alıyoruz
+        
         // Fonksiyon içerisinde var ile tanımlarsak içinde if bloğu olsa dahi çalıştırıyor, lakin if içinde var değil de let ile tanımlamış olsaydık fonksiyon içinde dahi olsa çalışmazdı
-    
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
 
-        console.log(a);   // Direk sadece bunu yazarsak "a is not defined" hatası alırız
-        var a;            // Ama altına da bunu eklersek, bu sefer "undefined" hatası alırız, üste de alsak alta da alsak aynısı gelir çünkü herhangi bir değeri yok şu an için
-                          // Ama bu şekilde alta yazıldığında sonradan da bir değer atasam yine "undefined" hatası alırız
-                          // Yani aslında var hoisting işlemi yapıyor burada böyle birşey var kullanılacak bu ben buna yer ayırayım demek
+        console.log(a);   // Direk sadece bunu yazarsak ("a is not defined") hatası alırız
+        var a;            // Ama altına da bunu eklersek, bu sefer ("undefined") hatası alırız, üste de alsak alta da alsak aynısı gelir çünkü herhangi bir değeri yok şu an için
+                          // Ama bu şekilde alta yazıldığında sonradan da bir değer atasam yine ("undefined") hatası alırız
+                          // Yani aslında var (hoisting işlemi) yapıyor burada böyle birşey var, kullanılacak bu ben buna yer ayırayım demek
         
         console.log(a);   
-        let a;            // Bu şekilde let ile sonradan yazarsak da bu sefer "Cannot access 'a' before initiallization" hatası alırız
+        let a;            // Bu şekilde let ile sonradan yazarsak da bu sefer ("Cannot access 'a' before initiallization") hatası alırız
                           // Fakat işte burada let de var gibi hoisting işlemi yok, olsaydı zaten yukarıdaki gibi undefined çıkardı ama cannnot access çıktı
-                          // let üste yazılıp atanmasaydı bu seferde "undefined" hatası alırız    
+                          // let üste yazılıp atanmasaydı bu seferde ("undefined") hatası alırız   
     
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -84,16 +90,16 @@
         let a = 5;
         console.log(a);
         
-        let a =4;         // Fakat let de bu işlemi yapamayız çünkü bu sefer "Identifier 'a' has already been declared" şeklinde ikaz alırız
-        console.log(a);   // Bu durumda let in değeri değiştirilebiliyordu bunu ise sadece ikincinin başındaki let yazısını kaldırarark yapabiliriz
-                          // Kısacası let ile tanımladığımız bir değişkeni tekrardan tanımlayamayız fakat değerini değiştirebiliriz tabiki 
+        let a =4;         // Fakat let de bu işlemi yapamayız çünkü bu sefer ("Identifier 'a' has already been declared") şeklinde ikaz alırız
+        console.log(a);   // Ama let in değeri değiştirilebiliyordu, bunu sadece ikincinin başındaki let yazısını kaldırarark yapabiliriz
+                          // Kısacası let ile tanımladığımız bir değişkeni tekrardan let ile tanımlayamayız, fakat değerini değiştirebiliriz tabiki 
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         console.log(a);   
-        const a;          // Bu şekilde const ile de sonradan yazarsak da bu sefer "Cannot access 'a' before initiallization" hatası alırız
+        const a;          // Bu şekilde const ile de sonradan yazarsak da bu sefer ("Cannot access 'a' before initialization") hatası alırız
                           // AYRICA const kullanırken üste yazdığımızda ilk değer ataması yapmadan çağırma işlemini de yapamayız diğerlerinde sonradan da atasak oluyordu
-                          // Kısacası Sonradan zaten değiştiremezsin, değer atamadan da kullanamazsın
+                          // Kısacası Sonradan zaten değiştiremezsin, değer atamadan da kullanamazsın!
     
     </script>
 </body>
