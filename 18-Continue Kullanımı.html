@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+
         var sayi = 0;
         while(sayi <= 10){
             
@@ -27,7 +28,7 @@
 
         while (i < 10){
             i === 0 ? console.log(i) : null; // Bu şekilde 0 da başa yazılmış oldu
-            i++;                             // Arttırma yeri önemli aksi takdirde sonsuz döngüye girilebilir, dikkat etmek gereklidir
+            i++;                             // Arttırma yeri önemli aksi takdirde sonsuz döngüye girilebilir, dikkat etmek gereklidir.
             if (i % 3 === 0){ 
                 continue;                    // Burada sadece 3 ve 3 ün katlarını yazmamak için bu sefer continue kullandık
             }
@@ -36,9 +37,7 @@
 
         //------------------------------------------------------------------------------------------------------------------
         
-        let i2;
-       
-        for (i2 = 0; i2 < 7; i2++){
+        for (let i2 = 0; i2 < 7; i2++){
             if (i2 == 2 || i2 ==4){          // 1 den 7 ye kadar olan sayılardan 2 ve 4 ü yazdırma demektir
                 continue;
             }

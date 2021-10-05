@@ -10,7 +10,7 @@
     <script>
         var araba = {marka: "BMW", model:"X5", yas:3, sehir: "İzmir"};
         var liste = " "; // Bir nevi boş liste tanımladık, sonradan for föngüsü ile içini doldurtup yazdırıyoruz 
-        var x;           // For in döngüsü içerisinde kullanabilmemiz için bu şekilde tanımladık, tanımlamasaydık da olurdu 
+        var x;           // "For in" döngüsü içerisinde kullanabilmemiz için bu şekilde tanımladık, tanımlamasaydık da olurdu 
 
         for(x in araba){ // in kullandığımız vakit ilgili indexteki değeri bize çıktı olarak veriyor burada
             liste += araba[x] + " , ";

@@ -24,7 +24,7 @@
         for (let a = 1; a <= 10; a++){
             for (let b = 1; b <= 10; b++){
                 document.writeln(a + "X" + b + " = " + a * b + "<br/>" );
-            //  document.write(`${a} * ${b} = ${a * b}`, "<br>") şeklinde de yazılabilirdi
+            //  document.write(`${a} * ${b} = ${a * b}`, "<br>") şeklinde de yazılabilirdi, hatta daha guzel olurdu
             }
             document.write("<br>");
         }
@@ -34,7 +34,7 @@
         const number = [13, 34, 24, 67, 23, 90];
         let total = 0;
 
-        for(let t = 0; t < number.length; t++){
+        for(let t = 0; t < number.length; t++){ // ( t <= number.length - 1 ) seklinde de yazilabilirdi
             total += number[t];
             // console.log(total); her seferinde yeni toplamı bu şekilde de yazdırabilirdik 
         }
@@ -42,7 +42,7 @@
 
         //----------------------------------------------------------------------------------------------------------------------
 
-        let fakt = prompt("Faktoriyeli alıancak sayıyı giriniz: ");
+        let fakt = Number(prompt("Faktoriyeli alıancak sayıyı giriniz: "));
         let result = 1;
 
         for (let f = 1; f <= fakt; f++){
@@ -52,7 +52,7 @@
 
         //----------------------------------------------------------------------------------------------------------------------
 
-        let fizzbuzz;
+        // FizzBuzz Cuzumu - 1
 
         for (let x = 1 ; x < 101; x++){
             if (x % 15 === 0 ){
@@ -68,12 +68,17 @@
                 console.log(x);
             }
 
-            //----------------------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------
         
-            for (var i = 1; i <= 100; i++) {
-            var f = i % 3 == 0, b = i % 5 == 0;
-            console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
-}
+        // FizzBuzz Cuzumu - 2
+
+        for (var i = 1; i <= 100; i++) {
+        var f = i % 3 == 0, b = i % 5 == 0; // Bu kisim "true" lar uzerinden gidiyor
+        console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+        // Aslinda burada f ve b ayni anda dogruysa "FizzBuzz" yaz,
+        // Aksi takdirde "Fizz" yaz ama b dogruysa da "Fizz" degil "Buzz" yaz
+            
+    }
 
     </script>
 </body>

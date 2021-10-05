@@ -18,8 +18,8 @@
         document.write("<br>");
         //---------------------------------------------------------------------------------------------------------------
         
-        for ( let sayi2 = 1; sayi2 <= 10; sayi2++ ){           /* For Döngüsü ile */
-            document.writeln(sayi2 + ". sayı <br>");
+        for ( let sayi2 = 1; sayi2 <= 10; sayi2++ ){         /* For Döngüsü ile, Assignment-Condition-Addition */
+            document.writeln(sayi2 + ". sayı <br>");         /* Aralarinda mutlaka ";" olmalidir aksi takdirde calismaz */
         }
 
         document.write("<br>");
@@ -44,7 +44,7 @@
         //---------------------------------------------------------------------------------------------------------------
 
         let sayi5 = 1;                                       
-        for ( ; sayi5 <= 5; ){                               /* Eğer değişken yukarıda tanımlanmış olduğu durumlarda parantez içinde değişkeni belirtmek şart değildir, lakin ";" kullanımı olmak zorundadır bu durumda*/
+        for ( ; sayi5 <= 5; ){                               /* Eğer değişken yukarıda tanımlanmış olduğu durumlarda parantez içinde değişkeni belirtmek şart değildir, lakin bu durumda ";" kullanımı olmak zorundadır */
             document.writeln(sayi5 + ". sayı <br>");
             sayi5++;                                         
         }
@@ -71,7 +71,7 @@
 
         let brand2 = "Clarusway";
 
-        for (let i = 0, j = brand2.length; i < brand.length; i++, j--){
+        for (let i = 0, j = brand2.length; i < j; i++, j--){
             console.log(i + 1, brand2[i], j, brand2[j-1]);
         }
 
@@ -89,7 +89,7 @@
         let text = "Clarusway";
         for (i = 0; i < text.length; i++){
             document.write(text[text.length - (i+1)]);  // Burada Clarusway yazısını tersten yazdırabilmek için text[8] için mesela bu şekilde bir kod yazmamız gerekiyor, 
-                                                        //takiben i arttıkça burası da azaldığı için text[7],text[6]... şeklinde gidiyor
+                                                        // takiben i arttıkça burası da azaldığı için text[7],text[6]... şeklinde gidiyor, gayet guzel
         }
 
         //---------------------------------------------------------------------------------------------------------------
@@ -97,10 +97,9 @@
         let text1 = "Clarusway";
         let newText = ''
         for (i = 0; i < text1.length; i++){
-            newText += text1[text1.length - (i+1)];
+            newText += text1[text1.length - (i+1)];    // Texti tersten yazdirabilmek icin
             console.log(newText);
         }
-
 
     </script>
     

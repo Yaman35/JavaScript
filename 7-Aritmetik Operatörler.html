@@ -31,6 +31,18 @@
             var k1 = '12';
             var m1 = '3';
             document.writeln(k1 / m1 + "<br>");            // Burada da her ne kadar string olsalar da normal bölme işlemi yapılır ve sonuç 4 çıkar (number olarak)                                   
+            
+            var hy = 10;
+            var th = '2';
+
+            c = hy + th;
+            console.log(c, typeof c); // 102 string olur
+
+            d = +c; // Bu sekilde basina tek "+" koyarsak
+            console.log(d, typeof d); // 102 'number' olur
+
+
+            
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             // Arithmetic Operators
@@ -76,7 +88,7 @@
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             document.writeln( false == false ); // true,
-            document.writeln( Boolean(0) == false ); //Boolean(0) false a eşit mi ave eşit dolayısıyla true
+            document.writeln( Boolean(0) == false ); //Boolean(0) false a eşit mi eşit dolayısıyla true
             document.writeln( Boolean('0') == false ); // false olur çünkü Boolean('0') true dur
             
             document.writeln( 0 == false )    // true
@@ -90,19 +102,69 @@
             document.writeln( null == 0 );    // false ama aşağıda işlemlerde 0 kabul edilir
             document.writeln( null + 3 );     // Sonuç 3 çıkar
 
-            document.writeln( Boolean(null) == false ) // true Aynı 0 da olduğu gibi boolean a girmiş hali ile girmemiş hali farklı
+            document.writeln( Boolean(null) == false ) // true Aynı 0 da olduğu gibi boolean a girmiş hali ile girmemiş hali farklı, Boolean(0) gibi dusunulmeli
             document.writeln( Boolean(null) == Boolean(0) ) //true, İkisi de false çünkü
 
             console.log(typeof NaN);          // "number" çıkıyor !!!
             document.writeln( NaN == NaN );   // false
 
+            //------------------------------
+
+            console.log('false equals false, correct? ', false == false);
+            console.log('Boolean(0) equals FALSE, correct? ', Boolean(0) == false);
+            console.log('0 equals false, correct? ', 0 == false);
+            console.log('Boolean("0") equals TRUE, correct? ', Boolean('0') == true);
+            console.log('0' == false);
+
+            console.log('\n*** null boolean operations ***');
+            console.log('Boolean(null) equals to', Boolean(null)); // false
+            console.log('null == false equals to', null == false);
+            console.log('null == true equals to', null == true); 
+            console.log('typeof null equals to', typeof null); 
+            console.log('0 == null equals to', 0 == null); // 
+            console.log('Boolean(null) == Boolean(0)', Boolean(null) == Boolean(0));
+            console.log('\n*** undefined boolean operations ***');
+
+            console.log('Boolean(undefined) equals', Boolean(undefined));
+            console.log('undefined == false correct?', undefined == false);
+            console.log('undefined == true correct?', undefined == true);
+            console.log('0 == undefined correct?', 0 == undefined);
+            console.log('null == undefined correct?', null == undefined);
+            console.log('null === undefined correct?', null === undefined);
+
+            console.log('\n*** NaN operations ***');
+            console.log(NaN == NaN); 
+            console.log(NaN === NaN); 
+            console.log(typeof NaN);
+            mathhew = 'new student'; 
+
+            // ! use global isNaN() function to overcome this
+
+
+
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            var aa;
-            while(isNaN(aa)){             // Kullanıcıdan alınan veri sayı mı? diye sorgulatmamıza yarar
+            var instructor = "Huseyin";
+
+            console.log('Merhaba '+ instructor);
+            console.log(`Merhaba ${instructor}`);
+            console.log(`2+3 = ${2+3}`);
+            console.log(Boolean('')); //false
+            console.log(Boolean(' ')); //true
+            console.log(Boolean(-1));
+            console.log(Boolean('Merhaba')); //true
+            console.log(Boolean(null)); //false
+            console.log(Boolean(8 < 5)); 
+            console.log(Boolean(8 < 9)); 
+            console.log(Boolean(3.14));
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            var a;
+            while(isNaN(a)){             // Kullanıcıdan alınan veri sayı mı? diye sorgulatmamıza yarar
             a = prompt("Enter a number");
-            a = Number(aa);               // Kullanıcıdan alınan tüm değerler string olduğu için bu şekilde sayıları hesaplamalarda kullanabilmek adına Number ile numbera çevrilmelidir
-            console.log(aa)
+            a = Number(a);               // Kullanıcıdan alınan tüm değerler string olduğu için bu şekilde sayıları hesaplamalarda kullanabilmek adına Number ile numbera çevrilmelidir
+            console.log(a, typeof a)
             }
 
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -180,26 +242,31 @@
 
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            console.log(015 + 025);  // 34 yapar (13 + 21) "Üçlü yani başına 0 uazılınca 8 lik (oktal) sisteme göre olur"
+            console.log(015 + 025);  // 34 yapar (13 + 21) "Üçlü yani başına 0 yazılınca 8 lik (oktal) sisteme göre olur"
             console.log(15 + 025);   // 36 yapar (15 + 21)
             console.log(015 + 25);   // 38 yapar (13 + 25)
             console.log(15 + 25);    // 40 yapar (15 + 25)
 
             console.log( 9 < 8);     // false
             console.log( 9 < 8 < 7); // true ( Burada false < 7 o da 0 < 7 gibi olur ve true çıkar)
-            console.log( false < 7);
+            console.log( false < 7); // true
+            console.log( false < -1);// false
+            console.log( null + 3);  // 3
+            console.log( true > false); // true (0 > 1)
 
             console.log('Clarusway' > 'clarusway'); // false olur, Karakterleri ASCII koduna göre 
-            console.log('C'.charCodeAt());          // 67 Çıkar
-            console.log('c'.charCodeAt());          // 99 Çıkarma
+            console.log('C'.charCodeAt());          // 67 Çıkar, ASCII karakter tablosu
+            console.log('c'.charCodeAt());          // 99 Çıkar
 
+            console.log(Number(false)); // 0 olur
+            console.log(Number(true));  // 1 olur
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             // Logical Operators
 
-            // (&&) "and" anlamına gelir
-            // (||) "or" anlamına gelir
-            // (!) "not" anlamına gelir 
+            // (&&) -->  "and" anlamına gelir (ampersand)
+            // (||) -->  "or" anlamına gelir  (pipe)
+            // (!), -->  "not" anlamına gelir (exclamation)
 
             let x5 = 2 && 3;
             console.log(x5);    // Burada sonucu 3 olarak verir, Phyton daki logical operators mantığının aynısı
@@ -210,10 +277,10 @@
 
 
             let x7 = 7 || false;
-            console.log(x7);    // Burada ilkinde True gelir ikincisi önemli değil sonuç True olur
+            console.log(x7);    // Burada ilkinde True gelir ikincisi önemli değil sonuç True olur ve 7 cikar
 
             let x8 = 0 || 3;
-            console.log(x8);    // Burada ilkinden false gelir ama ikincisi true olduğu için sonuç true olur
+            console.log(x8);    // Burada ilkinden false gelir ama ikincisi true olduğu için sonuç true olur ve 3 cikar
 
             let x9 = 0 || false;
             console.log(x9);    // Burada da ikincide karar veriyor bu sefer ikinci olan false u çıkarır
@@ -221,7 +288,7 @@
 
 
             let x10 = 0 || false;
-            console.log(!x10);  // Burada sonuç normalde fals çıkıyor ama ! işareti ile sonuç true ya çevriliyor
+            console.log(!x10);  // Burada sonuç normalde false çıkıyor ama ! işareti ile sonuç true ya çevriliyor
 
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -232,12 +299,22 @@
 
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            // Nullish Coalescing Operators "??" ile kullanılır
+            // Nullish Coalescing Operators ("??") ile kullanılır
 
-            const foo = null ?? "default string";    // İlk kısım null veya undefined ise sağdaki aksi takdirde soldakini veriyor
+            const foo = null ?? "default string";    // İlk kısım "null" veya "undefined" ise ikinciyi, aksi takdirde birinciyi veriyor
             console.log(foo);
+            console.log(null ?? true); // true 
+            console.log(true ?? null); // true
+            console.log(false ?? null);// false
 
-            const foo1 = 0 ?? 42;    // Burada 0 olması önemli değil null veya undefined değil ise ilkini verir yani buranın çıktısı 0 olur
+            var n;
+            console.log(n); // undefined 
+            console.log(null ?? true); //true
+            console.log((8>9) ?? 0); // false
+            console.log(n ?? 100); // 100
+
+
+            const foo1 = 0 ?? 42;    // Burada 0 olması önemli değil "null" veya "undefined" değil ise ilkini verir yani buranın çıktısı 0 olur
             console.log(foo1);
 
             const nullValue = null;
@@ -248,11 +325,9 @@
             const valB = emptyText ?? "Default for B";
             const valC = someNumber ?? 0;
 
-            console.log(valA); // "Default for A"
+            console.log(valA); // "Default for A" cikar cunku ilki null
             console.log(valB); // "" (as the empty string is not null or undefined)
             console.log(valC); // 42
-
-
 
         </script> 
     </pre>

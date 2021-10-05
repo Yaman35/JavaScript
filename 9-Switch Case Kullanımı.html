@@ -12,14 +12,14 @@
             // Ağaşıdaki iki kullanım aynı anlamdadır...
 
             var meyve1 = "ArMuT";
-            meyve2 = meyve1.toLowerCase(); // Burada kullanıcının girişlerinden kaynaklı hataları önlemek için kullanmakta fayda var
-                                         // toUpperCase() de kullanılabilir
+            meyve2 = meyve1.toLowerCase();  // Burada kullanıcının girişlerinden kaynaklı hataları önlemek için kullanmakta fayda var
+                                            // toUpperCase() de kullanılabilir
 
-            switch(meyve2){      // Karşılaştırma özelliğidir
+            switch(meyve2){      // Karşılaştırma özelliğidir, karsilastirilacak degiskeni parantez icine alir
 
-                case "armut":    // Bir de switch case yapısında karşılaştırmalar case sensitive dir dikkat edilmesi gerekir "armut-Armut"
+                case "armut":    // Bir de switch case yapısında karşılaştırmalar case sensitive dir dikkat edilmesi gerekir!!! ("armut-Armut")
                     document.writeln("Seçilen meyve armuttur..."); // Değişkenin armuta eşit olması durumudur
-                break;           // Burada "break" kullanılmazsa ilk seçenek doğru olsa bile ikinci seçeneği de hatalı olarak yazdırmaktadır !
+                break;           // Burada "break" kullanılmazsa ilk seçenek doğru olsa bile ikinci seçeneği de hatalı olarak yazdırmaktadır, o yuzden break kullanilmalidir !
                 
                 case "elma":
                     document.writeln("Seçilen meyve elmadır...");   // Değişkenin elmaya eşit olması durumudur
@@ -35,9 +35,10 @@
 
             //-------------------------------------------------------------------------------------------------------------------------
            
-            // Yukarıdaki örneğin if-elsse yapısı
+            // Yukarıdaki örneğin if-else yapısı
 
             let meyve = "elma";
+
             if (meyve == "elma"){
                 console.log("Seçilen meyve elmadır...");
             }
@@ -64,7 +65,7 @@
                 break;         
                 
                 case "notebook":
-                case "eraser":                  // Bu şekilde birden falza seçenek için aynı çıktıyı aldırtabiliriz
+                case "eraser":                  // Bu şekilde birden fazla seçenek için aynı çıktıyı aldırtabiliriz
                     message = " is 0.50$";     
                 break;
                 
@@ -76,7 +77,7 @@
                     message = "Select a product";     
             }
 
-            console.log(product, message); // Çıktısı Eraser is 0.50$ olur
+            console.log(product, message);     // Çıktısı Eraser is 0.50$ olur, bu sekilde de yazdirilabilir
 
             //-------------------------------------------------------------------------------------------------------------------------
 
@@ -107,30 +108,30 @@
 
             let dayUser = prompt("Bir gün giriniz: ");
             let day = dayUser.toLocaleLowerCase();     // Bu şekilde kullanım tüm diller için uygun olur
-            let message;
+            let message2;
 
             switch(day) {
-                case "pazartesi":   
-                case "çarşamba":
-                case "perşembe":
-                case "cumartesi":
-                    message = "Bugün in-class var";
+                case "monday":   
+                case "wednesday":
+                case "thursday":
+                case "saturday":
+                    message2 = "Bugün in-class var";
                 break;
 
-                case "salı":        
-                case "cuma":
-                    message = "Bugün TW var";
+                case "tuesday":        
+                case "friday":
+                    message2 = "Bugün TW var";
                 break;
 
-                case "pazar":
-                    message = "Bugün tatil";
+                case "sunday":
+                    message2 = "Bugün tatil";
                 break;
 
                 default:
-                    message = "Günü doğru girmediniz"
+                    message2 = "Günü doğru girmediniz";
 
             }
-            document.write(message);
+            document.write(message2);
         </script>
     </pre>
     

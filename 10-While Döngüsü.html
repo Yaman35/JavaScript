@@ -16,7 +16,7 @@
             document.writeln((counter + 1) + "." + selam);
             counter++;
             }
-            document.writeln();
+            document.writeln(); // Burada bosluk birakmak icin kullanilmistir
 
             //----------------------------------------------------------------------------------------------
 
@@ -28,15 +28,15 @@
                 console.log(i);
                 i++;
             }
-            console.log(`The total is: ${sum}`);
+            console.log(`The total is: ${sum}`); // Bu sekilde `` ile sonuc yazimi daha guzel olur
             
             //----------------------------------------------------------------------------------------------
 
             var tahmin = 0;
-            var istenilen = 5;
+            var istenilen = 10;
             var deneme = 1;
 
-            while(tahmin != istenilen) {
+            while(tahmin != istenilen) {   // tahmin istenilene esit olmadigi surece yani true oldukca
                 tahmin++;
                 document.writeln(deneme + ".deneme");
                 if(tahmin == istenilen){
@@ -59,6 +59,7 @@
                     document.writeln(deneme + ".denemede buldunuz");
                     document.writeln("İstenilen sayı: " + istenilen);
                     tahmin = 5;   // Burada tahmin değerini 5'e eşitleyerek de while döngüsünü kırabiliriz, break gibi
+                                  // Cunku while dongusune girmemesi icin false olmasi gerekiyor onun icinde icindeki ifadenin false degeri esit olmalari durumudur
                 }
                 deneme++;
             }
