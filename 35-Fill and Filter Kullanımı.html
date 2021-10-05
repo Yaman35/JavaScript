@@ -15,17 +15,17 @@
         var sayilar = [20, 86, 85, 99, 66, 56, 23, 19];
         document.write("Normal Liste: " + sayilar + "<br/><br/>");
 
-        var doldur1 = sayilar.fill(30);
+        var doldur1 = sayilar.fill(30);             // Tum listeyi ayni eleman ile doldurur
         document.write("Sabit Liste: " + doldur1 + "<br/><br/>" )
 
         var doldur2 = sayilar.fill("yaman");
         document.write("Metinsel : " + doldur2 + "<br/><br/>");
 
-        var doldur3 = sayilar.fill(30, 2);                                 // ilki value, ikincisi start indexi
-        document.write("2den sonrası 30 ile : " + doldur3 + "<br/><br/>");
+        var doldur3 = sayilar.fill(30, 2);          // ilki value, ikincisi start indexi, yani 2.indexten sonra parantez icindeki eleman ile doldurur arrayi
+        document.write("2.indexten sonrası 30 ile : " + doldur3 + "<br/><br/>");
 
         var sayilar = [200, 860, 850, 990, 660, 560, 230, 190];
-        var doldur4 = sayilar.fill(30, 2, 5);                              // ilki value, ikincisi start indexi, üçüncüsü end indexi
+        var doldur4 = sayilar.fill(30, 2, 5);       // ilki value, ikincisi start indexi, üçüncüsü end indexi ve o dahil degil herzamanki gibi
         document.write("2 ile 6 arası 30 ile : " + doldur4 + "<br/><br/>");
         
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@
         var yaslar = [11, 12, 15, 18, 20, 86, 85, 99, 66, 56, 23, 19, 21, 22, 23]
         document.write("Normal Liste: " + yaslar + "<br/><br/>");
         
-        function goster1(yas1){
+        function goster1(yas1){   // Icine array alan function
             return yas1 <= 18;
         }
 
@@ -43,9 +43,9 @@
             return yas2 > 18;
         }
 
-        document.write("18 yaş altı : " + yaslar.filter(goster1) + "<br/>");  // goster1 fonksiyonuna göre filtrele
+        document.write("18 yaş altı : " + yaslar.filter(goster1) + "<br/>");  // goster1 fonksiyonuna göre yaslar arrayini filtrele
 
-        document.write("18 yaş üstü : " + yaslar.filter(goster2) + "<br/>");  // goster2 fonksiyonuna göre filtrele
+        document.write("18 yaş üstü : " + yaslar.filter(goster2) + "<br/>");  // goster2 fonksiyonuna göre yaslar arrayini filtrele
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------
         

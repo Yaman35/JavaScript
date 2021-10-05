@@ -13,7 +13,7 @@
         var eleman = [20, 18, 11, "ayşe", 50, "masal", 85, 98, "okan", 20, 60, "emre", 23];
         document.write("Normal Liste: " + eleman + "<br/><br/>");
 
-        eleman.forEach(function(yazdir){       //forEach kullanımı
+        eleman.forEach(function(yazdir){       //forEach kullanımı function ile
            document.write(yazdir + "<br/>"); 
        })
     
@@ -22,11 +22,10 @@
     const items = ['item1', 'item2', 'item3'];
     const copy = [];
 
-    items.forEach(function(yaman){     // itemsin her elemanıa bu fonksiyonu uygula, ne o : fonksiyon içine gelen her elemanı copy listine push la
-        copy.push(yaman);
+    items.forEach(function(yaman){     // items in her elemanıa bu fonksiyonu uygula, ne o : fonksiyon içine gelen her elemanı copy listine push la
+        copy.push(yaman);              // Boyle boyle copy listesi olusur
     })
-    document.write(copy+ "<br/><br/>");
-
+    document.write(copy+ "<br/><br/>");// Ve copy listesini de yazdirdik
 
     </script>
   

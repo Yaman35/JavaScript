@@ -11,11 +11,11 @@
         let age = [20, 35, 44, 28, 56, 87, 51];
 
         function display(number){
-            return number >= 17;
+            return number >= 18;     // Sayi 18 e buyuk esitse true aksi takdirde false dondurur
         }
 
-        var eleman = age.every(display); // Sonucu true gelir
-
+        var eleman = age.every(display); // Sonucu true gelir, age array inin tum elemanlarini display fonksiyonu ile kontrol et
+                                         // Burada hepsi birbirine && ile baglidir, dolayisiyla birisi false ise sonuc false olurdu
         if(eleman == true){
             document.write("Kullanıcıların hepsinin yaşı 18 den büyüktür");
         }else {

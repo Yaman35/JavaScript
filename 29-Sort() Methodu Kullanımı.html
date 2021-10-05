@@ -14,14 +14,14 @@
         console.log(names.sort());      // Burada sort işlemi alfabetik sıraya göre yapılır
 
         const points = [40, 100, 1, 5, 25, 10]
-        console.log(points.sort());     // [1, 10, 100, 25, 40, 5] şeklinde çıkar, çünkü string gibi algılamaktadır
+        console.log(points.sort());     // [1, 10, 100, 25, 40, 5] şeklinde çıkar, çünkü string gibi algılamaktadır !!!
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         // Rakamları küçükten-büyüğe / büyükten - küçüğe sıralamak istediğimizde ise
 
         const points2 = [40, 100, 1, 5, 25, 10]
-        sortResult = points2.sort(function(a, b){return a - b})     // Bu function kullanarak elemanlar içindeki rakamları sıralayabiliriz
+        sortResult = points2.sort(function(a, b){return a - b})     // Bu functioni kullanarak elemanlar içindeki rakamları sıralayabiliriz
         console.log(sortResult);        // [1, 5, 10, 25, 40, 100] şeklinde doğru çıkar (küçükten büyüğe)
 
         // Sonuç negatif ise a, b den önce sıralanır
@@ -38,7 +38,8 @@
 
         var x = ["9","25","111","John","James","Aaron"];
         console.log (x.sort());  // ["111", "25", "9", "Aaron", "James", "John"] şeklinde çıkar
-        
+        var x1 = [36, 45, 111, "John","James","Aaron"];     // Sonuc olarak rakamlar her daim once yazilir
+        console.log (x1.sort());
     </script>
   
 </body>

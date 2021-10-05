@@ -12,22 +12,22 @@
 
         let names = ["John", "James", "Aaron", "Walter", "Edward"];
 
-        shiftedName = names.shift();      // shift() methodu elemanı array in ilk elamanını dönderir
+        shiftedName = names.shift();      // shift() methodu, array in ilk elamanını dönderir, o eleman artik array icerisinde gozukmez
         console.log(shiftedName);         // John dönderir
-        console.log(names);               // John çıkartılmış array hali
+        console.log(names);               // John çıkartılmış array hali kalir
 
 
         var colors = ["Red", "Yellow", "Green"];
         colors.push("Red");         // Sonuna "Red" ekledi
         colors.shift();             // Array ilk elemanını çıkardı
-        console.log(colors);        // ["Yellow", "Green", "Red"] şeklinde olur son halini
+        console.log(colors);        // ["Yellow", "Green", "Red"] şeklinde olur son hali, Bir nevi ilk elamani sonuna dogru attik
 
     // //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
 
         names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler and returns the new array length.
-        console.log(names2);              // "Yaman" eklenmiş hali
+        console.log(names2);              // Arrayin "Yaman" eklenmiş hali cikar, yani arrayin tamami
         names2.unshift("Yavuz Ali", "Emine");
         console.log(names2);
         

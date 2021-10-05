@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForEach kullanımı</title>
+    <title>From Kullanımı</title>
 </head>
 <body>
   
@@ -13,22 +13,23 @@
         // from kullanımı
 
         var city = "Barcelona";
-        new_city = Array.from(city);      // String ifadenin tüm karakterlerinden bir dizi oluşturdu
-        console.log(new_city); 
+        new_city = Array.from(city);      // String ifadenin tüm karakterlerinden bir dizi (array) oluşturdu
+        console.log({new_city}); 
         console.log(new_city[7],new_city[2]);
         
         //--------------------------------------------------------------------------------------------------------------------
         
         var i;
         for(i of new_city){               // Bu şekilde de dizi elemanlarını tek tek alt alta göstertebiliriz
-            console.log(i);               // Bu kod bloğu tek satırda da ifade edilebilirdi
+            console.log(i);               // Bu kod bloğu tek satırda da ifade edilebilirdi, cunku tek bir ifade var
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------
 
-        const set = new Set(['foo', 'bar', 'baz', 'foo']);
-        let test = Array.from(set);
-        console.log({test});                     // [ "foo", "bar", "baz" ]
+        const set = new Set(['foo', 'bar', 'baz', 'foo']);  // Set() icine bir array yazdik
+        console.log({set});         // Ayni elemanlari tekrar etmeyen bir set olusturduk
+        let test = Array.from(set); // Bu set ten from ile yeni bir liste olusturduk
+        console.log({test});        // [ "foo", "bar", "baz" ] cikar, cunku set'ten array'e donusunde bor "foo" kaybetti
 
     </script>
   

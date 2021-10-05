@@ -10,17 +10,17 @@
   
     <script>
 
-        // IndexOf() methodu arrayin içinde, yazmış olduğumuz elemanı (ilk gördüğü yerin) indexini dönderir
+        // IndexOf() methodu arrayin içinde, yazmış olduğumuz elemanı (ilk gördüğü yerin!) indexini dönderir
         // Eğer eleman array içerisinde değilse "-1" dönderir !!!!!
-        // ikinci parametre start index tir, herhangi bir değer verilmezse (0. indexten) başlatır. Case sensitive dir.
+        // ikinci parametre start index tir, herhangi bir değer verilmezse (default 0.indexten) başlatır. Case sensitive dir.
 
         var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango", "Strawberry", "Mango", "Mango"];
        
         console.log(fruits.indexOf("Mango", 3));   // 4 çıkar
         console.log(fruits.indexOf("mango", 3));   // -1 çıkar (Case sensitive)
-        console.log(fruits.indexOf("Orange", 3));  // -1 çıkar
+        console.log(fruits.indexOf("Orange", 3));  // -1 çıkar, cunku Index(3) ten sonra Orange yok
         console.log(fruits.indexOf("Tomato"));     // -1 çıkar   
-        console.log(fruits.indexOf("Mango", -6));  // Start index negatif de verilebilir 
+        console.log(fruits.indexOf("Mango", -6));  // Start index negatif de verilebilir, yine ilk gordugu yer olan 4 verir
               
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

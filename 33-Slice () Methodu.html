@@ -10,15 +10,15 @@
   
     <script>
 
-        // slice() methodu arrayin istediğimiz kısmını alıp yeni bir array oluşturur
-        // Orjinal arrayi bozmaz 
+        // slice() methodu arrayin istediğimiz kısmını alıp (yeni bir array) oluşturur
+        // Orjinal arrayi bozmaz!!! 
 
         var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 
-        var citrus = fruits.slice(1, 3);
+        var citrus = fruits.slice(1, 3);   // Index(3) dahil degil
         
         console.log(citrus); // ["Orange", "Lemon"]
-        console.log(fruits); // Orjinal array değişmez
+        console.log(fruits); // Orjinal array değişmez.
         
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,8 +30,8 @@
         console.log(months.slice(-2, -4));  // [] boş array verir, sondan başa doğru gitmez daima baştan sona doğru hareket eder
         console.log(months);                // Orjinal array değişmez    
         
-        console.log(months.reverse());      // Array tersten yazıldı ve orjinali değiştirir
-        console.log(months);
+        console.log(months.reverse());      // Array tersten yazıldı ve orjinali değiştirir. reverse() methodu
+        console.log(months);                // Gorulecegi uzere buradaki ciktida artik array orjinal hali degisti
          
     </script>
   
