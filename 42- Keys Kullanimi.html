@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Includes Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+    
+    // Liste elemanalarinin index numaralarini ogrenmek icin kullanilir
+
+    let liste = ["Emre", "Ali", 15, 24, "Kedi", "Aslan", "85", "78", "Izmir", "Elma"];
+    let numara;
+    let anahtar = liste.keys();
+
+    document.writeln(liste);
+
+    for (numara of anahtar){
+        document.writeln(numara + "<br>");
+    }
+
+    liste[0] = "Karpuz";    // Listenin index 0 da bulunan elemanini degistirmis olduk 
+    document.writeln(liste);// Ve yeni listeyi yazdirdik
+
+    </script>
+  
+</body>
+</html>
