@@ -30,13 +30,15 @@
 
         var fruits2 = ["Banana", "Orange", "Lemon", "Apple", "Mango", "Strawberry", "Mango", "Mango", "Banana"];
 
-        var last = fruits2.lastIndexOf("Mango");   
+        var last = fruits2.lastIndexOf("Mango");        // Bu sekilde bir degiskene de atanabilir
         console.log(last);                              // 7 çıkar
         console.log(fruits2.lastIndexOf("orange", 4));  // Case sensitive
-        console.log(fruits2.lastIndexOf("Tomato", 4));  // -1 verir, çünkü array içinde o eleman yok
         console.log(fruits2.lastIndexOf("Orange", 4));  // 1 çıkar, başlangıç indexi 4 ve sola doğru bakmaya devam eder
         console.log(fruits2.lastIndexOf("Lemon", -2));  // 2 çıkar, başlangıç indexi negatif değer de verilebilir
 
+        let search = fruits2.lastIndexOf("Tomato", 4);  // -1 verir, çünkü array içinde o eleman yok
+        // let search = fruits2.lastIndexOf("Lemon", 4);
+        search < 0 ? console.log("Aranan eleman array icerisinde yok"): console.log(`Aranan elemanin index numarasi: ${search}`);  // Bu sekilde de bir kontrol mekanizmasi kurabiliyoruz 
     </script>
   
 </body>

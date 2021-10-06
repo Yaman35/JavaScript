@@ -74,7 +74,7 @@
                 break;
                 
                 default:
-                    message = "Select a product";     
+                    message = `Do you want to buy ${product};`   // Text kismi bu sekilde de yazilabilir     
             }
 
             console.log(product, message);     // Çıktısı Eraser is 0.50$ olur, bu sekilde de yazdirilabilir
@@ -106,32 +106,67 @@
 
             //-------------------------------------------------------------------------------------------------------------------------
 
-            let dayUser = prompt("Bir gün giriniz: ");
-            let day = dayUser.toLocaleLowerCase();     // Bu şekilde kullanım tüm diller için uygun olur
+            let dayUser = prompt("Please enter a day: ");
+            let day = dayUser.toLocaleLowerCase();     // Bu şekilde kullanım tüm diller için uygun olur. Icine ('tr') yazsaydik Turkce karakterlerde daha az sikinti yasardik
             let message2;
 
-            switch(day) {
+            switch(day) {  // Burada oldugu gibi baska bir degiskene atamadan direk toLowerCase li halini de yazabilirdik
                 case "monday":   
                 case "wednesday":
                 case "thursday":
                 case "saturday":
-                    message2 = "Bugün in-class var";
+                    message2 = "There is in-class today";
                 break;
 
                 case "tuesday":        
                 case "friday":
-                    message2 = "Bugün TW var";
+                    message2 = "There is TW today";
                 break;
 
                 case "sunday":
-                    message2 = "Bugün tatil";
+                    message2 = "Today is holiday";
                 break;
 
                 default:
-                    message2 = "Günü doğru girmediniz";
+                    message2 = "Invalid day";
 
             }
             document.write(message2);
+
+            //--------------------------------------------------------------------------------------------------------------------
+
+            // Leap Year:
+
+            var year = 2024;
+            var month = 4;
+            var dayCount;
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    dayCount = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    dayCount = 30;
+                    break;
+                case 2:
+                    if (((year % 4 == 0) && !(year % 100 == 0))
+                        || (year % 400 == 0))
+                        dayCount = 29;
+                    else
+                        dayCount = 28;
+                    break;
+                default:
+                    dayCount = -1; // invalid month
+            }
+            console.log(dayCount); // 29
         </script>
     </pre>
     
