@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Includes Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+    // Includes() methodu icerisine iki parametre alir ve girilen parametrenin array icerisinde olup olmadigina bakar
+    // Ilk parametre aratilmak istenen elemandir, ikinci parametre ise belirtilen idexte mi (index sayisi girilir)
+    // Eger parantez icindeki eleman array icerisinde ise true, yoksa false donderir
+    // Mesela kufurleri engelleyecek sekilde bir yazilim yapmak bununla mumkundur
+
+    let eleman = ["Emre", "Ali", 15, 24, "Kedi", "Aslan", "85", "78", "Izmir", "Elma"];
+    document.write("Liste : <br> " + eleman + "<br>");
+
+    var search1 = eleman.includes("Ali");
+    document.write(search1 + "<br>");
+
+    var search2 = eleman.includes("Ali", 2); // false, cunku eleman 1.indexte (Yukarida yazmistik ikinci parametre indexte mi sorusu icin)
+    document.write(search2 + "<br>");
+
+    var search3 = eleman.includes("Ali", 1); // true cikar
+    document.write(search3 + "<br>");
+
+    //------------------------------------------------------------------------------------------------------
+    
+    if (search1 == true){
+        console.log("Evet aradiginiz eleman listede");
+    }
+    else{
+        console.log("Aradiginiz eleman bulunamadi");
+    }
+
+    // Su sekilde yazmak daha guzel olur
+
+    search1 ? console.log("Evet aradiginiz eleman listede") : console.log("Aradiginiz eleman bulunamadi");
+
+    
+    </script>
+  
+</body>
+</html>
