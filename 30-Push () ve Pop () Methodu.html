@@ -16,13 +16,45 @@
 
         var points = [40, 100, 1, 5, 25, 10]
         points.push(18);
-        console.log(points);    
+        console.log(points); 
+        
+        
+        // Asal sayilari bir dizi halinde yazdirir
+        function asalSayiKontrol(baslangic, bitis) {
+            var asalDizi = [];
+            for (var i = baslangic; i <= bitis; i++) {
+                var asalKontrol = true;
+                for (var j = 2; j <= i; j++) {
+                    if (i != j && i % j == 0) {
+                        asalKontrol = false;
+                        break;
+                    }
+                }
+                if (asalKontrol) {
+                    asalDizi.push(i);
+                }
+            }
+            return console.log(asalDizi);
+        }
+        asalSayiKontrol(35, 150);
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
         names2.pop();             // pop() methodu array in her zaman (SON ELEMANINI SILER), içine parametre almaz 
         console.log(names2);
+
+        let names3 = ["John", "James", "Aaron", "Walter", "Edward"];
+
+        function remove(){   // Her seferinde bu fonksiyonu cagirarak islem yaptirabiliriz
+            names3.pop();    // Arrayin son elemanin sileriz
+            document.write(names3 + " <br> ");
+        }
+
+        remove();  // Bu sekilde her seferinde ilgili fonksiyonu cagirarak her seferinde ilgili arrayin son elemanini silme islemini gerceklestirebiliriz
+        remove();
+        remove();
+       
         
 
         

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+    
+    let liste = [15, 24, 85, 78];
+    document.write(liste + "<br>");
+    
+    function carp(islem){   // carp() diye bor fonksiyon tanimlandi sadece
+        return islem * 2 ;    // icine aldigi degeri sadece 2 ile carpiyor
+    }
+
+    let result = liste.map(carp);   // Iste burada map() methodu ile, map icindeki fomksiyonu liste arrayinin tum elemanlarina uygula demek istiyoruz 
+    document.write(result + "<br>");
+
+    // let result = carp(liste); Eger bu sekilde yazsaydik "NaN" verecekti
+    </script>
+  
+</body>
+</html>
