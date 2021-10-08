@@ -117,19 +117,65 @@
         // Prime Number Authantication - 2
 
         var flag = true;
-        var number = parseInt(prompt("Please enter number : "));
-        if(number<2)console.log(`Minimum prime number:2  ${number} is lower than 2`)
+        var number2 = parseInt(prompt("Please enter number : "));
+        if(number2<2)console.log(`Minimum prime number:2  ${number2} is lower than 2`)
         else{
-        for(let i = 2;i<number;i++){
-            if (number%i ==0){
+        for(let i = 2;i<number2;i++){
+            if (number2%i ==0){
                 flag = false;
                 break
             }  
         }
-        if(flag) console.log(`${number} is a prime number`);
-        else console.log(`${number} is not a prime number`);
+        if(flag) console.log(`${number2} is a prime number`);
+        else console.log(`${number2} is not a prime number`);
         }
-        
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Reverse Text - 1
+
+        function reverse_txt(myText) {
+          if (myText.length == 1) {
+            console.log(myText);
+         } else {
+            newText = "";
+            for (let i = myText.length - 1; i >= 0; i--) {
+              newText += myText[i];
+            }
+            console.log(newText);
+          }
+        }
+
+        reverse_txt("Clarusway is the best");
+
+        // Reverse Text - 2
+
+        function reverseWord(myWord){
+            var lastWord = ""
+            if (myWord.length === 1){
+                console.log(myWord);
+            }
+            else{
+                for(i = myWord.length - 1; i >=0; i--){    
+                    lastWord += myWord[i];
+                }
+            }
+            let last = lastWord.toUpperCase();
+            console.log(last);
+        }
+
+        reverseWord('ey edip adanada pide ye')
+
+        //Reverse Text - 3
+
+        function reverseWords(str) {
+            return str.split('').reverse().join('').split(' ').reverse().join(' ');} 
+        console.log(reverseWords('Hayirli Cumalar'));
+
+        function reverse_text(text) { 
+            return text.split("").reverse().join("");
+        } console.log(reverse_text("+*/clarusway-clarusway!"))
+
         </script>
     
 </body>

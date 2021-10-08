@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+        // some() methodu, array elemanlari uzerinde bir test yapmamiza yarar. 
+        // Cikti olarak boolean deger donderir.( true / false ), map() methodu ile kullanim yonunden benzerlik gosterir.
+        // Sonucu true olana kadar ilgili fonksiyona gore arrayin tum elemanlarini dolasir eger bulamazsa false donderir
+
+        let liste = [20, 25, 12, 36, 52, 18, 46];
+        document.write(liste + "<br>");
+
+        function find(search){
+            return search <= 4;             // Burada icindeki elemanin 4 ten kucuk olmasi durumunda donderen bir fonksiyon yazdik
+        }
+
+        function find2(search){
+            return search <= 40;            // Burada icindeki elemanin 40 ten kucuk olmasi durumunda donderen bir fonksiyon yazdik
+        }
+
+        let result1 = liste.some(find);     // some() methodu ile diyoruz ki, liste arrayinin her elemanina find fonksiyonunu uygula ve sonucu true/false olarak cikar
+        document.write(result1 + "<br>");   // false cikar, cunku liste icerisinde 4 ten kucuk herhangi bir sayi yoktur
+
+        let result2 = liste.some(find2);    // some() methodu ile diyoruz ki, liste arrayinin her elemanina find fonksiyonunu uygula ve sonucu true/false olarak cikar
+        document.write(result2 + "<br>");   // true cikar, cunku liste icerisinde 40 ten kucuk eleman/lar var
+
+    </script>
+  
+</body>
+</html>

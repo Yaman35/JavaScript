@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReduceRight Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+    
+    let dizi1 = [10, 20, 30, 40, 50, 100];
+    document.write(dizi1 + "<br>");
+    
+    function process1(total1, number1){
+        document.write(`Toplam: ${total1}, Siradaki sayi: ${number1} <br>`) 
+        return total1 + number1;
+    }
+
+    let first_value1 = 50;
+    let result1 = dizi1.reduce(process1, first_value1);            
+    // Burada dizi arrayine process fonksiyonunu uygula demektir.
+    document.write(`Sonuc: ${result1} <br>`);
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    // reduce() methodunun tam tersi, yani reduce soldan saga islem yaparken, reduceRight() da sagdan sola olacak sekilde islem yapar
+
+    let dizi2 = [10, 20, 30, 40, 50, 100];
+    document.write(dizi2 + "<br>");
+    
+    function process(total2, number2){
+        document.write(`Toplam: ${total2}, Siradaki sayi: ${number2} <br>`) // Burasi sayesinde sagdan sola calistigini gorebiliriz
+        return total2 + number2;
+    }
+
+    let first_value2 = 50;
+    let result2 = dizi2.reduceRight(process, first_value2);            
+    // Burada dizi arrayine process fonksiyonunu sag taraftan baslayacak sekilde uygula demektir.
+    document.write(`Sonuc: ${result2} <br>`);
+
+    </script>
+  
+</body>
+</html>

@@ -68,7 +68,7 @@
                 console.log(x);
             }
 
-        //----------------------------------------------------------------------------------------------------------------------
+       
         
         // FizzBuzz Cuzumu - 2
 
@@ -76,9 +76,37 @@
         var f = i % 3 == 0, b = i % 5 == 0; // Bu kisim "true" lar uzerinden gidiyor
         console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
         // Aslinda burada f ve b ayni anda dogruysa "FizzBuzz" yaz,
-        // Aksi takdirde "Fizz" yaz ama b dogruysa da "Fizz" degil "Buzz" yaz
-            
-    }
+        // Aksi takdirde "Fizz" yaz ama b dogruysa da "Fizz" degil "Buzz" yaz anlamina geliyor
+        }
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // 1-100 Arasindaki Asal Sayilari Bulma - 1
+
+        for (var i = 2; i <= 100; i++) {
+            for(var k = 2; k < i; k++){
+                if(i % k == 0){
+                    break;
+                }
+            }
+            if(i == k){
+                console.log(i)
+            }
+        }
+
+
+        // 1-100 Arasindaki Asal Sayilari Bulma - 2
+
+        for(let num = 2 ; num < 100; num++){
+            var sonuc = true;
+                for(let i = 2; i < num; i++){
+                    if(num %i == 0){
+                       sonuc = false;
+                       break;
+                    }
+                }  
+            sonuc == true ? console.log(num) : null;    
+        }
 
     </script>
 </body>

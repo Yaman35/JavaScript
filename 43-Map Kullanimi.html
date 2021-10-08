@@ -10,6 +10,8 @@
   
     <script>
     
+    // mao() fonksiyonu ile array icerisindeki tum elemanlara, map methodu icerisine giren fonksiyonu uygulatabiliyoruz
+    
     let liste = [15, 24, 85, 78];
     document.write(liste + "<br>");
     
@@ -17,7 +19,7 @@
         return islem * 2 ;    // icine aldigi degeri sadece 2 ile carpiyor
     }
 
-    let result = liste.map(carp);   // Iste burada map() methodu ile, map icindeki fomksiyonu liste arrayinin tum elemanlarina uygula demek istiyoruz 
+    let result = liste.map(carp);   // Iste burada map() methodu ile, map icindeki foksiyonu liste arrayinin tum elemanlarina uygula demek istiyoruz 
     document.write(result + "<br>");
 
     // let result = carp(liste); Eger bu sekilde yazsaydik "NaN" verecekti

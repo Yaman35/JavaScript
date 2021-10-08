@@ -10,11 +10,27 @@
   
     <script>
 
+        // shift() methodu, pop () methodunun tam tersidir !
+        // pop() sondan siler, shift() bastan siler
+
         let names = ["John", "James", "Aaron", "Walter", "Edward"];
 
-        shiftedName = names.shift();      // shift() methodu, array in ilk elamanını dönderir, o eleman artik array icerisinde gozukmez
+        shiftedName = names.shift();      // shift() methodu, array in ilk elamanını dönderir, o eleman artik array icerisinde gozukmez, bir nevi dizi elemanlarini bastan itibaren siler
         console.log(shiftedName);         // John dönderir
         console.log(names);               // John çıkartılmış array hali kalir
+
+        function sil1(){
+            names.pop();
+            document.write("Listenin son hali: " + names + "<br>")
+        }
+
+        function sil2(){
+            names.shift();
+            document.write("Listenin son hali: " + names + "<br>")
+        }
+
+        sil1();
+        sil2();
 
 
         var colors = ["Red", "Yellow", "Green"];
@@ -22,7 +38,10 @@
         colors.shift();             // Array ilk elemanını çıkardı
         console.log(colors);        // ["Yellow", "Green", "Red"] şeklinde olur son hali, Bir nevi ilk elamani sonuna dogru attik
 
-    // //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        // unshift() methodu ise, push() methodunun tam tersidir ! 
+        // push() sona ekler, unshift() basa ekler
 
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
 
@@ -30,6 +49,8 @@
         console.log(names2);              // Arrayin "Yaman" eklenmiş hali cikar, yani arrayin tamami
         names2.unshift("Yavuz Ali", "Emine");
         console.log(names2);
+
+        
         
     </script>
   
