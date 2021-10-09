@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToString Kullanımı</title>
+</head>
+<body>
+  
+    <script>
+
+    // Object kullanimi birden fazla veriyi tutabilmek icin kullanilan bir yapidir 
+
+    let owner = "mine";
+    let color = "yellow";
+    let age = 4;
+    let brand = "Opel";
+
+    // Yukaridaki 4 degiskeni object seklinde tutabilmek icin asagidaki sekilde bir yapi hazirlanir
+    
+    // Object Olusturma - 1
+
+    let car1 = {             // Object Gosterim
+        owner : "Yaman",
+        color : "yellow",
+        age : 4,
+        brand : "Opel",
+        open : function (){
+            // Bu sekilde fonksiyonlari dahi tutabiliriz, icine istedimiz fonksiyon islemini de yazdirabiliriz
+        }  
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
+    // Object Olusturma - 2
+
+    let car2 = new Object();
+
+    car2.owner = "Yaman";
+    car2.color = "Yellow"
+    car2.yas = 4;
+    car2.brand = "Opel";
+
+    document.write(car2.owner + "<br>"); // Object ozelliklerini bu iki sekilde yazdirabiliriz 
+    document.write(car2["color"] + "<br>");
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+
+    // Object This Kullanimi
+
+    var global_degisken;
+
+    let car3 = {             
+        owner : "Yaman",
+        color : "Yellow",
+        age : 4,
+        brand : "Opel",
+        durum : function yaz(){
+            document.write("SATILDI..." + "<br>");
+            document.write(car3.color + "<br>");
+            document.write(this.brand + "<br>");     // Bu sekilde bir kullanim fonksiyonun su { } icerisinde bir yerde "brand' degiskeni var onu getir demek istiyoruz,
+                                                     // Yani aslinda "car3.brand" yerine "this.brand" yazdik, ikisi de ayni islemi yapacaktir
+                                                     // Temel mantik olarak "this" ile bu nesnenin icerisinde calisiyorum demek istiyoruz
+
+            global_degisken = this.age;              // Bu sekilde global bir degiskene, "this" ile fonksiyonun {} icersiidneki bir ozelligini de atayabiliyoruz
+            document.write(global_degisken + "<br>");
+        }  
+    }
+
+    car3.durum();      // Object icerisindeki fonksiyonu da bu sekilde cagirabiliriz
+
+    </script>
+  
+</body>
+</html>

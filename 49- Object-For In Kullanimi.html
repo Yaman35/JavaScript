@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object For In Kullanimi</title>
+</head>
+<body>
+    <script>
+
+    // Object For In Kullanimi, mesela nesnenin 100 tane ozelligi var bunlari yazdirabilmek icin kullanilir
+    
+        let car3 = {             
+        owner : "Yaman",
+        color : "Yellow",
+        age : 4,
+        brand : "Opel",
+        durum : function yaz(){
+            document.write("SATILDI..." + "<br>");   
+        }  
+    }
+
+    let liste;
+
+        for (liste in car3){ // car3 nesnesinin icersindeki tum ozellikleri listenin icine aktarmasini istiyorum
+            document.write(liste + "<br>"); // Bu sekilde tum nesne ozelliklaerini ekrana yazdirabiliyoruz
+        }
+    </script>
+</body>
+</html>

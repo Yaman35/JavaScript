@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object For In Kullanimi</title>
+</head>
+<body>
+    <script>
+
+        let car = {             
+        owner : "Yaman",
+        color : "Yellow",
+        age : 4,
+        brand : "Opel",
+        durum : function yaz(){
+            document.write("SATILDI..." + "<br>");   
+        }  
+    }
+
+    let real_car = car;  // Bu sekilde bir nesney ibaska bir degiskene de atayabiliyoruz
+    real_car.speed = "240 km/h"; // Yeni atadigimiz degiskeni de kullanarak nesneye yeni ozellikler ekleyebiliyoruz 
+
+    document.write(real_car.color + "<br>");
+    document.write(real_car.speed + "<br>");   
+    
+    </script>
+</body>
+</html>
