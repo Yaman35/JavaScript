@@ -13,12 +13,12 @@
         function display(){
             var student = "Hakan"
             document.writeln(student + "<br>")          // Hakan çıkartır
-            document.writeln(this.student + "<br>")     // Zeynep çıkartır
+            document.writeln(this.student + "<br>")     // Zeynep çıkartır(globaldeki student, yani tanimlandiktan sonra artik window nesnesi olan)
     }
     display();
 
     // Burada normalde çıktı olarak Hakan verirdi. Ama biz Zeynep'e ulaşabilmek için (window içindeki nesneye) başına this ekleyerek this.student yazmamız gerekiyor(global olana ulaşmak için)
-    // Globaldeki değişkenlere fonksiyon dışında iken erişmekte herhangi bir sıkıntı yok fakat fonksiyon içerisinde iken ulaşmak istediğimizde işte bu "this" yapısını kullanmaktayız
+    // Globaldeki değişkenlere fonksiyon dışında iken erişmekte herhangi bir sıkıntı yok fakat fonksiyon içerisinde iken ulaşmak istediğimizde işte bu "this" yapısını kullanmaktayız !!!
     
     // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,24 +28,39 @@
 
         function display2(){
             var student2 = "Hakan"  
-            var insan = this.student2;  // Globaldeki student2 değişkenini insan değişkenine atamış olduk
+            var insan = this.student2;  // Globaldeki student2 değişkenini, insan değişkenine atamış olduk
             
             document.writeln(insan)     // Zeynep çıkartır
         }
         display2();
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        
+    
+
+        var person1 = {
+            fullName : function(){
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+
+        var person2 = {
+            firstName : "John",
+            lastName : "Doe",
+        }
+
+        console.log(person1.fullName.call(person2));  // Will return John Doe
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         // This methodu, cat object
         // this içerisinde bulunduğu scopa işaret ediyor
-        // this özelliği arrow function larda kullanılamıyor
+        // this özelliği arrow function larda kullanılamıyor!
         
         const cat = {
         name: 'Muezza',
         age: 8,
-        whatName() {return this.name}
+        whatName() {return this.name} // Object icerisindeki name cagirma daha once gormustuk
         };
-        console.log(cat.whatName());  // Output: Muezza, Objecte ait bir değeri bu şekilde çağırabiliriz 
+        console.log(cat.whatName());  // Output: Muezza, Objecte ait bir değeri bu şekilde de çağırabiliriz 
 
 
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      function islem(a, b) {
+        var deger;
+        return (deger = a * b);             // Burada return bir deger donderir lakin ekrana yazdirmak icin tek basina yeterli degildir
+      }
+
+      function goster() {
+        document.write('Ic ice Fonksiyon kullanildi ve sonuc:', islem(5, 10)); // Bir fonksiyon icersiinde diger bir fonksiyon bu ssekilde cagrildi
+      }
+
+      goster();
+    </script>
+  </body>
+</html>

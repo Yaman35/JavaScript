@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pascal(n) {
+          let sum = 0;
+          for (let i = 0; i <= n; i++) {
+            sum += i;
+          }
+          return sum;
+        }
+
+        // second way
+        function pascal(n) {
+          return (n * (n + 1)) / 2;
+        }
+
+        // third way
+        function pascal(n) {
+          let arr = [];
+          for (let i = 0; i <= n; i++) {
+            arr.push(i);
+          }
+          return arr.reduce((a, b) => a + b);
+        }
+
+        console.log(pascal(5));
+
+        //-------------------------------------------------------------------------------------------------------------------------------
+
+        function divide(dividend, divider) {
+            if (isNaN(dividend) || isNaN(divider)) return -1;
+            if (divider == 0) return -1
+            var a = dividend / dividend
+            var b = dividend % dividend
+            var list = [];
+            list.push(b);
+            list.push(a);
+            return list;
+        }
+        let result = divide(5, 3);
+        console.log(result);
+
+function divide(dividend, divider) {
+            if (isNaN(dividend) || isNaN(divider)) return -1;
+            if (divider == 0) return -1
+            var a = dividend / dividend
+            var b = dividend % divider
+            var list = [];
+            list.push(b);
+            list.push(a);
+            return list;
+        }
+        let result = divide(5, 3);
+        console.log(result);
+
+        //----------------------------------------------------------------
+        function divide(dividend, divider) {
+  let quotient = dividend / divider;
+  let remainder = dividend % divider;
+  let result = [quotient, remainder];
+
+  if (divider === 0) return;
+  return result;
+}
+
+//----------------------------------------------------------------
+
+function divide(num1,num2){
+    if (num1==0|| num2==0){
+        return 'enter a number';
+    }
+    else{
+        let sonuc = parseInt(num1/num2)
+        let kalan=num1%num2
+        let result = [ sonuc ,kalan]
+        return result
+    }
+}
+let son = divide(10 ,3)
+console.log(son);
+
+//-------------------------------
+
+function divide(dividend, divider) {
+            if (isNaN(dividend) || isNaN(divider)) return -1;
+            if (divider == 0) return -1
+            var a = dividend / dividend
+            var b = dividend % dividend
+            var list = [];
+            list.push(b);
+            list.push(a);
+            return list;
+        }
+        let result = divide(5, 3);
+        console.log(result);
+
+        //-------------------------------
+
+        function divide(num1, num2){
+  if(isNaN(num1) ||isNaN(num2)){
+    return;
+  }
+  else if((num1 % num2) >= 0){
+    console.log(num1%num2) 
+  } 
+  else{
+    console.log("-1") 
+  }
+}
+
+divide(8,4)
+
+//---------------------------------------------------------------
+
+function quot(quotient,divider){
+    let result = [];
+    if(divider == 0){
+        return -1 ;
+    }
+    else{
+        var num= Math.round(quotient/divider);
+        var num2 = Math.round(quotient%divider);
+        result.push(num);
+        result.push(num2);
+        return result;
+    }
+}
+console.log(quot(13,4));
+
+//---------------------------------------------------------------
+
+function divide(x, y) {
+  if (y == 0) return "Please enter valid divider";
+  let quotient = Math.floor(x / y);
+  let remainder = x % y;
+  return `Quotient: ${quotient}, Reminder: ${remainder}`;
+}
+console.log(divide(13, 3));
+    </script>
+</body>
+</html>

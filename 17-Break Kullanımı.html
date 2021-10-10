@@ -9,6 +9,10 @@
 <body>
 
     <script>
+
+        // Tamamen donguyu durdurmak icin "break" kullanilir. Sadece bir ifadeyi yazmasini istemiyorsak ise "continue"kullanilir
+        // Bazen kod bloklarinda "Flow Through" seklinde notlar gorulur. Bu evet bilerek break kullanmadim, farkindayim anlamindadir
+
         var sayi = 1;
         for(sayi; sayi <=10; sayi++){
             if (sayi === 5){
@@ -40,6 +44,31 @@
             i2++;
            
         }
+
+
+        //------------------------------------------------------------------------------------------------------------------
+
+        // 1-6 arasinda random sayi uretilecek, eger 6 cikarsa veya ust uste 3 defa 3 gelirse donguden cikacak...
+
+        let randomnumber = 0;
+        let counter = 0;
+
+        while (randomnumber !== 6){         // Donguye ilk basta girebilsin diye
+        
+        randomnumber = Math.floor(Math.random() * 6 + 1);   // Random sayi uretme methodu (1-6 arasi), Math.random() always returns a number lower than 1.
+        console.log("randomnumber :>> ", randomnumber);
+            if (randomnumber == 3){ 
+                console.log("randomnumber :>> ", randomnumber);
+                counter++; }            // Sayi 3 ise counter 1 artacak counter 3 olursa donguden cikacak
+            if (counter == 3 ){         // counter > 2 seklinde de yazilabilirdi, sat geregi dongu tamamen biter
+                console.log("3 Comes third times, exiting");
+                break;
+            }
+            if (randomnumber == 6 ){ 
+                console.log("6 has come the loop ends");
+                break;
+            }
+        }       
     </script>
     
 </body>

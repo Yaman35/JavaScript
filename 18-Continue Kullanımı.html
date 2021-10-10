@@ -9,40 +9,16 @@
 <body>
     <script>
 
-        var sayi = 0;
-        while(sayi <= 10){
-            
-            sayi++;                 // Bu şekilde kontrol yapısı mutlak surette if bloğunun üzerinde olmalıdır aksi takdirde tarayıcı sonsuz döngüye girer
-            if ( sayi == 5 || sayi == 9){
-                document.write("Eksik bilgi verdiniz... <br>");
-                continue;           // continue ile o döngünün çalışmamasını atlanmasını sağlayıp bir sonrakine devam ettiriyoruz 
-                                    // Mesela burada "break" deseydik tüm döngü kırılırdı ama continue sadece o dişliyi kırıyor zincir devam ediyor 
-            } 
-            document.write(sayi + ".sayı <br>");
-        }
-
-        //------------------------------------------------------------------------------------------------------------------
-        
-        let i = 0;
-        //console.log(0); 0 başta yazsın istedik
-
-        while (i < 10){
-            i === 0 ? console.log(i) : null; // Bu şekilde 0 da başa yazılmış oldu
-            i++;                             // Arttırma yeri önemli aksi takdirde sonsuz döngüye girilebilir, dikkat etmek gereklidir.
-            if (i % 3 === 0){ 
-                continue;                    // Burada sadece 3 ve 3 ün katlarını yazmamak için bu sefer continue kullandık
-            }
-            console.log(i);
-        }
-
-        //------------------------------------------------------------------------------------------------------------------
-        
+    
         for (let i2 = 0; i2 < 7; i2++){
             if (i2 == 2 || i2 ==4){          // 1 den 7 ye kadar olan sayılardan 2 ve 4 ü yazdırma demektir
                 continue;
             }
             console.log(i2)
         }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
     </script>
 </body>

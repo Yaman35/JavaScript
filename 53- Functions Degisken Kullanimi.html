@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      var global = 'Global';    // Global olan degisken hafizada tutulur ve istedgimiz yerde kullanabiliriz
+
+      function write() {
+        var local = 'Local';    // Fakat local olan degisken sadece tanimlandigi fonksiyon icerisinde kullanilabilir, fonksiyon disinda ulasilamaz
+                                // Fonksiyon parantezi kapandiginda isi bitmis olur hafizada da tutulmaz, sadece fonksiyon bitene kadar tutulur
+      }
+
+      try {
+        document.write(global + '<br>');    // Eger biz burada sadece fonksiyon icersinde tanimlanmis olan local degiskenini yazdirmaya calisirsak bu sekilde hata aliriz
+        document.write(local);              // Bunun icin de try catch yapisini kullanarak ekranda da gosteretebiliriz
+      } catch (message) {                   // Yukaridaki try ifadesi arasindaki kodlari dene hatayi yakala ve message degiskenine ata demek
+        document.write(message + '<br>');   // Takiben de bu message degiskenini ekrana yazdir
+                                            // Ama bu iki document.write() eger fonksiyon icerisinde yazilirsa her iki degisken de cikti olarak alinabilirdi
+      }
+
+    </script>
+  </body>
+</html>

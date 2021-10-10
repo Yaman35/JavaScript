@@ -12,7 +12,7 @@
     // Immediately invoked funtion expression (Anonim Function Kullanımı - Self Invoked Function)
 
     
-    (function()                 // Burada görüldüğü gibi yazım şekli parantez (sarı) içerisinde olur
+    (function()                   // Burada görüldüğü gibi yazım şekli bir baska parantez (sarı) içerisinde olur
       {
         document.write("Merhaba" + "<br>")
       }) ();                      // Ve parantez bitirilir bitirilmez bu fonksiyon oluşturulduğu yerde çağırma işlemi yapılmalıdır, araya başka bir kod girerse çağıramayız
@@ -22,36 +22,39 @@
     (function(isim)
       {
         document.write("Merhaba ", isim, "! <br>")
-      }) ("Yaman");                                 // Parametreli çağırma işlemi
+      }) 
+      // Baska kod 
+      ("Yaman");                  // Parametreli çağırma işlemi
+                                  // Eger bu cagirma kodu ile fonksiyon arasinda baska bir kod yazilsaydi fonksiyonu cagirsak bile kod calismazdi
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------
     
     let age = 50;
-    (function(isim)                                 // Bu fonksiyon türünün dezavantajı kendinden önce gelen değişkenlere kullanabilirken kendinden sonra gelenleri tanımıyor
+    (function(isim)               // Bu fonksiyon türünün dezavantajı kendinden önce gelen değişkenleri kullanabilirken kendinden sonra gelenleri tanımıyor
       {
         document.write("Merhaba ", isim, "!", age, "<br>")
       }) ("Yaman");
       
-    // let age = 50; Mesela bu değişken yukarıda değil de burada tanımlansaydı bu değişkeni kullanamayacaktı ve undefined şeklinde yaş kısmını gösterecekti
+    // let age = 50; Mesela bu değişken yukarıda değil de burada tanımlansaydı bu değişkeni kullanamayacaktı ve yaş kısmını "undefined" şeklinde gösterecekti
     
     //--------------------------------------------------------------------------------------------------------------------------------------------------
 
       (function (n){                      // Immediately invoked funtion expression
         var sum = 0;
-        while (n>=0){
+        while (n >= 0){
             sum += n;
             n--;
         }
-        console.log('result : ', sum);   
+        console.log('Result is: ', sum);   
 
-        })(4);    // Görüleceği üzere hemen çağrıldı
+        })(4);        // Görüleceği üzere hemen bu sekilde icine parametre alarak çağrıldı ve sonuc 10 cikar
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-    var square2 = function(number2){ return number2 * number2 };         // Bu şekilde fonksyionları bir değişkene de atayabilriz (const, let, var hepsi olur)
+    var square2 = function(number2){ return number2 * number2 };         // Bu şekilde fonksyionları bir değişkene de atayabiliriz (const, let, var hepsi olur)
     console.log(square2(10));
 
-    const square3 = new Function("number", "return number*number");     // Bu iki şekilde de yazılabilir
+    const square3 = new Function("number", "return number*number");      // Bu iki şekilde de yazılabilir !!!
     console.log(square3(8));      
     
     //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -59,15 +62,16 @@
     function sayHi1(){
       return "Hello from sayHi1";
     }
-    console.log(sayHi1());  // Burayı sayHi tanımlanmadan önce yani en üstte yazsaydık da sıkıntı olmazdı çünkü bu bir regular function
+    console.log(sayHi1());        // Burayı sayHi tanımlanmadan önce yani en üstte yazsaydık da sıkıntı olmazdı çünkü bu bir regular function (ismi var)
 
     const sayHi2 = function greet(){return "Hello from sayHi2"};
-    console.log(sayHi2());  // Fakat buradaki sayHi2 functionu yukarıda çağırsaydık olmazdı çünkü bu bir anonim function ile tanımlandı 
-                            // Burada greet() fonksiyonunu çağırsaydık hata alırdık
-    
+    console.log(sayHi2());        // Fakat buradaki sayHi2 functionu yukarıda çağırsaydık olmazdı çünkü bu bir anonim function ile tanımlandı 
+                                  // Burada greet() fonksiyonunu çağırsaydık hata alırdık, cunku fonksiyon baska bir degiskene atandi
+                                  // Burada eger sadece console.log(sayHi2); seklinde yazsaydik bu seferde ciktida "ƒ greet(){return "Hello from sayHi2"}" alirdik
+                                  // Burada icinde bir parametresi olmadigi icin sadece sayHi2() seklinde cagirdik aksi takdirde sayHi2(parametre) seklinde cagrilmak zorundaydi, asagida ornekleri var
     //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-    const sayHi3 = function(a,b){return a + b};   // Bu şekilde değer tarafındaki fonksiyona illa ki bir isim vermek zorunda değiliz 
+    const sayHi3 = function(a,b){return a + b};   // Bu şekilde, değer tarafındaki fonksiyona illa ki bir isim vermek zorunda değiliz 
     console.log(sayHi3(3, 6));
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,8 +84,8 @@
     //--------------------------------------------------------------------------------------------------------------------------------------------------
 
     const pascalNumber2 = function recursive(n){
-        if (n === 1) return 1;              // Bunu koymazsak negatif sayılara doğru gider, biz burada bunu yazarak sigortamızı koymuş olduk
-        return n + recursive(n - 1);        // Fonksiyonun kendisini içinde bir daha çağırdık !!!!!!!!!!!!!!!!!!
+        if (n === 1) return 1;                    // Bunu koymazsak negatif sayılara doğru gider, biz burada bunu yazarak sigortamızı koymuş olduk
+        return n + recursive(n - 1);              // Fonksiyonun kendisini içinde bir daha çağırdık !!!!!!!!!!!!!!!!!! (RECURSIVE)
     }
     console.log(pascalNumber(10));
 
@@ -106,6 +110,12 @@
       islem(5, 3);          // Burada önemli olan içteki fonskiyon en altta çağırılırsa çalışmaz, onun yeri fonksiyonun kendi parantezinin hemen bittiği yer yani burası
     }
     goster();
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+    
 
     </script>
     
