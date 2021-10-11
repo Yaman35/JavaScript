@@ -9,7 +9,7 @@
 <body>
     <script>
 
-        // Arrow Functions !
+        // Arrow Functions ! React de cok kullanilirlar
 
         function uzun(a){return a * a;}
             document.write(uzun(5) + "<br>");         // Regular Function
@@ -30,7 +30,7 @@
         const multi = (x, y) => x * y;              
         console.log(multi(8, 4));
 
-        const square = (x) => x ** 2;   // Bunda parantez sart degildi
+        const square = (x) => x ** 2;                   // Bunda parantez sart degildi
         console.log(square(8));
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,7 +105,7 @@
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         const iief = (num => num + 5)(10);     // Arrow Function ile Immediately invoked funtion, bu fonksiyonu kullandık bitti gitti 
-        console.log(iief);
+        console.log(iief);                     // Bu sekilde () olmadan cagirmak gereklidir
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -117,6 +117,10 @@
         const sayHi2 = (user = 'New User') => "Hello " + user;    // Bu sekilde onceden bir default deger de belirleyebiliyoruz
         console.log(sayHi2('Emre'));            // Fonksiyon atanmis degiskenin icerisine tekrardan bir parametre aldik, dolayisiyla default deger "Emre" kullanilmamis oldu
         
+        
+        const sayHi1 = (user = 'New User') => user ? `Welcome ${user}`: "Welcome New User"; // Bu sekilde de cagrilabilir
+        console.log(sayHi1(user));
+
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         const sayHi3 = (user = 'New User') => `Welcome ${user}`;
