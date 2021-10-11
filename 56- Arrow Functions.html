@@ -9,78 +9,85 @@
 <body>
     <script>
 
-        function uzun(a){return a*a;}
-            document.write(uzun(5) + "<br>");
+        // Arrow Functions !
 
-        var kisa = a => a*a;                          // Arrow Functions Kullanımı, bu şekilde bir değişkene atamakta fayda var
+        function uzun(a){return a * a;}
+            document.write(uzun(5) + "<br>");         // Regular Function
+
+        var kisa = a => a * a;                          // Arrow Functions Kullanımı, bu şekilde bir değişkene atamakta fayda var
             document.write(kisa(6) + "<br>");
         
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-        function uzun2(a, b){return a*b;}
+        function uzun2(a, b){return a * b;}
             document.write(uzun2(5, 10) + "<br>");
 
-        var kisa2 = (a, b) => a*b;                    // Birden fazla parametre istemek istenirse veya hiç parametre istenmezse, bu şekilde parantez içinde kullanmak gereklidir
+        var kisa2 = (a, b) => a * b;                    // Birden fazla parametre istemek istenirse veya hiç parametre istenmezse, bu şekilde parantez içinde kullanmak gereklidir
             document.write(kisa2(6, 10) + "<br>");
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         
-        const multi = (x, y) => x * y;                // Arrow Functions
+        const multi = (x, y) => x * y;              
         console.log(multi(8, 4));
 
-        const square = (x) => x**2;
+        const square = (x) => x ** 2;   // Bunda parantez sart degildi
         console.log(square(8));
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-        // (a) => {                    
-        //     return a + 100;
-        // }
+        /* 
+        (a) => {                    
+            return a + 100;
+        }
 
-        // (a) => a + 100;                               // Eğer tek satır yazılacaksa bu üçü de aynı 
+        (a) => a + 100;                                 // Eğer tek satır yazılacaksa bu üçü de aynı 
 
-        // a => a + 100 ;
+        a => a + 100 ;
+        */
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         var kisa3 = (a, b) => {
-            var sayi;                                 // Fakat bu şekilde birden fazla satır yazacaksak mutlaka {} içinde yazmamız gerekiyor, yoksa hata alıyoruz
-            return sayi = a*b;                        // Ayrıca bu şekilde return kullanmakta da fayda var 
+            var sayi;                                   // Fakat bu şekilde birden fazla satır yazacaksak mutlaka {} içinde yazmamız gerekiyor, yoksa hata alıyoruz
+            return sayi = a * b;                        // Ayrıca bu şekilde return kullanmakta da fayda var 
         }                   
             document.write(kisa2(7, 10) + "<br>");
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-        // function test(a, b){
-        //     return a + b + 100;
-        // }
-
-
-        // (a, b) => a + b + 100;
-
-
-        // let a = 4;
-        // let b = 2;                                     // Bu hepsi aynı fonksyionun farklı tanımlanma şeklidir
-
-        // function test(a, b){
-        //     return a + b + 100
-        // }
-
-
-        // let a = 4;
-        // let b = 2;
-
-        // () => a + b + 100
+        // Asagidakileerin hepsi aynı fonksyionun farklı tanımlanma şeklidir
         
+        /*
+        function test(a, b){
+            return a + b + 100;     Regular Function
+        }
+
+
+        (a, b) => a + b + 100;      Arrow Function          
+
+
+        let a = 4;
+        let b = 2;                                    
+
+        function test(a, b){
+            return a + b + 100      Degiskenli Regular Function
+        }
+
+
+        let a = 4;
+        let b = 2;
+
+        var arrow = () => a + b + 100           Degiskenli Arrow Funvtion
+        */
         //--------------------------------------------------------------------------------------------------------------------------------------------------
         
-        ( sayi2 =>{                                   // Bu şekilde anonim fonksiyonlarla birlikte de kullanabiliriz
-        var g = sayi2 * 10;                           // Dikkat edilmesi gereken yine çoklu satır olduğunda {} kullanılması gerektiğidir
-        document.write(g + "<br>");}
-        ) (20);
+        (sayi2 =>{                                    // Bu şekilde anonym fonksiyonlarla birlikte de kullanabiliriz
+        var goster = sayi2 * 10;                      // Dikkat edilmesi gereken yine çoklu satır olduğunda {} kullanılması gerektiğidir
+        document.write(goster + "<br>");}
+        ) (20);         // Goruldugu gibi fonksiyon biter bitmez sicak sicak kullanilmistir
 
-        ( item => { 
-        total = item + 1;
+        (item => { 
+        var total = item + 1;
         document.write(total)
         }) (41);
 
@@ -92,39 +99,40 @@
         console.log(arrow(2));
 
 
-        const arrow2 = a => a + 100;        // Görüleceği üzere tek satır var ise {} gerek yok ve tek parametre varsa () yazılmasına da gerek yok 
+        const arrow2 = a => a + 100;          // Görüleceği üzere tek satır var ise {} gerek yok ve tek parametre varsa () yazılmasına da gerek yok 
         console.log(arrow2(3)); 
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-        const iief = (num => num + 5)(10)   // Arrow Function ile Immediately invoked funtion, bu fonksiyonu kullandık bitti gitti 
+        const iief = (num => num + 5)(10);     // Arrow Function ile Immediately invoked funtion, bu fonksiyonu kullandık bitti gitti 
         console.log(iief);
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         const user = 'Mark';
-        const sayHi1 = (user) => `Welcome ${user}`;
-        console.log(sayHi1(user));
+        const sayHi1 = user => `Welcome ${user}`;
+        console.log(sayHi1(user));              // Yukarida artik fonksiyonu degiskene atadigimiz icin degiskenin icine parametreyi yazmamiz gerekir cagirirken
 
         //const user = 'Mark'
-        const sayHi2 = (user = 'New User') => `Welcome ${user}`;
-        console.log(sayHi2('Emre'));
+        const sayHi2 = (user = 'New User') => "Hello " + user;    // Bu sekilde onceden bir default deger de belirleyebiliyoruz
+        console.log(sayHi2('Emre'));            // Fonksiyon atanmis degiskenin icerisine tekrardan bir parametre aldik, dolayisiyla default deger "Emre" kullanilmamis oldu
         
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         const sayHi3 = (user = 'New User') => `Welcome ${user}`;
-        console.log(sayHi3());      // İşte burada bu sefer içini boş gönderirsek bize gelirken default değer olan "New User" gelir
+        console.log(sayHi3());                  // İşte burada bu sefer içini boş gönderirsek bize gelirken default değer olan "New User" gelir
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------
 
         const users = 'Mark';
         const classroom = 'JS Core';
         const sayHi4 = (users) => `Welcome ${users}`;
-        console.log(sayHi4(classroom));
+        console.log(sayHi4(classroom));         // Bu sekilde degiskenin degerini de yazdirabiliyoruz
 
         //------------------------------------------------------------------
 
         // Zero Division Error
+
         const div1 = (num1, num2) => num1 / num2;
         console.log(div1(18,0));                // Infinity
 
@@ -133,28 +141,28 @@
         const div2 = (num1,num2) =>{
             if (num2 === 0){
                 return 'Zero Division Error';
-            }
+            }       // Goruldugu gibi else yazmamiza bile gerek yok
             return num1/num2;
         }
 
-        console.log(div2(18,3));
-        console.log(div2(18,0));
+        console.log(div2(18,3));    // 6
+        console.log(div2(18,0));    // Zero Division Error
 
         //------------------------------------------------------------------
 
         const div3 = (num1, num2) => num2 === 0 ? 'Zero Division Error' : num1/num2;   // Ternary
 
-        console.log(div3(21,3));
-        console.log(div3(18,0));
+        console.log(div3(21,3));    // 7
+        console.log(div3(18,0));    // Zero Division Error
 
         //------------------------------------------------------------------
 
         // Farklı bir ternary daha 
 
-        const div4 = (num1, num2) => num2 ? num1/num2 :'Zero Division';   // Burada num2 true mu yani 0 dan farklı bir değer mi onu sorguluyor ilk önce
+        const div4 = (num1, num2) => num2 ? num1/num2 : 'Zero Division';   // Burada num2 true mu yani 0 dan farklı bir değer mi onu sorguluyor ilk önce
 
-        console.log(div4(18,3));
-        console.log(div4(18,0));
+        console.log(div4(18,3));    // 6
+        console.log(div4(18,0));    // Zero Division Error
 
         //------------------------------------------------------------------
 
@@ -166,7 +174,7 @@
         // const car = () => {make: "BMW"}    Yanlış Kullanım, object çağırırken
         // console.log(car());
 
-        const car = () => ({make: "BMW"})     // Object return ederken bu şekilde () içinde kullanılmalıdır
+        const car = () => ({make: "BMW"})     // Object return ederken bu şekilde ekstra bir () içinde kullanılmalıdır, aksi takdirde "undefined" cikar
         console.log(car());
 
     </script>

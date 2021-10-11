@@ -15,10 +15,26 @@
       }
 
       function goster() {
-        document.write('Ic ice Fonksiyon kullanildi ve sonuc:', islem(5, 10)); // Bir fonksiyon icersiinde diger bir fonksiyon bu ssekilde cagrildi
+        document.write('Ic ice Fonksiyon kullanildi ve sonuc:', islem(5, 10) + '<br>'); // Bir fonksiyon icersiinde diger bir fonksiyon bu ssekilde cagrildi
       }
 
       goster();
+
+      //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      function display(){
+        let yazi = "Merhaba";
+        document.write("Display fonksiyonundan gelen:" + yazi + '<br>');
+          function process(a, b){
+            let result = a * b;
+            return result;
+          }
+         document.write("Process fonksiyonundan gelen:" + process(3, 5) + '<br>');  
+         // Ic ice fonksiyonlarda da bu sekilde icteki fonksiyonu yine ana fonksiyon icersiidne cagirmaliyiz, aksi takdirde hicbir isimize yaramaz
+         // Yine daha once fonksiyon icerisinde return olmasi ekrana yazdirmak icin tek basina yeterli olmaz diye soylemistik
+      }
+      // process(3, 5); Bu sekilde burada cagirmaya calissaydik "process is not defined" hatasi verirdi 
+      display(); 
     </script>
   </body>
 </html>

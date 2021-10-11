@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Kullanimi</title>
+</head>
+<body>
+    <script>
+       
+       // GetUTC Methods Uluslararasi Saati Gostermeye yarar. Date methods ile ayni kullanimdir aslindar
+
+       let calendar = new Date();
+       document.write("Tam Tarih: " + calendar + "<br>");
+
+       let hour = calendar.getUTCHours();
+       document.write("Saat: " + hour + "<br>");
+
+       let minute = calendar.getUTCMinutes();
+       document.write("Minutes: " + minute + "<br>");
+
+       document.write("UTC Time: " + hour + ":" + minute + "<br>");
+
+       //-----------------------------------------------------------------------------------------------------------------------------------------
+       
+       // Girilen tarih ile 1/1/1970 arasindaki mlisaniyeyi gosteren
+
+       var mili = Date.parse(" 02 01 2011"); // Ay-Gun-Yili
+       document.write("1970'ten gunumzue kadar olan milisaniye: " + mili + " ms")
+    </script>
+</body>
+</html>

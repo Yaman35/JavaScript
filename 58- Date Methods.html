@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Kullanimi</title>
+</head>
+<body>
+    <script>
+        let calendar = new Date();                                 // Date Objecti ve onun cok sayida propety si var. Su anda icinde bulundugumuz tarihi cikartir
+        document.write("Tam Tarih: " + calendar + "<br>");   
+
+        let year = calendar.getFullYear();                         // Yili almak icin kullanilir
+        document.write("Year: " + year + "<br>");         
+
+        let month = calendar.getMonth();                           // Ayi almak icin kullanilir, lakin 0 dan basladigi icin sorun oluyor, bu sorunu yazdirirken (month + 1) seklinde duzeltebiliriz
+        document.write("Month: " + (month+1) + "<br>");
+
+        let monthDate = calendar.getDate();                    
+        document.write("Day of the month: " + monthDate + "<br>"); // Ilgili ayin kacinci gunu oldugunu almak icin kullanilir
+
+        let weekDate = calendar.getDay();                    
+        document.write("Day of the week: " + weekDate + "<br>");   // Ilgili haftanin kacinci gunu oldugunu almak icin kullanilir. Pazardan baslar, pazar ise 0 gelir sonrasinda 6 ya kadar gider
+                    
+        let hour = calendar.getHours();                            // Saati almak icin kullanilir
+        document.write("Hour: " + hour + "<br>");
+
+        let minute = calendar.getMinutes();                        // Dakikayi almak icin kullanilir
+        document.write("Minute: " + minute + "<br>");
+
+        let second = calendar.getSeconds();                        // Saniyeyi almak icin kullanilir
+        document.write("Second: " + second + "<br>");
+
+        let milisecond = calendar.getMilliseconds();               // Milisaniyeyi gosterir, anlik saniye icin
+        document.write("Total Miliseconds: " + milisecond + "<br>"); 
+
+        let timeZone = calendar.getTimezoneOffset();               // Returns the difference between UTC and local time zone in minutes. -120 cikar yani 2 saat ondeyiz demektir
+        document.write("Timezone: " + timeZone + "<br>");
+
+        let totalMiliseconds = calendar.getTime();                 // 1/1/1970 ten beri gecen zamani milisaniye cinsindene bulabiliyoruz
+        document.write("Timezone: " + totalMiliseconds + "<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        let calendar2 = new Date();
+        let monthName = calendar2.getMonth();           // Buradan sadece guncel ayin index numarasi doner
+        let dayName = calendar2.getDay();               // Buradan sadece guncel gunun index numarasi doner
+
+        document.write("The current month: " + months[monthName] + "<br>");     // Buradaki kod ile ve index numarasi ile de yukaridaki array lere gore ilgili ay ve gun ismini yazdirabiliriz 
+        document.write("The current date: " + days[dayName] + "<br>");
+
+    </script>
+</body>
+</html>
