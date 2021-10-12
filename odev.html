@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+            const str = 'Lorem Ipsum is simply dummy text of simply printing and typesetting industry.';
+            let arrayIndex = [];
+            let searchWord = prompt('Enter the character to be searched: ');
+
+            for (var i = 0; i < str.length; i++) {
+              if (str[i] === searchWord) {
+                arrayIndex.push(i);
+              }
+            }
+            console.log(`The indexes of the search character is:  ${arrayIndex}`);
+
+            //--------------------------------------------------------------------------------------------------------------------
+
+            var indices = [];
+            var array = 'merhaba selam';
+            var element = 'a';
+            var idx = array.indexOf(element);
+
+            while (idx != -1) {
+              indices.push(idx);
+              idx = array.indexOf(element, idx + 1);
+            }
+            console.log({ indices });
+
+            //----------------------------------------------------------------------------------------------------------------------------------------
+
+            var ulkeler =['Türkiye' , 'Honduras' , 'Guetamala ' , 'San-Salvador' ];
+            for (i=0; ulkeler[i] ; i++){
+            if (ulkeler[i].includes("a")){
+                console.log(` ${ulkeler[i]} ülkesinde "a" harfi vardır.`);
+            }else{
+             continue
+            }
+      }
+    </script>
+  </body>
+</html>

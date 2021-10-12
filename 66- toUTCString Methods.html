@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+
+      let tarih = new Date();
+      document.write('Current Date: ', tarih + '<br>');
+
+      let global = tarih.toUTCString();
+      document.write('Changed Date: ', global + '<br>'); // " Tue, 12 Oct 2021 12:57:00 GMT " seklinde bir formatta cikartir
+
+    //---------------------------------------------------------------------------------------------------------------------
+      
+      let mili = Date.UTC(2019, 2, 20, 12, 41, 35, 365)   // Yil/Ay/Gun/Saat/Dakika/Saniye/Milisaniye
+      document.write('UTC Mili:', mili + '<br>');         // 1/1/1970 tarihinden itibaren, gecen milisaniyeyi bizim girdigimiz tarihimize verir  
+                                                          // UTC Mili:1553085695365
+    </script>
+
+  </body>
+</html>

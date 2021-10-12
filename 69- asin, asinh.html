@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // asin() methodu, girilen sayinin ark sinus degerini donderir
+        // Sadece " -1 " ile " 1 " arasinda bir deger kabul eder, bu aralik disindaysa "NaN" cikartir
+        // "-1" girdigimizde bize "-PI/2" degerini donderir
+
+        let sayi1= Math.asin(1); 
+        let sayi2 = Math.asin(-1); 
+        let sayi3 = Math.asin(0.5);
+        let sayi4 = Math.asin(3); 
+        let sayi5 = Math.asin(-20); 
+
+        console.log(sayi1);     // 1.5707963267948966 (PI/2)
+        console.log(sayi2);     // 3.141592653589793 (-PI/2)
+        console.log(sayi3);     // 0.5235987755982989
+        console.log(sayi4);     // NaN
+        console.log(sayi5);     // NaN
+
+        //------------------------------------------------------------------------------------------------------------------------------
+    
+        // asinh() methodu, girilen sayinin hiperbolik ark degerini donderir
+    
+        let sayi6= Math.asinh(1); 
+        let sayi7 = Math.asinh(-1); 
+        let sayi8 = Math.asinh(0.5);
+        let sayi9 = Math.asinh(3); 
+        let sayi10 = Math.asinh(-20);
+
+        console.log(sayi6);     //  0.881373587019543    
+        console.log(sayi7);     //  -0.881373587019543
+        console.log(sayi8);     //  0.48121182505960347  
+        console.log(sayi9);     //  1.8184464592320668  
+        console.log(sayi10);    //  -3.6895038689889055
+        
+    </script>
+</body>
+</html>

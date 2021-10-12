@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // toDateString() methodu tarihin sadece metinsel ifadesini alir. Saati almaz !
+      
+      let tarih = new Date();
+      document.write('Current Date: ', tarih + '<br>');        // Tue Oct 12 2021 14:30:58 GMT+0200 (Central European Summer Time)
+
+      let stringDate = tarih.toDateString();
+      document.write('Changed Date: ', stringDate + '<br>');   // Tue Oct 12 2021  seklindeki bir formatta cikartir
+
+      //--------------------------------------------------------------------------------------------------------------------
+
+      // toISOString() methodu ile tarihi ISO standartlarinda yazdirabiliyoruz
+      
+      let isoDate = tarih.toISOString();
+      document.write('Changed Date: ', isoDate + '<br>');      // 2021-10-12T12:31:38.132Z  seklinde bir formati var
+
+      //--------------------------------------------------------------------------------------------------------------------
+
+      // toISOString() methodu ile tarihi ISO standartlarinda yazdirabiliyoruz
+      
+      let jsonDate = tarih.toJSON();
+      document.write('Changed Date: ', jsonDate + '<br>');     // 2021-10-12T12:31:38.132Z  seklinde bir formati var, aslinda yukaridaki ile aynisi
+    
+    </script>
+  </body>
+</html>

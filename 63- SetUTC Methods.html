@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Kullanimi</title>
+  </head>
+  <body>
+    <script>
+
+      let tarih = new Date();                           // Burada () icerisine birsey yazmazsak current date, yazarsak da o olur
+      document.write('Current Date: ', tarih + '<br>');
+
+      tarih.setUTCHours(10,35,53);                      // Buraya uluslararasi saat olarak saat/dakika/saniye cinsinden ekleme yapiyoruz                           
+      document.write('Changed Hour: ', tarih + '<br>');
+
+      tarih.setUTCFullYear(2050);                       // Buraya da yil yazarak degisiklik yapabiliyoruz                        
+      document.write('Changed Hour: ', tarih + '<br>');
+
+    </script>
+  </body>
+</html>

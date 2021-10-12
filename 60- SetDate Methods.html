@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Kullanimi</title>
+  </head>
+  <body>
+    <script>
+
+      let tarih = new Date();                           // Burada () icerisine birsey yazmazsak current date, yazarsak da o olur
+      document.write('Current Date: ', tarih + '<br>');
+
+      tarih.setDate(2);                                 // Burada gun indexini aslinda yaziyoruz. 30 ceken bir ayda 31 yazarsak burada mod geregi 1 yazar
+      document.write('Changed Day: ', tarih + '<br>');
+
+      tarih.setFullYear(2032);                          // Burada artik yil 2032 olarak degisti      
+      document.write('Changed Year: ', tarih + '<br>');
+
+      tarih.setHours(18);                               // Burada da saati degistirmis olduk      
+      document.write('Changed Hour: ', tarih + '<br>');
+
+      tarih.setTime(198767483909);                      // ms cinsinden 1/1/1970 uzerine eklenir
+      document.write('Changed Time: ', tarih + '<br>');
+
+
+    </script>
+  </body>
+</html>

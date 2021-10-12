@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // abs() methodu, girilen sayinin mutlak degerini cikarir, metinsel ifadeleri kabul etmez
+
+        let sayi1 = Math.abs(10);      
+        let sayi2 = Math.abs(10 * 3);  
+        let sayi3 = Math.abs(-3 * 50); 
+        let sayi4 = Math.abs(-8.56);   
+        let sayi5 = Math.abs("Selam");
+
+        console.log(sayi1);     // 10
+        console.log(sayi2);     // 30
+        console.log(sayi3);     // 150
+        console.log(sayi4);     // 8.56
+        console.log(sayi5);     // NaN
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // acos() methodu, girilen sayinin ark kosinus degerini donderir
+        // Sadece " -1 " ile " 1 " arasinda bir deger kabul eder, bu aralik disindaysa "NaN" cikartir
+        // "-1" girdigimizde bize "PI" degerini donderir
+
+        let sayi6= Math.acos(1); 
+        let sayi7 = Math.acos(-1); 
+        let sayi8 = Math.acos(0.5);
+        let sayi9 = Math.acos(3); 
+
+        console.log(sayi6);     // 0
+        console.log(sayi7);     // 3.141592653589793 (PI)
+        console.log(sayi8);     // 1.0471975511965979
+        console.log(sayi9);     // NaN
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // acosh() methodu, girilen sayinin hiperbolik ark kosinus degerini donderir
+        // Icine aldigi deger " 1 " den kucukse "NaN" cikartir
+
+        let sayi10= Math.acosh(1);
+        let sayi11= Math.acosh(-1);
+        let sayi12= Math.acosh(0.5);
+        let sayi13= Math.acosh(15);
+
+        console.log(sayi10);    // 0   
+        console.log(sayi11);    // NaN    
+        console.log(sayi12);    // NaN   
+        console.log(sayi13);    // 3.4000844141133397
+        
+    </script>
+</body>
+</html>

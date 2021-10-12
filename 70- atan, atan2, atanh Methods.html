@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // atan() methodu, girilen sayinin arkadini -PI/2 ve PI/2 radyanlari arasinda donderir
+
+      let sayi1 = Math.atan(1);
+      let sayi2 = Math.atan(-1);
+      let sayi3 = Math.atan(0.5);
+      let sayi4 = Math.atan(3);
+      let sayi5 = Math.atan(-20);
+
+      console.log(sayi1); // 0.7853981633974483
+      console.log(sayi2); // -0.7853981633974483
+      console.log(sayi3); // 0.4636476090008061
+      console.log(sayi4); // 1.2490457723982544
+      console.log(sayi5); // -1.5208379310729538
+
+      //------------------------------------------------------------------------------------------------------------------------------
+
+      // atan2() (x,y) koordinatlarina sahip bir nokta ile ekseni arasindaki aciyi radyan olarak hesaplar
+      // PI ve -PI Radyanlari arasinda sayisal bir deger olarak donderir
+
+      let sayi6 = Math.atan2(20,2);
+      let sayi7 = Math.atan2(20,20);
+      let sayi8 = Math.atan2(45,90);
+     
+      console.log(sayi6); // 1.4711276743037347
+      console.log(sayi7); // 0.7853981633974483
+      console.log(sayi8); // 0.4636476090008061
+    
+    </script>
+  </body>
+</html>

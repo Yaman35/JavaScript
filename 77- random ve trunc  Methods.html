@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // random() methodu her seferinde 0-1 arasinda rastgele bir sayi uretir, (0 dahil 1 haric) !
+
+        let numberRandom = Math.random();
+        document.write("Her seferinde bu sayi farkli bir sayi olacaktir: ", numberRandom + "<br>")
+        
+        let roundRandom = Math.round(Math.random() * 100); // 0 ile 100 arasinda (100 dahil degil) rastgele sayilar uretmek icin kullandik
+        document.write(roundRandom + "<br>");
+
+        let roundRandom2 = Math.floor(Math.random() * 100 + 1); // Bu da 100 dahil edilmis hali
+        document.write(roundRandom2 + "<br>");
+    
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // trunc() methodu girilen bir sayinin tam kismini almak icin kullanilir
+
+        let numberTrunc = Math.trunc(10/3);
+        document.write("Girilen sayinin tam kismi: ", numberTrunc+ "<br>")
+
+        let numberTrunc2 = Math.trunc(8.5456787654);
+        document.write("Girilen sayinin tam kismi: ", numberTrunc2+ "<br>")
+
+    </script>
+</body>
+</html>

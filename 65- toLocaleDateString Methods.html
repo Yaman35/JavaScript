@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // toLocaleDateString() methodu tarihi local formata cevirerek gosterir
+      
+      let tarih = new Date();
+      document.write('Current Date: ', tarih + '<br>'); // Tue Oct 12 2021 14:38:02 GMT+0200 (Central European Summer Time)
+
+      let locale = tarih.toLocaleDateString();
+      document.write('Changed Date: ', locale + '<br>'); // 10/12/2021 (Ay/Gun/Yil) seklinde bir formatta cikartir
+    
+      //-------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+      // toLocaleTimeString() methodu zamani local formata cevirerek gosterir
+
+      let time = tarih.toLocaleTimeString();
+      document.write('Changed Time: ', time + '<br>'); // "2:43:48 PM" seklinde bir formatta cikartir
+
+      //-------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+      // toLocaleString() methodu tarih ve zamani local formata cevirerek gosterir
+
+      let localeString = tarih.toLocaleString();
+      document.write('Changed Time: ', localeString + '<br>'); // "10/12/2021, 2:51:31 PM" seklinde bir formatta cikartir
+    
+      //-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      // toTimeString() methodu tarih ve zamani local formata cevirerek gosterir
+
+      let timeString = tarih.toTimeString();
+      document.write('Changed Time: ', timeString + '<br>'); // "14:53:09 GMT+0200 (CET)" formatinda cikartir 
+    </script>
+  </body>
+</html>
