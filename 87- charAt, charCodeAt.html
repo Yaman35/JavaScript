@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // charAt(), stringin ilgili indexindeki elemani 
+        // Mesela kullanicinin adini ve soyadini aldiktan sonra ikisinin bas harfini kullanicinin profil resmi olarak ayarlayabiliriz
+
+        let word = "Merhaba";
+        let letter = word.charAt(5);
+        document.write(letter + "<br>");
+
+        let letter2 = word.charAt(word.length - 1); // Bu sekilde de yapilabilir, burada stringin sonuncu karakterini gosterir
+        document.write(letter2 + "<br>");
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // charCodeAt(), girdigimiz karakterleri HTML UNICODE a cevirir ve onu donderir
+
+        let metin = "MERHABA";
+        let kod1 = metin.charCodeAt(0);
+        let kod2 = metin.charCodeAt(4);
+
+        document.write(kod1 + "<br>"); // "M" harfi icin 77 cikar
+        document.write(kod2 + "<br>"); // "A" harfi icin 65 cikar
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        // fromcharCodeAt(), girdigimiz  HTML UNICODE degerini karaktere cevirir ve onu donderir
+
+        let cevir1 = String.fromCharCode(65);
+        document.write(cevir1 + "<br>");        // A
+
+        let cevir2 = String.fromCharCode(77);
+        document.write(cevir2 + "<br>");        // M
+
+    </script>
+</body>
+</html>

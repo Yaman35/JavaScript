@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Bu methodlar locale dillerdeki ozel karakterleri kodlayarak gonderir ve sikinti cikmasini onler
+
+        let link = "www.deneme.com / yazılım çalışmaları";    // Turkce Karakterler
+        document.write("Normal link: " + link + "<br>");
+
+        let kodla = encodeURI(link);
+        document.write("Kodlanmis link: " + kodla + "<br>");   // Kodlanmis hali
+    
+        let coz = decodeURI(kodla);                           // Tekrardan cozulmus hali
+        document.write("Cozulmus link: " + coz + "<br><br><br>");
+
+        // Fakat bu methodlar bazi ozel karakterleri (, / ? : @ & = + $ #) kodlamiyor, onlar icin asagidaki methodlar gecerli olacaktir
+    
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Yukarida bahsettigimiz ozel karakterleri ( , / ? : @ & = + $ # ) de kodlamasi icin bu methodlari kullanabiliyoruz
+
+        let link2 = "www.deneme.com / $$$yazı#lım, çalı&şmaları@ ";    // Turkce Karakterler
+        document.write("Normal link: " + link2 + "<br>");
+
+        let kodla2 = encodeURIComponent(link2);
+        document.write("Kodlanmis link: " + kodla2 + "<br>");   // Kodlanmis hali
+    
+        let coz2 = decodeURIComponent(kodla2);                           // Tekrardan cozulmus hali
+        document.write("Cozulmus link: " + coz2 + "<br>");
+
+    
+    
+    
+    </script>   
+</body>
+</html>

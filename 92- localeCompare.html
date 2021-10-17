@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // localeCompare() methodu elimizdeki verilerin alfabetik sirasini ogrenebilmek icin kullanilir
+        // Kullanicinin tarayiciya girdigi ulke onemlidir
+        // Parantez icine aldigi deger once gelmeli ise "1", hayir sonra gelmeli ise "-1", her iki string esit ise de "0" donderir
+
+        let word1 = 'cd';
+        let word2 = 'ab';
+
+        let compare1 = word1.localeCompare(word2);
+        document.write(compare1 + "<br/>");         // Sonucu 1 cikar yani parante icine aldigim degisken daha once olmaliydi! demek istemektedir.
+
+
+        let word3 = 'acd';
+        let word4 = 'fab';
+
+        let compare2 = word3.localeCompare(word4);  
+        document.write(compare2);                   // Sonucu -1 cikar, yani parantez icine aldigim kelime karsilastirdigimdan once gelemez! demek istemektedir.
+    
+    </script>
+</body>
+</html>

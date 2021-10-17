@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // isFinite() methodu, girilen degerin (rakam olup olmadigini) anlamamiza yarar
+
+        let number = 10;
+        let authentication = Number.isFinite(number);    // Burada bas tarafina "Number" yazmasak da calisiyor
+        document.write(authentication + "<br>"); // true
+
+        let number2 = "10";
+        let authentication2 = isFinite(number2);
+        document.write(authentication2 + "<br>"); // true, metinsel olmasi farketmiyor
+
+        let number3 = "2019/02/10";
+        let authentication3 = isFinite(number3);
+        document.write(authentication3 + "<br>"); // false
+
+        let number4 = 2019/02/10;
+        let authentication4 = isFinite(number4);
+        document.write(authentication4 + "<br>"); // true, bunu bolme islemi gibi dusunmektedir
+
+        let number5 = "Hello";
+        let authentication5 = isFinite(number5);
+        document.write(authentication5 + "<br>"); // false
+
+        let number6 = 10.56;
+        let authentication6 = isFinite(number6);
+        document.write(authentication6 + "<br>"); // true
+
+    </script>
+</body>
+</html>

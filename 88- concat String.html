@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let word1 = "Merhaba Arkadaslar ";
+        let word2 = "Ben Huseyin Yaman ";
+        let word3 = "Bugun size JS anlatacagim";
+
+        let metin1 = word1.concat(word2 + "<br>");
+        let metin2 = word1.concat(word2, word3);    // Bu sekilde birden fazla string de parantez icine yazilarak da concatanation islemi gerceklestirilebilir
+        
+        document.write(metin1);     // "Merhaba Arkadaslar Ben Huseyin Yaman"
+        document.write(metin2);     // "Merhaba Arkadaslar Ben Huseyin Yaman Bugun size JS anlatacagim"
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Number.isNaN() methodu, girilenin bir deger tasiyip tasimadigini anlamamiza yarar
+        // Eger girilen, deger tasiyorsa ise "false" verir, tasimiyorsa "true" verir
+
+        let number = 10.56;
+        let authentication = Number.isNaN(number); 
+        document.write(authentication + "<br>"); // false
+
+        let number2 = "10";
+        let authentication2 = Number.isNaN(number2); 
+        document.write(authentication2 + "<br>"); // false
+
+        let number3 = "Selam";
+        let authentication3 = Number.isNaN(number3); 
+        document.write(authentication3 + "<br>"); // false
+
+        let number4 = 0/0;
+        let authentication4 = Number.isNaN(number4); 
+        document.write(authentication4 + "<br>"); // true olur
+
+        let number5 = NaN;
+        let authentication5 = Number.isNaN(number5); 
+        document.write(authentication5 + "<br>"); // true
+
+        let number6 = "NaN";
+        let authentication6 = Number.isNaN(number6); 
+        document.write(authentication6 + "<br>"); // false
+
+        let number7 = undefined;
+        let authentication7 = Number.isNaN(number7); 
+        document.write(authentication7 + "<br>"); // false
+
+        let number8 = true;
+        let authentication8 = Number.isNaN(number8); 
+        document.write(authentication8 + "<br>"); // false
+
+       
+    </script>
+</body>
+</html>

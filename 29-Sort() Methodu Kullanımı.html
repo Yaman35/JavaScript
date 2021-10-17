@@ -10,6 +10,8 @@
   
     <script>
 
+        // sort() methodu array icerisinde siralama islemi yapar, orjinal arrayi de degistirir.
+
         let names = ["John", "James", "Aaron", "Walter", "Edward"];
         console.log(names.sort());      // Burada sort işlemi alfabetik sıraya göre yapılır
 
@@ -21,7 +23,7 @@
         // Rakamları küçükten-büyüğe / büyükten - küçüğe sıralamak istediğimizde ise
 
         const points2 = [40, 100, 1, 5, 25, 10]
-        sortResult = points2.sort(function(a, b){return a - b})     // Bu functioni kullanarak elemanlar içindeki rakamları sıralayabiliriz
+        sortResult = points2.sort(function(a, b){return a - b});     // Bu functioni kullanarak elemanlar içindeki rakamları sıralayabiliriz
         console.log(sortResult);        // [1, 5, 10, 25, 40, 100] şeklinde doğru çıkar (küçükten büyüğe)
 
         // Sonuç negatif ise a, b den önce sıralanır

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // slice(), elimizdeki string bir ifadeyi istedigimiz yerden bolup istedgimiz kadarini almaya yarar
+    // Icerisine iki parametre alabilir. Ilk rakam baslangic noktasini gosterir, ikinci rakam ise bitis indexini gosterir ki o dahil degildir
+    let sentence = "Merhaba arkadaslar ben Huseyin Yaman";
+    document.write("Original Sentence: " + sentence + "<br>");
+
+    let divide1 = sentence.slice(0);        // Burada 0 dan itibaren yazdigi icin cumlenin tamamini cikarir
+    let divide2 = sentence.slice(19);       // Burada ise 20 inci karakterden baslar oyle alir
+
+    document.write("Changed Sentence1: " + divide1 + "<br>");
+    document.write("Changed Sentence2: " + divide2 + "<br>");
+
+    let wantedWord = sentence.slice(8, 18); // Bu sekilde istedigimiz bir kelimeyi ilgili index numaralarini belirterek alabiliriz (Ayni sekilde 19 dahil degil)
+    document.write("Wanted Word: " + wantedWord + "<br>");
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // split()/ elimizdeki string ifadeyi istedigimiz yerden bolerek bize bir "Array" olusturur
+
+    let sentence2 = "Merhaba arkadaslar ben Huseyin Yaman";
+    
+    let word1 = sentence2.split("");
+    document.write(word1);          // Burasi Array olur
+
+    document.write("<br>");
+
+    document.write("Yeni arrayin 16.elemani: " + word1[16]);
+
+    document.write("<br>");
+
+    document.write("Yeni arrayin 16.elemani: " + sentence.split("",16));    // Bu sekilde arrayin bastab itibaren istedigimiz kadarini da ekrana getir diyebiliriz
+
+    document.write("<br>");
+
+    let word2 = sentence2.split(" ");
+    document.write(word2);          // Burasi da bir deger Array
+
+    </script>
+</body>
+</html>

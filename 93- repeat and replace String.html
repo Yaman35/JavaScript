@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // repeat(), tekrar etmesini istedigimiz cumleler icin kullanilir
+        // Parantez icerisine tekrar sayisini yazmamiz gereklidir.
+
+        let word = "Merhaba Arkadaslar ";
+        let result = word.repeat(5);
+        document.write(result + "<br><br><br>");
+
+      
+    //---------------------------------------------------------------------------------------------------------------------------------------
+
+        // replace() methodu ile string icerisinde degistirmek istedigimiz kelimeyi/karakteri degistirebiliyoruz
+        // Burada ilk yazdigimiz degismesini istedigimiz kelime, ikincisi ise yerine gelmesini istedigimiz kelimedir
+        
+        let sentence = "Merahaba arkadaslar ben Huseyin Yaman";
+        document.write("Original Sentence: " + sentence + "<br>");
+
+        let changed = sentence.replace("Huseyin", "Hasan");
+        document.write("Changed Sentence: " + changed+ "<br>");
+    </script>
+</body>
+</html>

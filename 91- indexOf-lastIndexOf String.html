@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // indexOf() methodu ile, elimizdeki metnin icerisindeki herhangi bir kelimenin/karakterin index numarasini ogrenebilmemize yarar
+        // Case Sensitive
+
+        let metin = "Dun akilliydim, \
+                     dunyayi degistirmek istedim, \
+                     Bugun ise bilgeyim, \
+                     kendimi degistirdim, \
+                     -Hz.Mevlana-";
+        
+        let sorgu1 = metin.indexOf("dun");
+        let sorgu2 = metin.indexOf("Dun");
+        let sorgu3 = metin.indexOf("ie");
+
+        document.write(sorgu1 + "<br>");        // 37
+        document.write(sorgu2 + "<br>");        // 0
+        document.write(sorgu3 + "<br>");        // -1 Bu sekilde aranilan kelime/karakter string icerisinde de degilse indexOf() methodu "-1" donderir
+
+        let sorgu4 = metin.indexOf("ise", 100); // Bu sekilde aramaya baslamasini istedigimiz index numarasini da belirtebiliyoruz.
+        document.write(sorgu4 + "<br>");        // -1,   Gorulecegi uzere eger kelimeye/karaktere rastlamazsa -1 donderir
+
+        let sorgu5 = metin.indexOf("ise", 90);  // 93
+        document.write(sorgu5 + "<br>");
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // lastindexOf() methodu ile, elimizdeki metnin icerisindeki herhangi bir kelimenin/karakterin index numarasini ogrenebilmemize yarar, fakat bu (SONDAN) aramaya baslar
+        // Ayni sekilde aranilan kelime/karakter string ifade icerisinde yoksa "-1" donderir
+        // Yine ayni sekilde, aramaya baslanilmasini istedigimiz index numarasini da girebiliyoruz
+        // Case Sensitive
+        
+        let metin2 = "Dun akilliydim, \
+                     dunyayi degistirmek istedim, \
+                     Bugun ise bilgeyim, \
+                     kendimi degistirdim, \
+                     -Hz.Mevlana-";
+        
+        let sorgu11 = metin2.lastIndexOf("dun");
+        let sorgu22 = metin2.lastIndexOf("Dun");
+        let sorgu33 = metin2.lastIndexOf("ie");
+    
+        document.write(sorgu11 + "<br>");        // 37
+        document.write(sorgu22 + "<br>");        // 0
+        document.write(sorgu33 + "<br>");        // -1 Bu sekilde aranilan kelime/karakter string icerisinde de degilse indexOf() methodu "-1" donderir
+
+        let sorgu44 = metin2.lastIndexOf("dun",35);
+         document.write(sorgu44 + "<br>");       // -1
+    
+    </script>
+</body>
+</html>

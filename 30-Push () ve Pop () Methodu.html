@@ -10,6 +10,8 @@
   
     <script>
 
+        // push() methodu, elemanı array in en (SONUNA EKLER). Array "const" ile olusturulmus olsa bile ekleyebiliyoruz
+
         let names = ["John", "James", "Aaron", "Walter", "Edward"];
         names.push("Yaman");      // push() methodu elemanı array in en (SONUNA EKLER)
         console.log({names});     // Object gösterim
@@ -40,15 +42,18 @@
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        // pop() methodu array in her zaman (SON ELEMANINI SILER), içine parametre almaz 
+
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
-        names2.pop();             // pop() methodu array in her zaman (SON ELEMANINI SILER), içine parametre almaz 
+        names2.pop();             
         console.log(names2);
 
         let names3 = ["John", "James", "Aaron", "Walter", "Edward"];
 
         function remove(){   // Her seferinde bu fonksiyonu cagirarak islem yaptirabiliriz
-            names3.pop();    // Arrayin son elemanin sileriz
-            document.write(names3 + " <br> ");
+            let deleted = names3.pop();    // Arrayin silinen elemanini donderir
+            document.write("Silinen eleman: " + deleted + " <br> ");
+            document.write("Arrayin son hali: " + names3 + " <br> ");
         }
 
         remove();  // Bu sekilde her seferinde ilgili fonksiyonu cagirarak her seferinde ilgili arrayin son elemanini silme islemini gerceklestirebiliriz

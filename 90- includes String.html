@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // includes() methodu ile, aramak istedimiz kelime veya karakterin string icerisinde olup olmadigini sorgulamak icin kullanilir
+        
+        let metin = "Dun akilliydim, \
+                     dunyayi degistirmek istedim, \
+                     Bugun ise bilgeyim, \
+                     kendimi degistirdim, \
+                     -Hz.Mevlana-";
+
+        let sorgu1 = metin.includes("kendimi");
+        let sorgu2 = metin.includes("bilge");
+        let sorgu3 = metin.includes("doktor");
+
+        document.write(sorgu1 + "<br>");    //  true
+        document.write(sorgu2 + "<br>");    //  true
+        document.write(sorgu3 + "<br>");    //  false
+
+        let sorgu4 = metin.includes("Dun");
+        document.write(sorgu4 + "<br>");    //  true
+
+        let sorgu5 = metin.includes("Dun", 5);          // Bu sekilde ikinci bir parametre olarak aramaya baslamasini istedigimiz index numarasini da yazabiliriz
+        document.write(sorgu5 + "<br>");    //  false   // Gorulecegi uzere ust tarafta "true" cikan olay burada start index olarak 5 girdikten sonra "false" donderdi
+
+    </script>
+</body>
+</html>

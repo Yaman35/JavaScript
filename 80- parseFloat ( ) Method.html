@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        // parseFloat(); Girilen degerin icerisinde sayi olup olmadigini bulan bir methoddur
+        // String olsun integer olsun eger degiskenin degerinin icerisinde uygun olacak sekilde sayi varsa onu verir aksi takdirde "NaN" verir
+        
+        let number = "10";
+        let number2 = "100 yaman";
+        let number3 = "yaman 1000";
+        let number4 = "     10.52 ";
+        let number5 = "20 50 96";
+
+        let authentication = parseFloat(number);
+        let authentication2 = parseFloat(number2);
+        let authentication3 = parseFloat(number3);
+        let authentication4 = parseFloat(number4);
+        let authentication5 = parseFloat(number5);
+
+        document.write(authentication + "<br>");  // "10"  Burada herhangi bir sikinti yok
+        document.write(authentication2 + "<br>"); // "100" Burada da sayi onde oldugu icin yine sayiy cikartir
+        document.write(authentication3 + "<br>"); // "NaN" Ama burada sayi olmasina ragmen sayinin onunde string bir ifade oldugu icin NaN cikartir
+        document.write(authentication4 + "<br>"); // "10.52" Onunde bosluk olsa bile sayiyi cikartir
+        document.write(authentication5 + "<br>"); // "20" Burada sadece ilk sayiyi cikartir
+
+
+
+    </script>
+</body>
+</html>

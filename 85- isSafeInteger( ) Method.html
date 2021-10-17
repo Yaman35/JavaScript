@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Number.isSafeInteger() methodu, girilenin sayinin guvenli sayi olup olmadigini kontrol etmek icin kullanilir
+ 
+        let number = 10;
+        let authentication = Number.isSafeInteger(number); 
+        document.write(authentication + "<br>");                        // true
+
+        let number2 = -10;
+        let authentication2 = Number.isSafeInteger(number2); 
+        document.write(authentication2 + "<br>");                       // true
+
+        let number3 = 10.89;
+        let authentication3 = Number.isSafeInteger(number3); 
+        document.write(authentication3 + "<br>");                       // false
+
+        
+        let authentication4 = Number.isSafeInteger(Math.pow(2,53)); 
+        document.write(authentication4 + "<br>");                       // false
+
+        let authentication5 = Number.isSafeInteger(Math.pow(2,53) - 1); 
+        document.write(authentication5 + "<br>");                       // true
+
+        let authentication6 = Number.isSafeInteger(Math.pow(-2,53)); 
+        document.write(authentication6 + "<br>");                       // false
+
+        let authentication7 = Number.isSafeInteger(Math.pow(-2,53) + 1); 
+        document.write(authentication7 + "<br>");                       // true
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // trim() ile istenemyen kisimlari kirpabiliriz, istersek hem sag hem soldan olur istersek de sadece sol veya sagdakiler seklinde de olur istersek
+
+        let sentence = "           Merhaba Arkadaslar         ";
+        console.log("Original sentence: " + sentence);
+
+        let trimmed = sentence.trim();  // Eger icerisine birsey yazmazsak sadece sag ve soldaki bosluklar trim edilir
+        console.log("Both Trimmed sentence: " + trimmed);
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+        // trimEnd() ve trimStart() methodlari ile de sadece sondaki veya bastaki kisimlari da trim edebiliriz
+
+        let startTrimmed = sentence.trimStart(); 
+        let endTrimmed = sentence.trimEnd(); 
+
+        console.log("Start Trimmed sentence: " + startTrimmed);
+        console.log("End Trimmed sentence: " + endTrimmed);
+        
+    </script>
+</body>
+</html>

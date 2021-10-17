@@ -31,6 +31,8 @@
         const numbers2 = new Array(10);      // Ancak böyle tek elemanlı bir array oluşturmak istediğimizde, mesela bu örnekte 10 tane empty eleman oluşturuyor
         console.log(numbers2);
 
+        const array = Array.of(1, 2, 3);     // Array tanimlamanin bir diger yolu 
+
         //------------------------------------------------------------------------------------------------------------------------------------------
         
         var name = ['John', 'James', 24];    // Arrays
@@ -199,9 +201,9 @@
          for (let i2 of colors) console.log(i2);          // Yukarıdaki kodun daha kısa hali, empty elemanları undefined olarak gösterir
 
          for (let i3 in colors) console.log(colors[i3]);  // Normalde buradaki "in" ile sadece indexler geldiği için value ları çıktı alabilmek için [] içinde yazdık, empty elemanları pas geçer
-
+                                                          
          colors.forEach(i4 => console.log(i4));           // Bu da yukarıdaki gibi array elemanlarıni çıkartır, empty elemanları pas geçer
-
+                                                          // forEach icersine goruldugu uzere bir fonksiyon alip o sekilde donderme islemini gerceklestirebiliyor
          //----------------------------------------------------------------------------------------------------------------
          
           let obj = {x: 1, y: 2, z: 3};

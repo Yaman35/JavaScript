@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    // startsWith() methodu ile, elimizdeki string bir ifadenin parantez icine yazdigimiz kelime/karakterle baslayip baslamadigini kontrol ediyoruz
+    // Birinci parametre sorgulanmak istenen kelime/karakter olur, ikinci parametre ise sorgulamaya baslanmasi istenen yer olur 
+    // true ya da false donderir.
+
+    let sentence = "Merhaba arkadaslar ben Huseyin Yaman";
+
+    let search1 = sentence.startsWith("Merhaba");
+    let search2 = sentence.startsWith("Mer");
+    let search3 = sentence.startsWith("arkadaslar");
+
+    document.write(search1 + "<br>");   // true
+    document.write(search2 + "<br>");   // true
+    document.write(search3 + "<br>");   // false
+
+    let search4 = sentence.startsWith("arka", 8);   // Bu sekilde ikinci parametre ile sorgulamaya baslamasini istedgimiz yeri belirtebiliyoruz.
+    document.write(search4 + "<br>");   // true     Burada "arka" ifadesi 8. indexten mi basliyor diye soruyoruz ve haliyle "true" donderiyor
+
+    </script>
+
+</body>
+</html>

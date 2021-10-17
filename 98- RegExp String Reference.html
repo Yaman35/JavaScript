@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Regular Expressions - Duzenli Ifadeler
+    // Mesela kullancidan, kullanici ismi belirlemesini istiyoruz ve bunun bizim koydugumuz sartlara uyup uymadigini kontrol etmemizi saglara
+
+    // 1.Yontem
+
+    let rule = new RegExp("Emre");
+    let word = "Emre";                  // Eger "emre" seklinde yazilsaydi "Istenen sart saglanmadi!: null" ciktisi verirdi
+
+    let sart = rule.exec(word, "i");    // Iste burada ikinci kisimda "i" seklinde yazmamiz buyuk kucuk harf duyarliligini ortadan kaldirir ve saglandi seklinde gosterir
+                                        // // rule e gore word u test et bak bakalim sartlari sagliyor mu?  
+    if(sart == word){
+        console.log("Istenen sart saglandi:" + sart);
+    }else{
+        console.log("Istenen sart saglanmadi!:" + sart);
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+    // 2.Yontem
+
+    let rule2 = /emre/i;    // Bu kisimda yukaridaki gibi kural belirlenirken ve istisnaisini ortadan kaldirirken kullanmaya karsi farkli bir yontem
+    let word2 = "Emre";     // Mesela burada "Emre " seklinde bosluklu yazilsaydi sart saglanmayacakti
+                            // Yine ayni sekilde herhangi birsey yazsaydi da bu sefer sart saglanmayip "null" verecekti             
+    let sart2 = rule2.exec(word2);    
+
+    if(sart2 == word2){
+        console.log("Istenen sart saglandi:" + sart2);
+    }else{
+        console.log("Istenen sart saglanmadi!:" + sart2);
+    }
+
+    // (www.flavicopes.com) ve (www.regexr.com) sitelerinde cok daha ayrintili bilgiler mevcut oradan bakabilirsin !!!
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    let rule3 = /[a-z]/i;       // Buradaki gibi a dan z ye kadar olan karakterler yazilabilsin sorun olmadan diyebiliyorum, ama bu sadece tek karakterler icin yani tek "w" mesela 
+    let word3 = "w";            // Ama mesela burada tek "w" yerine iki tane olsaydi bu sefer sart saglanmiyor olacakti    
+                                // Rule olarak (/[a-z]+/i;) seklinde sonuna "+" ekleyerek belirtmis olsaydim bu sefer herhangi bir sikinti yasanmazdi
+                                // Ayni sekilde(/[a-z]{1,}/i;) seklinde yazarsam birden fazla olabilir anlami veriyor
+                                // Veya (/[a-z]{1,5}/i;) seklinde yazarak da maksimum kac karakter girebilicegini belirleyebiliyoruz, mesela bunu yazdiktan sonra kullanici 6 karakter girerse sart saglanmaz oluyor
+                                // Ayni sekilde (/[0-9]{1,}/i;) girerek de kullanicinin sadece rakam girmesini saglayabiliriz, herhangi bir sayi siniri belirlemeden
+                                // Ayni sekilde (/[^0-9]{1,}/i;) seklinde girersek de kullanici rakam olmayan herhangi birsey girerse sart saglanmis olur
+                                // (/\d{1,}/i;) ifadesi de (/[0-9]{1,}/i;) su ifade ile ayni anlama gelir
+                                // (/\D{1,}/i;) ifadesi de (/[^0-9]{1,}/i;) su ifade ile ayni anlama gelir
+                                // (www.flavicopes.com) 
+    let sart3 = rule3.exec(word3);    
+
+    if(sart3 == word3){
+        console.log("Istenen sart saglandi:" + sart3);
+    }else{
+        console.log("Istenen sart saglanmadi!:" + sart3);
+    }
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    // tes() ile test etme yontemi !!! Birkac yer yukaridaki kullanimdan farkli DIKKAT ET !
+
+    let rule4 = /\D{1,}/i;;    
+    let word4 = "sdfghjklkjhg";     
+                            
+    let sart4 = rule4.test(word4);  // rule4 e gore word4 u test et bak bakalim sartlari sagliyor mu?  
+
+    if(sart4 == true){              // Tek fark olarak burada "true" ya esitlemek gereklidir
+        console.log("Istenen sart saglandi:" + word4);      // Buralarda da metin kismini yazdirmamiz gerekir (sart kismini) degil
+    }else{
+        console.log("Istenen sart saglanmadi!:" + word4);   // Buralarda da metin kismini yazdirmamiz gerekir (sart kismini) degil
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    let rule5 = /[A-Z]{1,}/;;        // Bu sekilde sadece buyuk harflerle yazmasini istiyorsak bu sekilde belirtebiliriz
+    let word5 = "sdfghjklkjhg";      // Iste kullanici burada yukaridaki kurala aykiri olarak kucuk harflerle girdigi icin   
+                            
+    let sart5 = rule5.test(word5);    
+
+    if(sart5 == true){             
+        console.log("Istenen sart saglandi:" + word5);      
+    }else{
+        console.log("Istenen sart saglanmadi!:" + word5);   
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    let rule6 = /[a-zA-Z0-9]{1,}/;        // Bu sekilde sadece butun karakterleri yazabilmesini istiyorsak bu sekilde belirtebiliriz
+                                          // Burada (/[a-zA-Z0-9]{1,}/;) yerine sadece (\w\s;) seklinde de yazabilirdik
+    let word6 = "sdfghjklkjhg asd ASDFGGFDS 1234567654 **/**";      // Iste kullanici burada yukaridaki kurala aykiri olarak kucuk harflerle girdigi icin   
+                            
+    let sart6 = rule6.test(word6);    
+
+    if(sart6 == true){             
+        console.log("Istenen sart saglandi:" + word6);      
+    }else{
+        console.log("Istenen sart saglanmadi!:" + word6);   
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    let rule7 = /[a-z A-Z 0-9]{1,}/;        // Bu sekilde aralarini yukaridakinin aksine ayri yazarsak BOSLUKLARI da karakter olarak kabul ettiririz
+                                            // Veya (/[a-zA-Z0-9\s]{1,}/;) seklinde yazmak da memkundur bu is icin
+    let word7 = "sdfghjklkjhg asd ASDFGGFDS 1234567654";      
+                            
+    let sart7 = rule7.test(word7);    
+
+    if(sart7 == true){             
+        console.log("Istenen sart saglandi:" + word7);      
+    }else{
+        console.log("Istenen sart saglanmadi!:" + word7);   
+    }
+    </script>
+</body>
+</html>

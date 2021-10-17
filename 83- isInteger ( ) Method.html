@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Number.isInteger() methodu, girilen degerin (tam sayi olup olmadigini) anlamamiza yarar
+
+        let number = 10.56;
+        let authentication = Number.isInteger(number); // Number.isInteger() seklinde yazilmalidir
+        document.write(authentication + "<br>"); // false
+
+        let number2 = 10;
+        let authentication2 = Number.isInteger(number2); 
+        document.write(authentication2 + "<br>"); // true
+
+        let number3 = "10";
+        let authentication3 = Number.isInteger(number3); 
+        document.write(authentication3 + "<br>"); // false, metinsel ifadeleri integer olarak kabul etmiyor
+
+        let number4 = "Selam";
+        let authentication4 = Number.isInteger(number4); 
+        document.write(authentication4 + "<br>"); // false, metinsel ifadeleri integer olarak kabul etmiyor
+
+        let number5 = -50;
+        let authentication5 = Number.isInteger(number5); 
+        document.write(authentication5 + "<br>"); // true
+
+        let number6 = 10.00;
+        let authentication6 = Number.isInteger(number6); 
+        document.write(authentication6 + "<br>"); // true
+    </script>
+</body>
+</html>

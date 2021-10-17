@@ -8,41 +8,66 @@
   </head>
   <body>
     <script>
+      const str = 'Lorem Ipsum is simply dummy text of simply printing and typesetting industry.';
+      let arrayIndex = [];
+      let searchWord = prompt('Enter the character to be searched: ');
 
-            const str = 'Lorem Ipsum is simply dummy text of simply printing and typesetting industry.';
-            let arrayIndex = [];
-            let searchWord = prompt('Enter the character to be searched: ');
-
-            for (var i = 0; i < str.length; i++) {
-              if (str[i] === searchWord) {
-                arrayIndex.push(i);
-              }
-            }
-            console.log(`The indexes of the search character is:  ${arrayIndex}`);
-
-            //--------------------------------------------------------------------------------------------------------------------
-
-            var indices = [];
-            var array = 'merhaba selam';
-            var element = 'a';
-            var idx = array.indexOf(element);
-
-            while (idx != -1) {
-              indices.push(idx);
-              idx = array.indexOf(element, idx + 1);
-            }
-            console.log({ indices });
-
-            //----------------------------------------------------------------------------------------------------------------------------------------
-
-            var ulkeler =['Türkiye' , 'Honduras' , 'Guetamala ' , 'San-Salvador' ];
-            for (i=0; ulkeler[i] ; i++){
-            if (ulkeler[i].includes("a")){
-                console.log(` ${ulkeler[i]} ülkesinde "a" harfi vardır.`);
-            }else{
-             continue
-            }
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] === searchWord) {
+          arrayIndex.push(i);
+        }
       }
+      console.log(`The indexes of the search character is:  ${arrayIndex}`);
+
+      //--------------------------------------------------------------------------------------------------------------------
+
+      var indices = [];
+      var array = 'merhaba selam';
+      var element = 'a';
+      var idx = array.indexOf(element);
+
+      while (idx != -1) {
+        indices.push(idx);
+        idx = array.indexOf(element, idx + 1);
+      }
+      console.log({ indices });
+
+      //----------------------------------------------------------------------------------------------------------------------------------------
+
+      var ulkeler = ['Türkiye', 'Honduras', 'Guetamala ', 'San-Salvador'];
+      for (i = 0; ulkeler[i]; i++) {
+        if (ulkeler[i].includes('a')) {
+          console.log(` ${ulkeler[i]} ülkesinde "a" harfi vardır.`);
+        } else {
+          continue;
+        }
+      }
+
+      //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+      function commonIndx() {
+        let stra = prompt('Write a something');
+        var b = [];
+        var count = 0;
+        let maxChar = '';
+        var stran = stra.toLowerCase();
+        var arr = stran.split('');
+
+        for (i of arr) {
+          let missingLength = stra.split(i).length;
+          if (missingLength > count) {
+            maxChar = i;
+            count = missingLength;
+          }
+        }
+        for (var i = 0; i < stra.length; i++) {
+          if (stra[i] === maxChar) {
+            b.push(i);
+          }
+        }
+        return document.write(`Most common character is : "${maxChar}"<br><hr>Index numbers are : ${b} `);
+      }
+      commonIndx();
     </script>
   </body>
 </html>

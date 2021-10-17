@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //endswith() methodu ile, stringimizin sonu bununla mi bitiyor? diye sorguluyoruz.
+        // Eger stringimizin sonu parantez icindeki ifade ile bitiyorsa "true", bitmiyorsa "false" donderir
+        
+        let word = "merhaba arkadaslar ben huseyin yaman";
+
+        let search1 = word.endsWith("yaman");
+        let search2 = word.endsWith("merhaba");
+
+        document.write(search1 + "<br>");   // true
+        document.write(search2 + "<br>");   // false
+
+        let search3 = word.endsWith("merhaba", 7);  // 7 karakter boyunca "merhaba" var mi demek istiyorum
+        let search4 = word.endsWith("merhaba ", 7); // Fakat burda merhabanin sonunda bosluk var 
+        let search5 = word.endsWith("merhaba ", 8); // Boslugu da hesap ederek yazarsak true cikar
+
+        document.write(search3 + "<br>");           // true
+        document.write(search4 + "<br>");           // false
+        document.write(search5 + "<br>");           // true
+
+        let search6 = word.endsWith("r", 10);       // 10. karaktere kadar r ile mi bitiyor?
+        document.write(search6 + "<br>");           // true
+
+        let search7 = word.endsWith("arka", 12);    // 12. karaktere kadar "arka" ile mi bitiyor?
+        document.write(search7 + "<br>");           // true
+
+    
+    </script>
+</body>
+</html>

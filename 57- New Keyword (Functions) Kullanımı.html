@@ -13,14 +13,14 @@
         //    document.write(isim + "<br/>");
         //    document.write(soyisim + "<br/>");
         //    document.write(yas + "<br/>");
-            this.isim = isim;                           // Globaldeki yani asagidaki isim ile eşleştirebilmek için ("this") yazılmalıdır
+            this.isim = isim;                           // Globaldeki yani asagidaki isim ile eşleştirebilmek için ("this") yazılmalıdır, bu yazilmazsa asagi taraf "undefined" cikar
             this.soyisim = soyisim;                     // Bir nevi fonksiyonlara da objectler (nesneler) gibi davranabiliyoruz
             this.yas = yas;
        }
        // insan("emre", "sabuncu", 50);
 
         var yeni = new insan("Hüseyin", "Yaman", 35);
-            document.write(yeni.isim + "<br/>");        // Sadece bu şekilde kullanırsak undefined hatası alırız o yüzden yukarıdaki this ile kullanmak zorundayız
+            document.write(yeni.isim + "<br/>");        // Sadece bu şekilde kullanırsak undefined hatası alırız o yüzden yukarıdaki "this"  birlikte kullanmak zorundayız
             
             yeni.boy = 175;                             // Yeni fonksiyona bu şekilde yeni parametreler dahi eklenebililyor
             document.write(yeni.boy + "<br/>");

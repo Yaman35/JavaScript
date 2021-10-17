@@ -45,8 +45,9 @@
 
         let names2 = ["John", "James", "Aaron", "Walter", "Edward"];
 
-        names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler and returns the new array length.
-        console.log(names2);              // Arrayin "Yaman" eklenmiş hali cikar, yani arrayin tamami
+        let unshifted = names2.unshift("Yaman");          // unshift() methodu array in başına her zaman içine aldığı elemanı ekler and returns the new array length.
+        console.log(unshifted); // 6 donderir             // Takiben eklenmis arrayin eleman sayisibi donderir. Yani (array.length)
+        console.log(names2);                              // Arrayin "Yaman" eklenmiş hali cikar, yani arrayin tamami
         names2.unshift("Yavuz Ali", "Emine");
         console.log(names2);
 

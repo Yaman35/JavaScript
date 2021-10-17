@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // console.assert() ile Consol kismina istedigimiz ozel bir hatayi yazdirabiliyoruz. 
+        // Boolean tarzinda "true" ya da "false" deger almasi gerekiyor
+        // Ayni sekilde bir hata mesaji da vermeniz gerekiyor. String ifade yerine Degisken de kullanilabilir
+        
+        let name = "Yaman";
+        let sart;
+
+        if(name == "Huseyin"){
+            sart = true;
+        }else{
+            sart = false;
+        }
+        console.assert(sart, "The name has not matched!");  // Bu uyariyi yalnizca "false" oldugunda verdirebiliyoruz !!!
+        
+        // Fakat burada IF BLOGU icerisinde "Yaman" a esit olsaydi sart true olacakti ve altta yazilmis olsa bile console da hata cikmayacakti 
+   
+   </script>
+</body>
+</html>

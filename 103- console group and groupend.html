@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // Console yazdirdigimiz yazilari gruplandirmaya yarar
+
+    console.log("Merhaba Ben Yaman");
+    console.log("Merhaba Ben Huseyin");
+
+    console.group();    // Bundan sonra yaziklarim bir grup halinde hareket etsin demektir
+                        // Bununla gruplanan ifadeler ok isaretiyle acilip kapanabilir
+    console.log("Merhaba Ben Ahmet");
+    console.log("Merhaba Ben Mehmet");
+    console.log("Merhaba Ben Hasan");
+
+    console.groupEnd(); // Bununla da artik gruplandirma islemini sonlandirmis oluyoruz. Artik bundan sonra yazilanlar gruba dahil edilmemis olacak
+        
+    console.log("Merhaba Ben Selin");
+    console.log("Merhaba Ben Ece");
+   </script>
+</body>
+</html>
