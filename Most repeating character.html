@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+    // Girilen string ifadedeki en cok tekrar eden karakter ve index numaralari
+
+      function commonIndx() {
+        let stra = prompt('Write a something');         // Kullanicidan bir girdi aliyoruz
+        var b = [];                                     // En cok yazilmis olan karakterin index numaralari icin bir bos array belirledik
+        var count = 0;                                                  
+        let maxChar = '';
+
+        var stran = stra.toLowerCase();                 // Girilen karakterlerin hepsini kuculttuk
+        var arr = stran.split('');                      // Ve kuculttugumuz elemanlarin hepsini ayirip bir diziye attik
+
+        for (i of arr) {                                // Bu dizinin tum elemanlari icin
+          let missingLength = stra.split(i).length;     // Ilgili karakter baz alinarak original string ayrilarak bir array olusturuldu ve uzunlugu bir degiskene atandi
+          if (missingLength > count) {                  // Eger bu uzunluk count dan buyuk ise ki count degiskeni her seferinde ya artiyor ya da sabit kaliyor (bir onceki ile ayni ise)
+            maxChar = i;                                // Bu karakteri maxChar degiskenine atadik
+            count = missingLength;                      // Takiben de ayirirken olusan arrayin eleman sayisi o karakter baz alinarak olustugu icin sayisini verir, onu da bir degiskene atadik
+          }
+        }
+        for (var i = 0; i < stra.length; i++) {         // Orginal string botunca karakterlere tek tek bakilir
+          if (stra[i] === maxChar) {                    // Eger dizinin ilgili elemani yukaridaki elemana esit ise
+            b.push(i);                                  // Onun index numarasini b arrayine at
+          }
+        }
+        return document.write(`Most common character is : "${maxChar}"<br><hr>Index numbers are : ${b} `);
+      }
+      commonIndx();
+    </script>
+  </body>
+</html>

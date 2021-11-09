@@ -1,76 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToString Kullanımı</title>
-</head>
-<body>
-  
+  </head>
+  <body>
     <script>
+      // Object kullanimi birden fazla veriyi tutabilmek icin kullanilan bir yapidir
 
-    // Object kullanimi birden fazla veriyi tutabilmek icin kullanilan bir yapidir 
+      let owner = 'mine';
+      let color = 'yellow';
+      let age = 4;
+      let brand = 'Opel';
 
-    let owner = "mine";
-    let color = "yellow";
-    let age = 4;
-    let brand = "Opel";
+      // Yukaridaki 4 degiskeni object seklinde tutabilmek icin asagidaki sekilde bir yapi hazirlanir
 
-    // Yukaridaki 4 degiskeni object seklinde tutabilmek icin asagidaki sekilde bir yapi hazirlanir
-    
-    // Object Olusturma - 1
+      // Object Olusturma - 1
 
-    let car1 = {             // Object Gosterim
-        owner : "Yaman",
-        color : "yellow",
-        age : 4,
-        brand : "Opel",
-        open : function (){
-            // Bu sekilde fonksiyonlari dahi tutabiliriz, icine istedimiz fonksiyon islemini de yazdirabiliriz
-        }  
-    }
+      let car1 = {
+        // Object Gosterim
+        owner: 'Yaman',
+        color: 'yellow',
+        age: 4,
+        brand: 'Opel',
+        open: function () {
+          // Bu sekilde fonksiyonlari dahi tutabiliriz, icine istedimiz fonksiyon islemini de yazdirabiliriz
+        }
+      };
 
-    //-----------------------------------------------------------------------------------------------------------------------------------------
+      //-----------------------------------------------------------------------------------------------------------------------------------------
 
-    // Object Olusturma - 2
+      // Object Olusturma - 2
 
-    let car2 = new Object();    // let car2 = {}; seklinde de yazilabilirdi
+      let car2 = new Object(); // let car2 = {}; seklinde de yazilabilirdi
 
-    car2.owner = "Yaman";
-    car2.color = "Yellow"
-    car2.yas = 4;
-    car2.brand = "Opel";
+      car2.owner = 'Yaman';
+      car2.color = 'Yellow';
+      car2.yas = 4;
+      car2.brand = 'Opel';
 
-    document.write(car2.owner + "<br>"); // Object ozelliklerini bu iki sekilde yazdirabiliriz 
-    document.write(car2["color"] + "<br>");
+      document.write(car2.owner + '<br>'); // Object ozelliklerini bu iki sekilde yazdirabiliriz
+      document.write(car2['color'] + '<br>');
 
-    //-----------------------------------------------------------------------------------------------------------------------------------------
+      //-----------------------------------------------------------------------------------------------------------------------------------------
 
-    // Object This Kullanimi
+      // Object This Kullanimi
 
-    var global_degisken;
+      var global_degisken;
 
-    let car3 = {             
-        owner : "Yaman",
-        color : "Yellow",
-        age : 4,
-        brand : "Opel",
-        durum : function yaz(){
-            document.write("SATILDI..." + "<br>");
-            document.write(car3.color + "<br>");
-            document.write(this.brand + "<br>");     // Bu sekilde bir kullanim fonksiyonun su { } icerisinde bir yerde "brand' degiskeni var onu getir demek istiyoruz,
-                                                     // Yani aslinda "car3.brand" yerine "this.brand" yazdik, ikisi de ayni islemi yapacaktir
-                                                     // Temel mantik olarak "this" ile bu nesnenin icerisinde calisiyorum demek istiyoruz
+      let car3 = {
+        owner: 'Yaman',
+        color: 'Yellow',
+        age: 4,
+        brand: 'Opel',
+        2021: 'Clarusway', // Bu sekilde interger ifadeleri de key olarak kullanabiliyoruz, fakat asagida....
+        durum: function yaz() {
+          document.write('SATILDI...' + '<br>');
+          document.write(car3.color + '<br>');
+          document.write(this.brand + '<br>'); // Bu sekilde bir kullanim fonksiyonun su { } icerisinde bir yerde "brand' degiskeni var onu getir demek istiyoruz,
+          // Yani aslinda "car3.brand" yerine "this.brand" yazdik, ikisi de ayni islemi yapacaktir
+          // Temel mantik olarak "this" ile bu nesnenin icerisinde calisiyorum demek istiyoruz
 
-            global_degisken = this.age;              // Bu sekilde global bir degiskene, "this" ile fonksiyonun {} icersiidneki bir ozelligini de atayabiliyoruz
-            document.write(global_degisken + "<br>");
-        }  
-    }
+          global_degisken = this.age; // Bu sekilde global bir degiskene, "this" ile fonksiyonun {} icersiidneki bir ozelligini de atayabiliyoruz
+          document.write(global_degisken + '<br>');
+          console.log(car3[2021]); // Burada da goruldugu gibi burada eger digerleri gibi car3.2021 yazarsam hata aliyoruz.
+        } // Burada car3[2021], car3["2021"],car2{"2021"} sekillerinde yazabiliyoruz
+      };
 
-    car3.durum();      // Object icerisindeki fonksiyonu da bu sekilde cagirabiliriz
+      car3.durum(); // Object icerisindeki fonksiyonu da bu sekilde cagirabiliriz
+
+      //-------------------------------
+
+      var dog = {
+        name: 'Rocky',
+        legs: 4,
+        tail: 1,
+        qualities: ['loyalty', 'companionship'],
+        bark: function () {
+          // Objectler icerisinde bu sekilde function tanimlanabildigini gormustuk, bunlar burada object methods olarak gecer
+          console.log('woof');
+        },
+        result: function () {
+          return this.name + ' has ' + this.legs + ' legs.';
+        }
+      };
+
+      dog.bark(); // Iste burada artik bu sekilde objectler icerisindeki fonksiyonlari bir method gibi cagirma islemini gerceklestirebiliriz
+      console.log(dog.result());
+
+      //-------------------------------------------------------------------------------------------------------------------------------------------
+
+      const person = {
+        firstName: 'John',
+        age: 30,
+        location: {
+          city: 'New York',
+          temp: 92
+        },
+        2021: 'Clarusway'
+      };
+
+      console.log(person.firstName);
+      console.log(person['age']);
+      console.log(person);
+      console.log(person.lastName);
+
+      person.lastName = 'Smith';
+      console.log(person['midName']);
+
+      console.log(person);
+      console.log(person['2021']);
+
+      const field = 'Name';
+      console.log(person['first' + field]); // Bu sekilde de bir kullanim mevcut
+
+      //--------------------------------------------------------------------------------------------------------------------
+
+      const person2 = {
+        firstName: 'John',
+        lastName: 'Smith',
+        age: 30,
+        citiesLived: ['New York', 'Paris', 'London'],
+        location: {
+          city: 'New York',
+          temp: 92
+        },
+        2021: 'Clarusway',
+        getFullName: function () {
+          return `${this.firstName} ${this.lastName}`;
+        },
+        getFullName2() {
+          return `${this.firstName} ${this.lastName}`;
+        },
+        aMethod: () => {
+          return 'Hello';
+        },
+        printCitiesLived() {
+          this.citiesLived.forEach(city => {
+            // Eger burada function() ile yazsaydik this bize unnamed donderiyor
+            console.log(this.firstName + ' has lived in ' + city);
+          });
+        }
+      };
+      // console.log(person.getFullName2());
+
+      person2.printCitiesLived(); // Bunu degiskene atayip kullanirsak o zaman ulasamiyor hata aliyoruz, bu hata this in context hatasi
+
+      //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      // We can use an object constructor function to create an object type.
+
+      function dog(name, legs, tail) {
+        this.name = name;
+        this.legs = legs;
+        this.tail = tail;
+      }
+
+      //After we have an object constructor, we can create new objects of the same type with the new keyword.
+
+      var dog1 = new dog('Riley', 4, 1);
+      var dog2 = new dog('Ginger', 4, 1);
+
+      document.write(dog1.name);
+      document.write(dog2.tail);
+
+      // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      // CLASSES !
+
+      class User{
+        constructor(firstName, lastName, credit){
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.credit = credit;
+        }
+
+        getFullName(){
+          let fullName = `My full name is ${this.firstName} ${this.lastName}`;
+          return fullName;
+        }
+
+        editName(newname){
+          const myName = newname.split(' ');
+          this.firstName = myName[0];
+          this.lastName = myName[1];
+        }
+      }
+
+      const yaman = new User("Huseyin", "Yaman", "100", "husoyaman1987@gmail.com");
+      console.log(yaman.getFullName());
+      yaman.editName('Huseyin Yaman');
+      console.log(yaman.getFullName());
+
+      // A class is a type of function, but we use the keyword class and assign the properties within a constructor() method instead of using the keyword function to initiate it.
+
+      //  ➤ Classes are "special functions," and the class syntax has two components just as you can describe function expressions and function declarations: class expressions and class declarations.
+      //  ➤ The standard way to define a class is to use a declaration of class. You use the class keyword with the class name to designate a class, and always add the constructor() method.
+
+      class Pet {
+        constructor(name, age) {
+          this.name = name; // "this" is a keyword that refers to the current object. It is not a variable. And we cannot change the value of this.
+          this.age = age;
+        }
+
+        walk() {
+          console.log("I'm walking");
+        }
+        speak() {
+          return 'I like humans';
+        }
+      }
+
+      myDog = new Pet('Buldog', 4); // Now you can create objects using the "Pet" class
+
+      //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      class Dog {
+        constructor(name, foot) {
+          this.dogName = name;
+          this.foot = foot;
+        }
+        current() {
+          return 'I have a ' + this.dogName + ' and it has ' + this.foot + ' legs';
+        }
+      }
+      myDog = new Dog('Buldog', 4);
+      document.getElementById('content').innerHTML = myDog.current();
+
+      //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      //  ➤ Static methods are defined on the class itself, and not on the prototype.
+
+      //  ➤ That means you cannot call a static method on the object, but on the class:
+
+      class Dog {
+        constructor(name, foot) {
+          this.dogName = name;
+          this.foot = foot;
+        }
+        static hello() {
+          return 'Hello';
+        }
+      }
+      myDog = new Dog('Buldog');
+      document.getElementById('content').innerHTML = Dog.hello();
+
+      // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      //  ➤ To create a class inheritance, use the extends keyword.
+
+      //  ➤ A class created with a class inheritance inherits all the methods from another class:
+
+      class Dog {
+        constructor(name, foot) {
+          this.dogName = name;
+          this.foot = foot;
+        }
+        current() {
+          return 'I have a ' + this.dogName;
+        }
+      }
+
+      class Specy extends Dog {
+        constructor(name, foot, char) {
+          super(name, foot); //  The super() method refers to the parent class.
+          // By calling the super() method in the constructor method, we call the parent's constructor method and get access to the parent's properties and methods.
+          this.character = char;
+        }
+        show() {
+          return this.current() + ', it is  ' + this.character;
+        }
+      }
+
+      myDog = new Specy('Buldog', 4, 'curious');
+      document.getElementById('content').innerHTML = myDog.show();
+
+      //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      class Cat extends Pet {
+        #weight = 5;
+
+        get weight() {
+          return this.#weight;
+        }
+
+        set weight(value) {
+          if (value < 0) {
+            this.weight = 3;
+          } else {
+            this.#weight = value;
+          }
+        }
+        constructor(name, age, color) {
+          super(name, age);
+          this.color = color;
+        }
+        speak() {
+          let result = super.speak();
+          result += ' and I like to meow';
+          return this.#weight;
+        }
+      }
+
+      const muezza = new Cat('Müezza', 2, 'gri');
+      // muezza.weight = 5;
+      // console.log(muezza);
+      console.log(muezza.speak());
+      // muezza.walk();
+      muezza.weight = -5;
+      console.log(muezza.weight);
+
+      //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      // Getters and Setters
+      // ➤ Classes also allows us to use getters and setters.
+      // ➤ To add getters and setters in the class, use the get and set keywords.
+
+      class Song {
+        constructor(genre) {
+          this.genre = genre;
+        }
+        get sgenre() {
+          return this.genre;
+        }
+        set sgenre(newgenre) {
+          this.genre = newgenre;
+        }
+      }
+
+      mysong = new Song('Classical');
+      document.getElementById('content').innerHTML = 'My favourite is ' + mysong.sgenre;      // Outoput: My favourite is Classical
+
+      //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      // Even if the getter is a method, you do not use parentheses when you want to get the property value.
+      // To use a setter, use the same syntax as when you set a property value, without parentheses.
+
+      class Song {
+        constructor(genre) {
+          this.genre = genre;
+        }
+        get sgenre() {
+          return this.genre;
+        }
+        set sgenre(newgenre) {
+          this.genre = newgenre;
+        }
+      }
+
+      mysong = new Song('Classical');
+      mysong.sgenre = 'Jazz';
+
+      document.getElementById('content').innerHTML = 'My favourite is ' + mysong.sgenre;      // Output: My favourite is Jazz
 
     </script>
-  
-</body>
+  </body>
 </html>

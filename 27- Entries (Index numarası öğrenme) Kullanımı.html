@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entries Kullanımı</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        var fruits = ["Kiraz", "Elma", "Kivi", "Karpuz", "Nar", "Portakal", "Muz", "Çilek", "Armut"];
-        var display = fruits.entries();
 
-        var i;
-        for(i of display) {
-            document.write(i + "<br/>"); // Index no ogrenmek icin kullanilir
-        }
+      var fruits = ['Kiraz', 'Elma', 'Kivi', 'Karpuz', 'Nar', 'Portakal', 'Muz', 'Çilek', 'Armut'];
+      var display = fruits.entries(); // Index no ogrenmek icin kullanilir
+
+      var i;
+      for (i of display) {
+        document.write(i + '<br/>');
+      }
+
+      //---------------------------------------------------------------------------------------------------------------------------------------------
+
+      function convert(obj) {
+        var result = Object.entries(obj);
+        console.log(result);
+      }
+      convert({ a: 1, b: 2 });  // [['a', 1],['b', 2]]
+
     </script>
-  
-</body>
+  </body>
 </html>

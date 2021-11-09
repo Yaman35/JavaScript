@@ -17,7 +17,7 @@ console.log(h1);
 const highlightSpan = h1.querySelectorAll(".highlight");   // Farkedileceği üzere burada document ile değil de h1 ile başladı. Yani h1 altındaki classı ".highlight" olanların hepsi alındı (2 tane span)
 console.log(highlightSpan);               // Birden fazla eleman var. [Array]
 
-h1.firstElementChild.style.color = "red"; // h1 in çocuklarının ilki (yani ilk span)
+h1.firstElementChild.style.color = "red"; // h1 in çocuklarının ilki (yani ilk span) nin style ile color degistirdik
 h1.lastElementChild.style.color = "blue"; // h1 in çocuklarının sonuncusu (yani ikinci span)
 
 // document.querySelectorAll(".highlight")[0].style.color = "red";    İlk elemanın rengi bu şekilde de değiştirilebilirdi
@@ -26,9 +26,43 @@ h1.lastElementChild.style.color = "blue"; // h1 in çocuklarının sonuncusu (ya
 h1.closest(".header").style.backgroundColor = "yellow";   /* Bu şekilde parantez içindeki şartı sağlayan en yakın elemana da ulaşıp işlem yaptırabiliyoruz 
                                                           (Üst komşulardan (parent şart değil, 2-3 üst alt olsa da gider) en yakın olan, yani şartları sağlayan birden fazla olsa bile en yakın olana işlem yapılır) */
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+// let navbarItem1 = document.getElementsByClassName("nav__item")[0].innerText;
+// console.log(navbarItem1);
+// let navbarItem1 = document.getElementsByClassName("nav__links")[0].firstElementChild.innerText;
+let navbarItem1 = document.getElementsByClassName("nav__links")[0].children[0];
+let navbarItem2 = document.getElementsByClassName("nav__links")[0].children[1];
+let navbarItem3 = document.getElementsByClassName("nav__links")[0].children[2];
+// console.log(navbarItem1);
+
+let h1 = document.querySelector("h1");
+let span = h1.querySelector(".highlight");
+span.style.color = "red";
+// span.classList.remove("highlight");
+// span.className = "highlight";
+// span.classList.add("highlight");
+// console.log(span);
+let headerDiv = h1.parentElement.children;
+// console.log(headerDiv);
+// [... headerDiv].forEach(function(element) {
+//     if(element != h1){
+//         element.style.transform = 'scale(0.7)';
+//         element.style.color = "purple";
+//     }
+// });
+
+for (let index = 0; index < headerDiv.length; index++) {
+    if(headerDiv[index] != h1){
+        headerDiv[index].style.transform = 'scale(0.7)';
+        headerDiv[index].style.color = "purple";
+    }
+}*/
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// EVENTS
+// DOM EVENTS
 
 window.onload = () => { alert("Welcome !");}            // Sayfa yüklenirken "Welcome" ekranda çıkar
 window.onload = function(){ alert("Welcome !");}        //Bu şekilde de yazılabilirdi
@@ -38,6 +72,30 @@ window.addEventListener("load", function(){             // addEventListener ile 
 });
 
 window.addEventListener("load", () => alert("Welcome !") ); // Bu ve yukarıdakilerin hepsi aynı işi yapar
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* 
+// DOM EVENTS
+
+window.onload = (e) => {
+    console.log("your page is loaded");
+    // alert("your page was rendered");
+}
+
+window.addEventListener("load", (e) => {
+    console.log("windowload eventlistener added");
+    console.log(navbarItem1.innerText);
+});
+
+window.addEventListener("DOMContentLoaded", function(e){
+    console.log("DOMContent was Loaded");
+});
+
+navbarItem1.addEventListener("click", ()=>{
+    alert("Paths clicked");
+})
+
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
@@ -86,7 +144,7 @@ navbarItem3.style.backgroundColor = randomColor();   // Her tıkta arka plan ren
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/* function changeColor() {                                    // changeColor() adında bir fonksiyon oluşturduk navbarItem3 için  
+/* function changeColor() {                                 // changeColor() adında bir fonksiyon oluşturduk navbarItem3 için  
       navbarItem3.style.borderRadius = "10px";              // Arrow function ile de yapabiliriz ama o functionı EventListener den silebilmek için bir ismi olmalı o da variable functions şeklinde olmalı
       navbarItem3.style.backgroundColor = randomColor();
     }
