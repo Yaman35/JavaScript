@@ -8,6 +8,7 @@
   </head>
   <body>
     <script>
+
       // Object kullanimi birden fazla veriyi tutabilmek icin kullanilan bir yapidir
 
       let owner = 'mine';
@@ -17,7 +18,9 @@
 
       // Yukaridaki 4 degiskeni object seklinde tutabilmek icin asagidaki sekilde bir yapi hazirlanir
 
-      // Object Olusturma - 1
+      //////////////////////////
+      // Object Olusturma - 1 //
+      //////////////////////////
 
       let car1 = {
         // Object Gosterim
@@ -25,28 +28,29 @@
         color: 'yellow',
         age: 4,
         brand: 'Opel',
-        open: function () {
-          // Bu sekilde fonksiyonlari dahi tutabiliriz, icine istedimiz fonksiyon islemini de yazdirabiliriz
+        open: function () {     // Bu sekilde fonksiyonlari dahi tutabiliriz, icine istedigimiz fonksiyon islemini de yazdirabiliriz
         }
       };
 
       //-----------------------------------------------------------------------------------------------------------------------------------------
 
-      // Object Olusturma - 2
+      //////////////////////////
+      // Object Olusturma - 2 //
+      //////////////////////////
 
-      let car2 = new Object(); // let car2 = {}; seklinde de yazilabilirdi
+      let car2 = new Object();  // let car2 = {}; seklinde de yazilabilirdi
 
-      car2.owner = 'Yaman';
+      car2.owner = 'Yaman';     // Bu sekilde de object ozelliklerini yazdirabiliyoruz
       car2.color = 'Yellow';
       car2.yas = 4;
       car2.brand = 'Opel';
 
-      document.write(car2.owner + '<br>'); // Object ozelliklerini bu iki sekilde yazdirabiliriz
+      document.write(car2.owner + '<br>');    // Object ozelliklerini bu iki sekilde yazdirabiliriz
       document.write(car2['color'] + '<br>');
 
       //-----------------------------------------------------------------------------------------------------------------------------------------
 
-      // Object This Kullanimi
+      // Object "This" Kullanimi
 
       var global_degisken;
 
@@ -55,41 +59,66 @@
         color: 'Yellow',
         age: 4,
         brand: 'Opel',
-        2021: 'Clarusway', // Bu sekilde interger ifadeleri de key olarak kullanabiliyoruz, fakat asagida....
+        2021: 'Clarusway',                                  // Bu sekilde interger ifadeleri de key olarak kullanabiliyoruz, fakat asagida....
         durum: function yaz() {
           document.write('SATILDI...' + '<br>');
           document.write(car3.color + '<br>');
-          document.write(this.brand + '<br>'); // Bu sekilde bir kullanim fonksiyonun su { } icerisinde bir yerde "brand' degiskeni var onu getir demek istiyoruz,
-          // Yani aslinda "car3.brand" yerine "this.brand" yazdik, ikisi de ayni islemi yapacaktir
-          // Temel mantik olarak "this" ile bu nesnenin icerisinde calisiyorum demek istiyoruz
+          document.write(this.brand + '<br>');              // Bu sekilde bir kullanim fonksiyonun su { } icerisinde bir yerde "brand' degiskeni var onu getir demek istiyoruz,
+                                                            // Yani aslinda "car3.brand" yerine "this.brand" yazdik, ikisi de ayni islemi yapacaktir
+                                                            // Temel mantik olarak "this" ile bu nesnenin icerisinde calisiyorum demek istiyoruz
 
-          global_degisken = this.age; // Bu sekilde global bir degiskene, "this" ile fonksiyonun {} icersiidneki bir ozelligini de atayabiliyoruz
+          global_degisken = this.age;                       // Bu sekilde global bir degiskene, "this" ile fonksiyonun {} icerisindeki bir ozelligini de atayabiliyoruz
           document.write(global_degisken + '<br>');
-          console.log(car3[2021]); // Burada da goruldugu gibi burada eger digerleri gibi car3.2021 yazarsam hata aliyoruz.
-        } // Burada car3[2021], car3["2021"],car2{"2021"} sekillerinde yazabiliyoruz
+          console.log(car3[2021]);                          // Burada da goruldugu gibi burada eger digerleri gibi car3.2021 yazarsam hata aliyoruz.
+        }                                                   // Fakat car3[2021], car3["2021"] sekillerinde yazdirabiliyoruz
       };
 
-      car3.durum(); // Object icerisindeki fonksiyonu da bu sekilde cagirabiliriz
+          car3.durum();                                     // Object icerisindeki fonksiyonu da bu sekilde cagirabiliriz
 
-      //-------------------------------
+      //---------------------------------------------------------------
 
       var dog = {
         name: 'Rocky',
         legs: 4,
         tail: 1,
         qualities: ['loyalty', 'companionship'],
-        bark: function () {
-          // Objectler icerisinde bu sekilde function tanimlanabildigini gormustuk, bunlar burada object methods olarak gecer
+        bark: function () {                               // Objectler icerisinde bu sekilde function tanimlanabildigini gormustuk, bunlar burada "object methods" olarak gecer
           console.log('woof');
         },
+
         result: function () {
           return this.name + ' has ' + this.legs + ' legs.';
-        }
+        },                                              // (Bu object ozellikleri arasindaki "," leri unutmamakta fayda var yoksa hata aliriz)
+
+        result2() {                                     // Yukaridaki methodu bu sekilde de yazdigimizda sonuc yine ayni olacaktir
+          return this.name + ' has ' + this.legs + ' legs.';
+        },
+
+        result3: () => {                                // !! Fakat buradaki gibi arrow function seklinde kullanirsak, hata gozukmemesine ragmen sonucta ilgili degerlere ulasamayiz, "undefined" olur
+          return this.name + ' has ' + this.legs + ' legs.';
+  }
       };
 
-      dog.bark(); // Iste burada artik bu sekilde objectler icerisindeki fonksiyonlari bir method gibi cagirma islemini gerceklestirebiliriz
-      console.log(dog.result());
+      dog.bark();                 // Iste burada artik bu sekilde objectler icerisindeki fonksiyonlari bir method gibi cagirma islemini gerceklestirebiliriz, method icinde console log oldugundan cagirirken tekrar yazmaya gerek yok
+      console.log(dog.result());  // Bunu bu sekilde yazmak zorundayiz cunku object icinde yer alan methodun sadece "return" ozelligi var, donderebilmek icin console log icinde yazmamiz gerekiyor
+      console.log(dog.result2()); // Ayni cikar
+      console.log(dog.result3()); // "undefined" has "undefined" legs. seklinde bir cikstisi olur
 
+      //----------------------------------------------------------------
+
+      const person = {
+          firstName: 'Barry',
+          lastName: 'Mitchell',
+          birthYear: 1977,
+          skills: ['JS', 'AWS', 'Dockers', 'Pyhton'],
+          employed: true,
+          calcAgeBad: function (bYear) {     // Bu sekilde icine parametre alan functionlar da objectler icerisinde tanimlanabilir
+            return 2021 - bYear;
+          }
+      }
+
+      console.log(`Kendisi ${person.calcAgeBad(1975)} yillik bir personelimizdir`);
+      
       //-------------------------------------------------------------------------------------------------------------------------------------------
 
       const person = {
@@ -97,24 +126,24 @@
         age: 30,
         location: {
           city: 'New York',
-          temp: 92
+          temp: 92,
         },
-        2021: 'Clarusway'
+        2021: 'Clarusway'                   // Bu sekilde de tanimlanabilir, ama kullanimi asagidaki gibi olmak zorundadir
       };
 
-      console.log(person.firstName);
-      console.log(person['age']);
-      console.log(person);
-      console.log(person.lastName);
+      console.log(person.firstName);        // John
+      console.log(person['age']);           // 30
+      console.log(person);                  // Object seklinde gosterir  ({2021: 'Clarusway', firstName: 'John', age: 30, location: {…}})
+      console.log(person.lastName);         // "undefined" olur cunku icerisinde boyle bir veri yok
 
-      person.lastName = 'Smith';
-      console.log(person['midName']);
+      person.lastName = 'Smith';            // Sonradan boyle tanimlansa da undefined olur, ama yazdirmadan once sonradan boyle ayrica tanimlanirsa o zaman gosterir
+      console.log(person['midName']);       // "undefined" olur cunku icerisinde boyle bir veri yok 
 
-      console.log(person);
-      console.log(person['2021']);
+      console.log(person);                  // "person" objectinin sonradan lastName eklenmis halini de simdi gorebiliriz  ({2021: 'Clarusway', firstName: 'John', age: 30, location: {…}, lastName: 'Smith'})
+      console.log(person['2021']);          // "person.2021" kabul edilmez. Ya buradaki gibi person['2021'] ya da person[2021] seklinde kullanilmalidir
 
       const field = 'Name';
-      console.log(person['first' + field]); // Bu sekilde de bir kullanim mevcut
+      console.log(person['first' + field]); // Bu sekilde de bir kullanim mevcut, cikti olarak yine "John" verilir
 
       //--------------------------------------------------------------------------------------------------------------------
 
@@ -128,97 +157,143 @@
           temp: 92
         },
         2021: 'Clarusway',
+
         getFullName: function () {
           return `${this.firstName} ${this.lastName}`;
         },
+
+        // Yukaridaki fonksiyonu asagidaki gibi de yazdırabilirdik(function yazmadan )
+        
         getFullName2() {
           return `${this.firstName} ${this.lastName}`;
         },
+
+        // Arrow function seklinde de yazabiliyoruz 
+
         aMethod: () => {
           return 'Hello';
         },
+
         printCitiesLived() {
-          this.citiesLived.forEach(city => {
-            // Eger burada function() ile yazsaydik this bize unnamed donderiyor
+          this.citiesLived.forEach(city => {                 // Eger burada function(city) ile yazsaydik this bize "unnamed" donderiyor, o yuzden bu sekilde arrow function seklinde yazmaliyiz
             console.log(this.firstName + ' has lived in ' + city);
           });
         }
+
       };
       // console.log(person.getFullName2());
 
-      person2.printCitiesLived(); // Bunu degiskene atayip kullanirsak o zaman ulasamiyor hata aliyoruz, bu hata this in context hatasi
+      person2.printCitiesLived();                           // Bunu degiskene atayip kullanirsak o zaman ulasamiyor hata aliyoruz, bu hata "this in context hatasi"
+      console.log(person2.location);
+      console.log(person2.location.temp);                   // Object ozelliklerinin alt ozelliklerine de bu sekilde ulasabiliriz
 
-      //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+      console.log(person2.aMethod());                       // Arrow functionlara da bu sekilde ulasabiliriz lakin icinde "this" ile donderilen bir bilgi varsa yukaridaki "dog" nesnesinde oldugu gibi  ona ulasamiyoruz !!!!
+      
+      //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      
+      const student1 = {
+        name: 'John',
+        grade: 68,
 
-      // We can use an object constructor function to create an object type.
+        // Asagidaki iki kullanimda hicbir sikinti yok, her ikisi de ayni islemi yapar
+
+        printGrade() {
+          return `${this.name} has grade of ${this.grade}`;
+        },
+
+        printArrowGrade: () => {                            // Fakat burada icerigi nedense alamiyor,"this context hatasi" 
+          return `${this.name} has grade of ${this.grade}`;
+        }
+      };
+
+      console.log(student1.printGrade());
+
+      //------------------------------
+
+        const module = {
+        x: 42,
+        getX: function() {
+            return this.x;
+        }
+        };
+
+        const unboundGetX = module.getX;
+        console.log(unboundGetX());         // The function gets invoked at the global scope
+        // expected output: undefined
+        console.log(module.getX());         // Veya direk bu sekilde yazsaydik da olurdu
+
+        const boundGetX = unboundGetX.bind(module);     // Ya da yukarida bahsettigimiz gibi bu sekilde "bind" ile baglamamiz gerekli
+        console.log(boundGetX());
+        // expected output: 42
+
+      //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      //////////////////////////
+      // Object Olusturma - 3 //
+      //////////////////////////
+
+      // We can use an ("object constructor function") to create an object type.
 
       function dog(name, legs, tail) {
-        this.name = name;
-        this.legs = legs;
-        this.tail = tail;
+        this.ad = name;
+        this.ayaklar = legs;
+        this.kuyruk = tail;
       }
 
-      //After we have an object constructor, we can create new objects of the same type with the new keyword.
+      //After we have an object constructor, we can create new objects of the same type with the "new" keyword.
 
       var dog1 = new dog('Riley', 4, 1);
-      var dog2 = new dog('Ginger', 4, 1);
+      var dog2 = new dog('Ginger', 2, 1);
 
-      document.write(dog1.name);
-      document.write(dog2.tail);
+      console.log(dog1.ad);
 
-      // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-      // CLASSES !
-
-      class User{
-        constructor(firstName, lastName, credit){
-          this.firstName = firstName;
-          this.lastName = lastName;
-          this.credit = credit;
-        }
-
-        getFullName(){
-          let fullName = `My full name is ${this.firstName} ${this.lastName}`;
-          return fullName;
-        }
-
-        editName(newname){
-          const myName = newname.split(' ');
-          this.firstName = myName[0];
-          this.lastName = myName[1];
-        }
-      }
-
-      const yaman = new User("Huseyin", "Yaman", "100", "husoyaman1987@gmail.com");
-      console.log(yaman.getFullName());
-      yaman.editName('Huseyin Yaman');
-      console.log(yaman.getFullName());
-
-      // A class is a type of function, but we use the keyword class and assign the properties within a constructor() method instead of using the keyword function to initiate it.
-
-      //  ➤ Classes are "special functions," and the class syntax has two components just as you can describe function expressions and function declarations: class expressions and class declarations.
-      //  ➤ The standard way to define a class is to use a declaration of class. You use the class keyword with the class name to designate a class, and always add the constructor() method.
-
-      class Pet {
-        constructor(name, age) {
-          this.name = name; // "this" is a keyword that refers to the current object. It is not a variable. And we cannot change the value of this.
-          this.age = age;
-        }
-
-        walk() {
-          console.log("I'm walking");
-        }
-        speak() {
-          return 'I like humans';
-        }
-      }
-
-      myDog = new Pet('Buldog', 4); // Now you can create objects using the "Pet" class
+      console.log(dog2.kuyruk);
+      console.log(dog2.ayaklar);
 
       //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      class Dog {
-        constructor(name, foot) {
+      function Animal(name, age) {        // ("object constructor function") ile "Animal" adinda bir constructor olusturduk
+        this.name = name;
+        this.age = age;
+      }
+
+      function Cat(name, age) {
+        this.prototype = Animal.call(this, name, age); // Burada "call" ile prototype indeki ozelliklerini de bu nesneye cagirarak dahil etmis olduk, yani artik "Cat" nesnesi "Animal" nesnesinin ozelliklerini de gosterir
+        this.color = 'black';                          // Bu sekilde prototypeden gelen ozelliklere ilave olarak ozzellik ekleyebiliyoruz
+        function speak() {                             // Yine ayni sekilde bir method belirledik
+          console.log('meow');                         // Dikkat edilirse object constructor function ile yaparsak methodlari da bu sekilde tanimliyoruz
+        }
+      }
+
+      function Dog(name, age) {
+        Animal.call(this, name, age);                  // name ve age degerleri prototype dan dolayi otomatik olarak aktarilmis olacak
+        this.color = 'white';
+        function speak() {
+          console.log('woaf');
+        }
+      }
+
+      // Cat.prototype = Object.create(Animal.prototype);
+      const cat1 = new Cat('Fluffy', 2);               // "cat1" degiskenine "Cat" nesnesinden bir object instance atadik
+      console.log(cat1);                               // Burada biz name ve age tanimlamamamiza ragmen prototype dan o ozellikler gelir
+
+      Dog.prototype = Object.create(Animal.prototype); // Dog prototype belirledik, yukarida Cat icin kendi nesnesi icinde belirtmistik, iki sekilde de olur
+      const karabas = new Dog('Karabas', 2);
+      console.log(karabas);
+
+      // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+      //////////////////////////
+      // Object Olusturma - 4 //
+      //////////////////////////
+
+      ///////////////////////////////////////////////////////////////////////////
+      //---------------------------- CLASSES ! --------------------------------//
+      ///////////////////////////////////////////////////////////////////////////
+
+       class Dog {                    // Bu sekilde de bir object olusturabilir ve ondan ornekler yaratabiliriz
+        constructor(name, foot) {     // "constructor" ismi zorunlu degil herhangi bir isim de olabilir, burada sadece gorevi belli olsun diye bu sekilde kullanildi 
           this.dogName = name;
           this.foot = foot;
         }
@@ -227,30 +302,101 @@
         }
       }
       myDog = new Dog('Buldog', 4);
-      document.getElementById('content').innerHTML = myDog.current();
+      console.log(myDog.current());
 
       //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+      class User {
+        constructor(firstName, lastName, credit,email) {
+          this.myfirstName = firstName;
+          this.mylastName = lastName;
+          this.myCredit = credit;
+          this.myEmail = email;
+        }
+
+        getFullName() {
+          let fullName = `My full name is ${this.myfirstName} ${this.mylastName}`;
+          return fullName;
+        }
+
+        editName(name) {
+          const newName = name.split(' ');
+          this.myfirstName = newName[0];
+          this.mylastName = newName[1];
+        }
+      }
+
+      const yaman = new User('Huseyin', 'Yaman', '100', 'husoyaman1987@gmail.com');
+      console.log(yaman);
+
+      console.log(yaman.getFullName());
+
+      yaman.editName('YavuzAli Yaman');
+      console.log(yaman.getFullName());
+
+      // A class is a type of function, but we use the keyword class and assign the properties within a constructor() method instead of using the keyword function to initiate it.
+
+      //  ➤ Classes are "special functions," and the class syntax has two components just as you can describe function expressions and function declarations: class expressions and class declarations.
+      //  ➤ The standard way to define a class is to use a declaration of class. You use the class keyword with the class name to designate a class, and always add the constructor() method.
+
+      //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      class Color {
+        constructor(red, green, blue, name) {
+          this.r = red;
+          this.g = green;
+          this.b = blue;
+          this.name = name;
+        }
+
+        print() {
+          console.log(`rgb(${this.r}, ${this.g}, ${this.b})`);
+        }
+
+        rgb() {
+          return `rgb(${this.r}, ${this.g}, ${this.b})`;
+        }
+
+        hex() {
+          return `#${this.r.toString(16)}${this.g.toString(16)}${this.b.toString(16)}`;   // Bu sekilde hexadecimal renk kodlarina cevirme islemini gerceklestirebiliyoruz
+        }
+      }
+
+      // !!! Color.print(); seklinde cagiramayiz cunku class larin bu sekilde cagirma islemi olmaz, asagida anlatildigi uzere "static" kullanimi zorunludur
+
+      const color1 = new Color(160, 24, 25, 'redly');     // Burada Color classindan yeni bir nesne yarattik
+      // div1.style.backgroundColor = color1.rgb();       // Yarattigimiz yeni nesnenin rgb methodunu ile getirdigimiz rengi mesela div rengi olarak belirledik
+      console.log(color1.rgb());
+
+      //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     
       //  ➤ Static methods are defined on the class itself, and not on the prototype.
 
       //  ➤ That means you cannot call a static method on the object, but on the class:
 
       class Dog {
-        constructor(name, foot) {
+        constructor(name, foot) {     // Burada goruldugu gibi "Dog" classi icerisinde bor object olusturuldu
           this.dogName = name;
           this.foot = foot;
         }
-        static hello() {
+
+        static hello() {              // Yine "Dog" classi icerisinde bir "static method" olusturuldu
           return 'Hello';
         }
       }
-      myDog = new Dog('Buldog');
-      document.getElementById('content').innerHTML = Dog.hello();
+
+      myDog = new Dog('Buldog', 4);
+
+      console.log(myDog);             // Dog {dogName: 'Buldog', foot: 4}
+      console.log(Dog.hello());       // ("static method") ancak bu sekilde class uzerinden erisilebilir, object(constructor) uzerinden degil
+      console.log(myDog.hello());     // Eger bu sekilde class dan olusturulmus bir nesne uzerinden class methoduna ulasmaya calisirsak "myDog.hello is not a function" seklinde bir hata aliriz 
+
+      // Burada yukaridaki kullanimin aksine basarili bir sekilde methodu cagirabiliyoruz, cunku "static" olarak tanimlanmis
 
       // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      //  ➤ To create a class inheritance, use the extends keyword.
-
+      //  ➤ To create a class inheritance, use the ("extends") keyword.
       //  ➤ A class created with a class inheritance inherits all the methods from another class:
 
       class Dog {
@@ -263,60 +409,84 @@
         }
       }
 
-      class Specy extends Dog {
-        constructor(name, foot, char) {
-          super(name, foot); //  The super() method refers to the parent class.
-          // By calling the super() method in the constructor method, we call the parent's constructor method and get access to the parent's properties and methods.
+      class Specy extends Dog {               // Iste burada "extend" ile Specy classina parant classi olan Dog classinin tum ozellikleri kalitimsal olarak aktarilmis oldu
+        
+          constructor(name, foot, char) {
+          super(name, foot);                  //  The super() method refers to the parent class. Daha once gordugumuz "this.prototype = Animal.call(this, name, age);" kullanimi gibi
+                                              // By calling the super() method in the constructor method, we call the parent's constructor method and get access to the parent's properties and methods.
           this.character = char;
-        }
-        show() {
-          return this.current() + ', it is  ' + this.character;
-        }
+          }
+        
+          show() {
+          console.log(`${this.current()}, it is ${this.character}`);      // Gorulecegi uzere burada curren() methodu parent class tan inheritance olarak gelmistir
+          }
+
       }
 
-      myDog = new Specy('Buldog', 4, 'curious');
-      document.getElementById('content').innerHTML = myDog.show();
+      myDog = new Specy('Buldog', 4, 'curious');                          // Artik parent classtan gelen ozelliklerle birlikte daha da gelisen Spicy class indan bir object instance olusturduk
+      myDog.show();                           // Burada bu sekilde artik methodu cagirabiliyoruz, fakat show() methodunun onune (static) ibaresi konsaydi o methoda artik object uzerinden degil class uzerinden ulasabilirdik !!!   
+
 
       //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      class Cat extends Pet {
-        #weight = 5;
-
-        get weight() {
-          return this.#weight;
+      class Pet {
+        constructor(name, age) {
+          this.name = name;           // "this" is a keyword that refers to the current object. It is not a variable. And we cannot change the value of this.
+          this.age = age;
         }
 
-        set weight(value) {
-          if (value < 0) {
-            this.weight = 3;
-          } else {
-            this.#weight = value;
-          }
-        }
-        constructor(name, age, color) {
-          super(name, age);
-          this.color = color;
+        walk() {
+          console.log("I'm walking");
         }
         speak() {
-          let result = super.speak();
-          result += ' and I like to meow';
-          return this.#weight;
+          return 'I like humans';
+        }
+      }
+
+      myDog = new Pet('Buldog', 4);   // Now you can create objects using the "Pet" class
+
+      class Cat extends Pet {         // Boylelikle Cat classi Pet classindan miras alir, extend eder ve yeni ozellikler de ekleyebilir
+
+        constructor(name, age, color) {
+          super(name, age);           // Burada super() ile "extends" yapildigi icin bir ust class ozelliklerini de kullanabilir hale geldik
+          this.color = color;         // Burada da artik yeni bir ozellik ekledik
+        }
+
+        speak() {
+          let result = super.speak(); // Mesela burada ust siniftaki speak() methodu bir degiskene atandi, yani onu da kullanabiliyoruz
+          result += ' and I like to meow';    // Iste burada da ona bir ifade daha ekleyebildik
+          return result;
+        }
+
+        #weight = 5;                  // Bu sekilde class yapisi icerisinde degiskenler de tanimlanabilmektedir, fakat const yapilamaz ("#") ile private yapilabilir
+                                      // Bu da demek oluyor ki nesnenin bu ozelligi disaridan "object.property" seklinde erisilemez, cagrilamaz !!!
+
+        get weight(){
+          return this.#weight;        // Ve goruldugu uzere bu sekilde ("get") ile direk de alinabilmektedirler
+        }
+
+        set weight(value) {           // Ve goruldugu gibi bu sekilde ("set") ile ilgili degiskenlere istedigimiz durumda istedigimiz degeri set edebiliyoruz
+          if (value < 0) {
+            this.weight = 3;          // Mesela burada kontrol sonucunda negatif geliyorsa agirlik minumum 3 olsun seklinde yapabiliyoruz
+          } else {
+            this.#weight = value;     // Aksi takdirde zaten kontrolden gelen "value" degerini esitliyoruz
+          }
         }
       }
 
       const muezza = new Cat('Müezza', 2, 'gri');
-      // muezza.weight = 5;
-      // console.log(muezza);
-      console.log(muezza.speak());
-      // muezza.walk();
-      muezza.weight = -5;
+      //muezza.weight = 10;
+      //console.log(muezza);
+      console.log(muezza.speak());    // Iste burada hem parent class tan gelen ozellik hem de kendi ozelligi bir arada kullanilmis oldu
+      muezza.walk();                  // Inheritance from Pet class, burada direk parent class tan gelen ozelligini kullandi
+      muezza.weight = -5;             // Burada biz 5 girsek bile yukarida "set" ile kontrol mekanizmasi yaptigimiz icin 3 gelir
       console.log(muezza.weight);
 
       //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      // Getters and Setters
+      // ("Getters and Setters")
       // ➤ Classes also allows us to use getters and setters.
-      // ➤ To add getters and setters in the class, use the get and set keywords.
+      // ➤ To add getters and setters in the class, use the "get" and "set" keywords.
 
       class Song {
         constructor(genre) {
@@ -326,16 +496,16 @@
           return this.genre;
         }
         set sgenre(newgenre) {
-          this.genre = newgenre;
+          this.genre = newgenre;          // Burada yeni value set etmis olduk
         }
       }
 
       mysong = new Song('Classical');
-      document.getElementById('content').innerHTML = 'My favourite is ' + mysong.sgenre;      // Outoput: My favourite is Classical
+      console.log(mysong.sgenre);         // Output: Classical
 
       //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      // Even if the getter is a method, you do not use parentheses when you want to get the property value.
+      // Even if the getter is a method, you "(do not use parentheses)" when you want to get the property value.
       // To use a setter, use the same syntax as when you set a property value, without parentheses.
 
       class Song {
@@ -351,9 +521,9 @@
       }
 
       mysong = new Song('Classical');
-      mysong.sgenre = 'Jazz';
+      mysong.sgenre = 'Jazz';           // Goruldugu uzere bu sekilde kullanildiginda da () olmadan! kullanmaliyiz
 
-      document.getElementById('content').innerHTML = 'My favourite is ' + mysong.sgenre;      // Output: My favourite is Jazz
+      console.log(mysong.sgenre);       // Output: Jazz
 
     </script>
   </body>
